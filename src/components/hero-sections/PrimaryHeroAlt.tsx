@@ -27,30 +27,25 @@ export default function PrimaryHero() {
 
   return (
     <div className="relative -mt-24 bg-gray-900 overflow-x-hidden overflow-y-hidden">
-      {/* Pattern overlay */}
-      {/* <div className="absolute inset-y-0 left-0 w-full overflow-hidden ring-1 ring-white/5 z-10">
-        <svg
-          className="absolute inset-0 h-full w-full stroke-gray-700 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="hero-pattern"
-              width={200}
-              height={200}
-              x="100%"
-              y={-1}
-              patternUnits="userSpaceOnUse"
-            >
-              <path d="M130 200V.5M.5 .5H200" fill="none" />
-            </pattern>
-          </defs>
-          <svg x="100%" y={-1} className="overflow-visible fill-gray-800/20">
-            <path d="M-470.5 0h201v201h-201Z" strokeWidth={0} />
-          </svg>
-          <rect width="100%" height="100%" strokeWidth={0} fill="url(#hero-pattern)" />
-        </svg>
-      </div> */}
+      {/* Animated Wave Background - Right Side Only */}
+      <div 
+        className="absolute right-0 top-0 w-1/2 h-full"
+        style={{
+          background: `url('/wave-bg.jpeg')`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'right center', // Changed to left to show the wave part
+          opacity: '0.4',
+          animation: 'wave 15s linear infinite',
+        }}
+      />
+
+      {/* Gradient Overlay - Right Side Only */}
+      <div 
+        className="absolute right-0 top-0 w-1/2 h-full z-20 bg-gradient-to-r from-gray-900 via-gray-900/70 to-gray-900/90"
+        style={{
+          mixBlendMode: 'multiply',
+        }}
+      />
 
       {/* Gradient blob */}
       <div
@@ -66,7 +61,8 @@ export default function PrimaryHero() {
         />
       </div>
 
-      <Container className="relative z-30">
+      {/* Adjust container z-index to be above the wave */}
+      <Container className="relative z-40">
         <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24 md:pb-32 md:pt-32">
         <h1 className="mt-14 text-4xl font-bold tracking-tight lg:leading-loose sm:text-5xl xl:text-6xl">
           <span className="text-white">{title1}</span>
@@ -105,3 +101,4 @@ export default function PrimaryHero() {
     </div>
   );
 }
+
