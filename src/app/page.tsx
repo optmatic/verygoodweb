@@ -1,10 +1,11 @@
-import PrimaryHero from "@/components/hero-sections/PrimaryHero";
-import PrimaryHeroAlt from "@/components/hero-sections/PrimaryHeroAlt";
+// import PrimaryHero from "@/components/hero-sections/PrimaryHero";
+import CS from "@/components/optmatic/CS";
+
 export default function Home() {
   return (
     <div>
-      <PrimaryHero />
-      <PrimaryHeroAlt />
+      {/* <PrimaryHero /> */}
+      <CS />
     </div>
   );
 }

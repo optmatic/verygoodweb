@@ -21,7 +21,7 @@ export default {
         serif: ["Merriweather", "serif"],
       },
       colors: {
-        // none yet
+        deepBlue: "#080a13"
       },
     },
   },

@@ -28,7 +28,7 @@ function DesktopNav() {
           <Link
             key={href}
             href={href}
-            className="flex items-center px-4 text-base font-medium text-white  hover:bg-white/5"
+            className="flex items-center px-4 py-2 text-base font-medium text-white  hover:bg-white/5"
           >
             {label}
           </Link>
@@ -42,7 +42,7 @@ function DesktopNav() {
 function MobileNavButton() {
   return (
     <DisclosureButton
-      className="flex size-12 items-center justify-center self-center rounded-lg data-[hover]:bg-white/10 lg:hidden"
+      className="flex size-12 items-center justify-center self-center data-[hover]:bg-white/10 lg:hidden"
       aria-label="Open main menu"
     >
       <Bars2Icon className="size-6 text-white" />
@@ -81,8 +81,8 @@ function MobileNav() {
 
 export function Navbar({ banner }: { banner?: React.ReactNode }) {
   return (
-    <Disclosure as="header" className="relative w-full bg-gray-900 z-50">
-      <PlusGrid className="relative max-w-7xl mx-auto bg-white/5 rounded-xl shadow-lg shadow-black/20">
+    <Disclosure as="header" className="absolute top-0 left-0 right-0 w-full z-50">
+      <PlusGrid className="relative max-w-7xl mx-auto bg-deepBlue/50 shadow-xl shadow-deepBlue/70">
         <PlusGridRow className="relative flex justify-between my-4 px-4">
           <div className="relative flex gap-6">
               <Link href="/" title="Home">
