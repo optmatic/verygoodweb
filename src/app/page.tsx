@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       {/* <PrimaryHero /> */}
       <CS />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 }
