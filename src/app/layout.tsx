@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "brb -Optmatic",
+  title: "brb - Optmatic",
   description: "Optmatic - brb",
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col w-full items-center justify-center`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col w-full items-center justify-center bg-deepBlue`}
       >
         {/* <Navbar /> */}
           <main>
