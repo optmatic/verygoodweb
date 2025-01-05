@@ -56,7 +56,7 @@ export default function Contact() {
           className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
         /> */}
       </div>
-      <div className="mx-auto max-w-2xl text-left">
+      <div className="mx-auto max-w-xl text-left">
         <h2 className="text-balance text-4xl font-light font-serif tracking-tight text-white sm:text-5xl">Get in touch :)</h2>
         <p className="mt-2 text-lg/8 text-white font-light">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
       </div>
