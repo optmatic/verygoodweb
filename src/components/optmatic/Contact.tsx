@@ -1,11 +1,46 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { Field, Label, Switch } from '@headlessui/react'
 
 export default function Contact() {
-  const [agreed, setAgreed] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
+  const [loading, setLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [result, setResult] = useState("")
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setLoading(true)
+    setResult("Sending....")
+
+    const formData = new FormData(e.currentTarget)
+    formData.append("access_key", "21455ef4-d6aa-4abd-858a-8376cb4f30d2")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setResult("Form Submitted Successfully")
+        setSubmitted(true)
+        formRef.current?.reset()
+      } else {
+        console.error("Error", data)
+        setResult(data.message)
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      setResult("An error occurred while submitting the form")
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div className="isolate bg-deepBlue px-6 py-24 sm:py-32 lg:px-8">
@@ -22,10 +57,10 @@ export default function Contact() {
         /> */}
       </div>
       <div className="mx-auto max-w-2xl text-left">
-        <h2 className="text-balance text-4xl font-light font-serif tracking-tight text-white sm:text-5xl">Contact sales</h2>
+        <h2 className="text-balance text-4xl font-light font-serif tracking-tight text-white sm:text-5xl">Get in touch :)</h2>
         <p className="mt-2 text-lg/8 text-white font-light">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
       </div>
-      <form action="#" method="POST" className="mx-auto max-w-xl mt-6">
+      <form ref={formRef} onSubmit={handleSubmit} method="POST" className="mx-auto max-w-xl mt-6">
         <div className="grid grid-cols-1 gap-x-4  sm:grid-cols-2">
           <div>
             {/* <label htmlFor="first-name" className="block text-sm/6 font-semibold text-white">
@@ -38,7 +73,7 @@ export default function Contact() {
                 type="text"
                 autoComplete="given-name"
                 placeholder="First name"
-                className="block w-full px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                className="block w-full px-3.5 py-2  text-white outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white"
               />
             </div>
           </div>
@@ -53,7 +88,7 @@ export default function Contact() {
                 type="text"
                 autoComplete="family-name"
                 placeholder="Surname"
-                className="block w-full px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                className="block w-full px-3.5 py-2 text-white outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white"
               />
             </div>
           </div>
@@ -82,7 +117,7 @@ export default function Contact() {
                 type="email"
                 autoComplete="email"
                 placeholder="Email"
-                className="block w-full px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                className="block w-full px-3.5 py-2 text-white outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white"
               />
             </div>
           </div>
@@ -91,7 +126,7 @@ export default function Contact() {
               Phone number
             </label> */}
             <div className="mt-2.5">
-              <div className="flex  outline outline-1 -outline-offset-1 outline-white has-[input:focus-within]:outline has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+              <div className="flex  outline outline-1 -outline-offset-1 outline-white has-[input:focus-within]:outline has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-white">
                 <div className="grid shrink-0 grid-cols-1 focus-within:relative">
                   {/* <select
                     id="country"
@@ -114,7 +149,7 @@ export default function Contact() {
                   name="phone-number"
                   type="text"
                   placeholder="Phone number"
-                  className="block min-w-0 grow px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0"
+                  className="block min-w-0 grow px-3.5 py-2 text-base text-white placeholder:text-gray-400 focus:outline focus:outline-0"
                 />
               </div>
             </div>
@@ -129,7 +164,7 @@ export default function Contact() {
                 name="message"
                 placeholder="Message"
                 rows={4}
-                className="block w-full px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                className="block w-full px-3.5 py-2 text-white outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white"
                 defaultValue={''}
               />
             </div>
@@ -160,11 +195,18 @@ export default function Contact() {
         <div className="mt-6">
           <button
             type="submit"
-            className="w-full text-white shadow-lg shadow-white/5 bg-gradient-to-br from-green-400 to-blue-600 px-3 py-1.5 hover:bg-gradient-to-bl"
+            disabled={loading}
+            className="w-full text-white shadow-lg shadow-white/5 bg-gradient-to-br from-green-400 to-blue-600 px-3 py-1.5 hover:bg-gradient-to-bl disabled:opacity-50"
           >
-            Let's talk
+            {loading ? 'Sending...' : 'Let\'s talk'}
           </button>
         </div>
+        {submitted && (
+          <p className="mt-4 text-center text-white">Thank you for your message!</p>
+        )}
+        {result && (
+          <p className="mt-4 text-center text-white">{result}</p>
+        )}
       </form>
     </div>
   )
