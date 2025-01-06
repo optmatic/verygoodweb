@@ -28,7 +28,7 @@ function DesktopNav() {
           <Link
             key={href}
             href={href}
-            className="flex items-center px-4 py-2 text-base font-medium text-white border border-deepBlue hover:border hover:border-white/10"
+            className="flex items-center px-4 py-2 text-base font-medium text-white border border-deepBlue hover:border hover:border-white/10 hover:bg-white/5"
           >
             {label}
           </Link>

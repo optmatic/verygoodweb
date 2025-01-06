@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "brb - Optmatic",
-  description: "Optmatic - brb",
+  title: "dev - Optmatic",
+  description: "Optmatic - dev",
 };
 
 export default function RootLayout({

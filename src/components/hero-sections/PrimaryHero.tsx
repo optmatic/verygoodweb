@@ -9,7 +9,7 @@ import { Container } from "@/components/radiant/container";
 import { useState, useEffect } from 'react';
 
 
-const title1 = "Adapt to the";
+const title1 = "Thrive in the";
 const title2 = " ever-evolving";
 const title3 = " digital ecosystem.";
 
@@ -75,12 +75,14 @@ export default function PrimaryHero() {
 
       {/* Adjust container z-index to be above the wave */}
       <Container className="relative z-40">
-        <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24 md:pb-32 md:pt-32">
-        <h1 className="mt-14 text-4xl font-bold tracking-tight lg:leading-loose sm:text-5xl xl:text-6xl">
+        <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24 md:pt-32">
+          <div className="leading-10">
+        <h1 className="mt-14 text-4xl font-bold font-mono sm:text-5xl xl:text-6xl">
           <span className="text-white">{title1}</span>
           <span className="text-gray-950 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600">{title2}</span>
           <span className="text-white">{title3}</span>
         </h1>
+        </div>
           <p className="mt-8 max-w-2xl text-md font-light text-white sm:text-xl">
           Optimising your digital presence is our forte. Entrust Optmatic&apos;s cutting-edge, data-driven approach for exceptional web development and optimisation.
           </p>
