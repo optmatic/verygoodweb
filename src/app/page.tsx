@@ -8,7 +8,6 @@ export default function Home() {
     <div>
       <PrimaryHero />
       <TechUsed />
-        <CS />
         <Contact />
     </div>
   );

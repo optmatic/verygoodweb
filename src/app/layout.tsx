@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navigation/Navbar";
 import { GradientBackground } from "@/components/radiant/gradient";
+import { Navigation } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

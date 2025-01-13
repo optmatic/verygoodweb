@@ -1,55 +1,45 @@
-"use client"
+const logos = [
+  {
+    alt: "Shopify",
+    src: "https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-monotone-black-6bded589fa6172f888c4b4f6ae1eca654e865dbb93271f7e2b94a563749aeb40.svg"
+  },
+  {
+    alt: "Next",
+    src: "/nextjs-logotype-light-background.svg"
+    },
+    {
+      alt: "Astro",
+        src: "https://astro.build/assets/press/astro-logo-dark.svg"
+    },
+    {
+      alt: "Vercel",
+      src: "/vercel-logotype-dark.svg"
+    },
+    {
+      alt: "Tailwind",
+      src: "/tailwindcss-logotype.svg"
+    }
 
-import { useState, useEffect } from 'react';
+]
 
 export default function TechUsed() {
-    const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
-    
-    const logos = [
-      {
-        alt: "Transistor",
-        src: "https://tailwindui.com/plus/img/logos/158x48/transistor-logo-gray-900.svg"
-      },
-      {
-        alt: "Reform",
-        src: "https://tailwindui.com/plus/img/logos/158x48/reform-logo-gray-900.svg"
-      },
-      {
-        alt: "Tuple",
-        src: "https://tailwindui.com/plus/img/logos/158x48/tuple-logo-gray-900.svg"
-      },
-      {
-        alt: "SavvyCal",
-        src: "https://tailwindui.com/plus/img/logos/158x48/savvycal-logo-gray-900.svg"
-      },
-      {
-        alt: "Statamic",
-        src: "https://tailwindui.com/plus/img/logos/158x48/statamic-logo-gray-900.svg"
-      },
-      
-    ];
-
     return (
-      <div className="bg-stone-400 py-16 sm:pt-16 sm:pb-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-center uppercase text-xl font-normal text-gray-900">
-            Tech we&apos;re most familiar with
+      <div className="bg-stone-100 py-16 sm:py-24 flex items-center justify-center w-full">
+        <div className="w-full max-w-4xl px-6 lg:px-8 flex flex-col items-center">
+          <h2 className="text-center text-xl font-bold text-gray-900">
+            [tech]
           </h2>
-          <div className="mx-auto mt-10 flex justify-between items-center">
-            {logos.map((logo, index) => (
-              <img
-                key={index}
-                alt={logo.alt}
-                src={logo.src}
-                width={158}
-                height={48}
-                className={`max-h-12 w-auto object-contain transition-all duration-500 ${
-                  currentLogoIndex === index 
-                    ? 'opacity-100 scale-110' 
-                    : 'opacity-50 scale-100'
-                }`}
-              />
-            ))}
+          <div className="mt-10 w-full flex justify-center overflow-hidden">
+            <div className="animate-scroll flex gap-8 [&>*]:shrink-0">
+              {[...logos, ...logos].map((logo, index) => (
+                <img
+                  key={`${logo.alt}-${index}`}
+                  alt={logo.alt}
+                  src={logo.src}
+                  className="w-[150px] h-auto grayscale"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
