@@ -24,8 +24,8 @@ const logos = [
 
 export default function TechUsed() {
     return (
-      <div className="bg-stone-100 py-16 sm:py-24 flex items-center justify-center w-full">
-        <div className="w-full max-w-4xl px-6 lg:px-8 flex flex-col items-center">
+      <div className="bg-white py-16 sm:py-24 flex items-center justify-center w-full">
+        <div className="w-full max-w-5xl px-6 lg:px-8 flex flex-col items-center">
           <h2 className="text-center text-xl font-bold text-gray-900">
             [tech]
           </h2>
@@ -36,7 +36,7 @@ export default function TechUsed() {
                   key={`${logo.alt}-${index}`}
                   alt={logo.alt}
                   src={logo.src}
-                  className="w-[150px] h-auto grayscale"
+                  className="w-[200px] h-auto grayscale"
                 />
               ))}
             </div>
