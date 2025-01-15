@@ -26,26 +26,30 @@ const logos = [
   {
     alt: "Shopify",
     src: "/shopify_monotone_white.svg",
-    description: "E-commerce platform powering online stores"
+    description: "Transform your business with a robust e-commerce platform that handles everything from product listings to secure payments. Perfect for entrepreneurs wanting a professional online store without complex technical setup."
   },
   {
     alt: "Next",
-    src: "/nextjs-logotype-dark-background.svg"
-    },
-    {
-      alt: "Astro",
-        src: "/astro-logo-light.svg"
-    },
-    {
-      alt: "Vercel",
-      src: "/vercel-logotype-light.svg"
-    },
-    {
-      alt: "Tailwind",
-      src: "/tailwindcss-logotype-white.svg"
-    }
-
+    src: "/nextjs-logotype-dark-background.svg",
+    description: "Supercharge your website's performance and user experience. Our Next.js applications load faster, rank better in search results, and provide a smooth, app-like browsing experience across all devices."
+  },
+  {
+    alt: "Astro",
+    src: "/astro-logo-light.svg",
+    description: "Achieve lightning-fast websites that load incredibly quickly. Ideal for businesses wanting to improve their online visibility, reduce bounce rates, and provide a seamless user journey."
+  },
+  {
+    alt: "Vercel",
+    src: "/vercel-logotype-light.svg",
+    description: "Enterprise-grade hosting that ensures your website is always online, globally accessible, and performs brilliantly. Automatic updates, instant deployments, and rock-solid reliability."
+  },
+  {
+    alt: "Tailwind",
+    src: "/tailwindcss-logotype-white.svg",
+    description: "Custom design without the hefty price tag. We create pixel-perfect, responsive interfaces that look professional and work flawlessly across all screen sizes and devices."
+  }
 ]
+
 
 // Add types to the Tooltip component
 const Tooltip = ({ text, isVisible, position }: TooltipProps) => {
@@ -55,12 +59,13 @@ const Tooltip = ({ text, isVisible, position }: TooltipProps) => {
     <div 
       className="
         fixed
-        px-3 py-2 
+        px-4 py-3
         bg-gray-900 
         text-white 
         text-sm 
         rounded-lg 
-        whitespace-nowrap 
+        whitespace-normal
+        max-w-[300px]
         z-[100]
         pointer-events-none
       "
@@ -113,7 +118,11 @@ export default function TechUsedDark() {
                   <img
                     alt={logo.alt}
                     src={logo.src}
-                    className="w-auto h-[30px] grayscale hover:[animation-play-state:paused] object-contain"
+                    className={`
+                      w-auto grayscale hover:[animation-play-state:paused] object-contain
+                      ${logo.alt === "Astro" || logo.alt === "Tailwind" ? "h-[80px]" : "h-[45px]"}
+                      min-w-[120px] max-w-[200px]
+                    `}
                   />
                 </div>
               ))}
