@@ -96,7 +96,7 @@ export default function TechUsedDark() {
               {[...logos, ...logos].map((logo, index) => (
                 <div 
                   key={`${logo.alt}-${index}`} 
-                  className="relative inline-block"
+                  className="relative inline-flex items-center py-8"
                   onMouseEnter={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect();
                     setTooltip({
@@ -104,7 +104,7 @@ export default function TechUsedDark() {
                       isVisible: true,
                       position: {
                         x: rect.left + rect.width / 2,
-                        y: rect.top
+                        y: rect.top + (rect.height / 4)
                       }
                     });
                   }}
@@ -113,7 +113,7 @@ export default function TechUsedDark() {
                   <img
                     alt={logo.alt}
                     src={logo.src}
-                    className="w-[200px] h-auto grayscale hover:[animation-play-state:paused]"
+                    className="w-auto h-[30px] grayscale hover:[animation-play-state:paused] object-contain"
                   />
                 </div>
               ))}
