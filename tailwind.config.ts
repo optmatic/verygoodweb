@@ -32,6 +32,8 @@ export default {
   		},
   		colors: {
   			deepBlue: '#080a13',
+			optBlue: 'rgb(96 165 250)',
+			optGreen: 'rgb(74 222 128)',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
