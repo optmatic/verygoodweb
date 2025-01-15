@@ -7,11 +7,11 @@ export default function WhyOptmatic() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row shadow-sm shadow-optBlue/30">
         {/* Left Content Section */}
         {/* Removed padding from here */}
-        <div className="flex-1 bg-deepBlue p-8 flex flex-col justify-center">
+        <div className="flex-1 bg-deepBlue p-8 md:p-12 flex flex-col justify-center">
           <div className="max-w-xl">
             <p className="text-sm font-mono tracking-wider uppercase mb-4">WHY OPTMATIC?</p>
             <h1 className="text-4xl font-bold lg:text-5xl mb-8 font-mono">
-                <hr className="w-full bg-deepBlue mb-8" />
+                <hr className="w-full border-optBlue/20 mb-8" />
                 Ultra-Customised, Yet Affordable Digital Solutions.
             </h1>
             <p className="text-xl mb-4 leading-relaxed">
