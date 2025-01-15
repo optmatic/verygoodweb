@@ -19,7 +19,6 @@ const logos = [
       alt: "Tailwind",
       src: "/tailwindcss-logotype.svg"
     }
-
 ]
 
 export default function TechUsed() {
@@ -27,7 +26,7 @@ export default function TechUsed() {
       <div className="bg-white py-16 sm:py-24 flex items-center justify-center w-full">
         <div className="w-full max-w-5xl px-6 lg:px-8 flex flex-col items-center">
           <h2 className="text-center text-xl font-bold text-gray-900">
-            [tech]
+            [tech we use]
           </h2>
           <div className="mt-10 w-full flex justify-center overflow-hidden">
             <div className="animate-scroll flex gap-8 [&>*]:shrink-0">

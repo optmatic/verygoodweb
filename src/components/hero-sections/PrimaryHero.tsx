@@ -87,7 +87,7 @@ export default function PrimaryHero() {
           Optimising your digital presence is our forte. Entrust Optmatic&apos;s cutting-edge, data-driven approach for exceptional web development and optimisation.
           </p>
           <div className="mt-8 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <a href="/contact" className="mt-3 w-full rounded-md border border-gray-900 bg-gradient-to-br from-green-400 to-blue-600 px-3 py-1.5 text-base font-medium text-white shadow-sm hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-green-200 sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center">
+            <a href="/contact" className="mt-3 font-mono font-semibold w-full rounded-md border border-gray-900 bg-gradient-to-br from-green-400 to-blue-600 px-3 py-1.5 text-base font-medium text-white shadow-sm hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-green-200 sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center">
               Contact
             </a>
           </div>
