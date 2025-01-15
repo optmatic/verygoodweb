@@ -1,4 +1,5 @@
 import InsightsImg from '@/images/insights-img.jpeg'
+import GradientHeading from './GradientHeading';
 
 
 
@@ -22,31 +23,31 @@ const gridItems: GridItem[] = [
     title: 'Static Websites',
     subtitle: 'Push to deploy',
     description: 'Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae odio.',
-    image: 'https://tailwindui.com/plus/img/component-images/bento-01-releases.png'
+    image: InsightsImg.src,
   },
   {
     title: 'Dynamic Websites',
     subtitle: 'Connect your favorite tools',
     description: 'Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae odio.',
-    image: 'https://tailwindui.com/plus/img/component-images/bento-01-integrations.png'
+    image: InsightsImg.src,
   },
   {
     title: 'Web Applications',
     subtitle: 'Push to deploy',
     description: 'Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae odio.',
-    image: 'https://tailwindui.com/plus/img/component-images/bento-01-releases.png'
+    image: InsightsImg.src,
   },
   {
     title: 'Headless CMS',
     subtitle: 'Push to deploy',
     description: 'Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae odio.',
-    image: '/insights-img.jpeg'
+    image: InsightsImg.src,
   },
   {
     title: 'Wesbite Management',
     subtitle: 'Push to deploy',
     description: 'Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae odio.',
-    image: 'https://tailwindui.com/plus/img/component-images/bento-01-releases.png'
+    image: InsightsImg.src,
   },        
 
 ];
@@ -66,7 +67,7 @@ export default function ProjectGrid() {
   return (
     <div className="project-grid bg-deepBlue py-24 sm:py-32">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-base/7 font-semibold text-optGreen">Deploy faster</h2>
+        <GradientHeading text="Everything you need to deploy your app" level="h3" />
         <p className="mt-2 max-w-2xl text-pretty text-4xl font-semibold tracking-tight text-white font-mono sm:text-5xl">
           Everything you need to deploy your app
         </p>
