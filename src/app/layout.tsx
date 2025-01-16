@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono,  } from "next/font/google";
+import { Geist, Geist_Mono, Alegreya, Alegreya_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navigation/Navbar";
+// import { Navbar } from "@/components/navigation/Navbar";
+import PrimaryNav from "@/components/navigation/PrimaryNav";
 import { GradientBackground } from "@/components/radiant/gradient";
 import { Navigation } from "lucide-react";
 
@@ -15,10 +16,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+const alegreya = Alegreya({
+  variable: "--font-alegreya",
+  subsets: ["latin"],
+});
+
+const alegreyaSans = Alegreya_Sans({
+  variable: "--font-alegreya-sans",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+
+
+
+
 export const metadata: Metadata = {
   title: "dev - Optmatic",
   description: "Optmatic - dev",
 };
+
+
 
 export default function RootLayout({
   children,
@@ -28,9 +47,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col w-full bg-deepBlue`}
+        className={`${geistSans.variable} ${geistMono.variable} ${alegreya.variable} ${alegreyaSans.variable} antialiased min-h-screen flex flex-col w-full bg-deepBlue`}
       >
-        <Navbar />
+        <PrimaryNav />
           <main>
           {children}
           </main>

@@ -26,12 +26,14 @@ export default {
   				'monospace'
   			],
   			serif: [
-  				'Merriweather',
+  				'Alegreya',
   				'serif'
-  			]
+  			],
   		},
   		colors: {
-  			deepBlue: '#080a13',
+  			// deepBlue: '#080a13',
+			deepBlue: '#0b1423',
+			slightBlue: '#0f1929',
 			optBlue: 'rgb(96 165 250)',
 			optGreen: 'rgb(74 222 128)',
   			background: 'hsl(var(--background))',

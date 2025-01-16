@@ -11,8 +11,17 @@ export default function GradientHeading({
 }) {
   const Tag = level as keyof JSX.IntrinsicElements;
   
+  const sizeClasses = {
+    h1: 'text-4xl md:text-5xl',
+    h2: 'text-3xl md:text-4xl',
+    h3: 'text-2xl md:text-3xl',
+    h4: 'text-xl md:text-2xl',
+    h5: 'text-lg md:text-xl',
+    h6: 'text-base md:text-lg',
+  }[level];
+  
   return (
-    <Tag className="text-gray-950 font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600">
+    <Tag className={`${sizeClasses} text-gray-950 font-bold bg-clip-text tracking-tight text-transparent bg-gradient-to-r from-optBlue to-optGreen`}>
       {text}
     </Tag>
   );

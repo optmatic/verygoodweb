@@ -66,15 +66,13 @@ export default function ProjectGrid() {
 
   return (
     <div className="project-grid bg-deepBlue py-24 sm:py-32">
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <GradientHeading text="Everything you need to deploy your app" level="h3" />
-        <p className="mt-2 max-w-2xl text-pretty text-4xl font-semibold tracking-tight text-white font-mono sm:text-5xl">
-          Everything you need to deploy your app
-        </p>
-        
+      {/* Was mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 */}
+      <div className="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-0">
+        {/* <GradientHeading text="End-to-end solutions for the modern web" level="h2" /> */}
+        <h2 className="text-3xl md:text-5xl font-bold text-white">End-to-end solutions for the modern web.</h2>
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           {gridItems.map((item, index) => (
-            <div key={index} className="relative border border-optBlue/20 rounded-sm">
+            <div key={index} className="relative border border-optBlue/20 rounded-sm hover:border-optBlue/50">
               <div className={`absolute inset-px bg-deepBlue ${getCornerClasses(item.position)}`} />
               <div className={`relative flex h-full flex-col overflow-hidden rounded-sm ${
                 item.position ? `lg:rounded-${item.position.toLowerCase()}-[calc(2rem+1px)]` : ''
@@ -85,7 +83,7 @@ export default function ProjectGrid() {
                   className="h-80 object-cover object-left"
                 />
                 <div className="px-4 py-10">
-                  <h3 className="text-sm/4 font-semibold text-optBlue">{item.title}</h3>
+                  <h4 className="text-sm/4 font-semibold text-optBlue">{item.title}</h4>
                   <p className="mt-2 text-lg font-medium tracking-tight text-white">{item.subtitle}</p>
                   <p className="mt-2 max-w-lg text-sm/6 text-white">{item.description}</p>
                 </div>

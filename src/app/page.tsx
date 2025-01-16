@@ -10,6 +10,7 @@ export default function Home() {
       <PrimaryHero />
       <WhyOptmatic />
       <OptGrid />
+      <hr className="border-optBlue/20" />
       <TechUsedDark />
       <TechUsed />
     </div>

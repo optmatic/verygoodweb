@@ -8,6 +8,7 @@ import { Container } from "@/components/radiant/container";
 // import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from 'react';
 import WaveBackground from "@/images/wave-bg.jpeg"
+import GradientButton3d from "../optmatic/GradientButton3d";
 
 
 const title1 = "Thrive in the";
@@ -76,9 +77,10 @@ export default function PrimaryHero() {
 
       {/* Adjust container z-index to be above the wave */}
       <Container className="relative z-40">
-        <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24 md:pt-32">
+        {/* WAS <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24 md:pt-32"> */}
+        <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24">
           <div className="leading-10">
-        <h1 className="mt-14 text-4xl font-bold font-mono sm:text-5xl xl:text-6xl">
+        <h1 className="mt-14 text-4xl font-bold font-serifsa sm:text-5xl xl:text-6xl">
           <span className="text-white">{title1}</span>
           <span className="text-gray-950 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600">{title2}</span>
           <span className="text-white">{title3}</span>
@@ -88,9 +90,7 @@ export default function PrimaryHero() {
           Optimising your digital presence is our forte. Entrust Optmatic&apos;s cutting-edge, data-driven approach for exceptional web development and optimisation.
           </p>
           <div className="mt-8 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <a href="/contact" className="mt-3 font-mono font-semibold w-full rounded-md border border-gray-900 bg-gradient-to-br from-green-400 to-blue-600 px-3 py-1.5 text-base font-medium text-white shadow-sm hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-green-200 sm:mt-0 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center">
-              Contact
-            </a>
+         <GradientButton3d text="Get in touch" link="/contact" targetVal="_self" type="primary" />
           </div>
 
           <div className="mt-12  relative py-2 rounded-sm shadow-lg shadow-black/20 overflow-hidden whitespace-nowrap">
