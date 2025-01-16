@@ -14,7 +14,7 @@ export default function WhyOptmatic() {
             <p className="text-sm subheading tracking-wider uppercase mb-4">WHY OPTMATIC?</p>
             <h1 className="text-4xl font-bold lg:text-5xl mb-8 font-serif">
                 <hr className="w-full border-optBlue/20 mb-8" />
-                Ultra-customised, yet affordable digital solutions.
+                Ultra-customised, yet <span className="gradient-text">affordable</span> digital solutions.
             </h1>
             <p className="text-lg mb-4 leading-relaxed">
             At Optmatic, we specialise in crafting bespoke digital strategies tailored to your unique goals. Every solution is designed to enhance your online presence and deliver measurable results.

@@ -1,3 +1,5 @@
+import GradientButton3d from '../optmatic/GradientButton3d'
+import OptmaticLogo from '@/images/optmatic-logo.svg'
 import { GradientFooterBackground } from '../radiant/gradient'
 
 const navigation = {
@@ -93,26 +95,20 @@ const navigation = {
     return (
       <footer className="relative bg-deepBlue">
         <GradientFooterBackground />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-base/7 font-semibold text-indigo-600">Get started</h2>
-            <p className="mt-2 text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-              Boost your productivity. Start using our app today.
-            </p>
-            <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-600">
-              Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur
-              commodo do ea.
+        <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-0 lg:py-32">
+        {/* <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32"> */}
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mt-2 text-balance text-4xl font-semibold tracking-tight text-light sm:text-5xl">
+              Ready to discuss your project? Let&apos;s get started.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg/8 text-light">
+            Excited to bring your vision to life? Let’s kick off your project with a conversation!
             </p>
             <div className="mt-8 flex justify-center">
-              <a
-                href="#"
-                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-              >
-                Get started
-              </a>
+            <GradientButton3d text="Get started" link="/contact" />
             </div>
           </div>
-          <div className="mt-24 border-t border-gray-200 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
+          {/* <div className="mt-24 border-t border-gray-200 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
             <img
               alt="Company name"
               src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
@@ -172,18 +168,25 @@ const navigation = {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="mt-12 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
-            <div className="flex gap-x-6 md:order-2">
+          </div> */}
+          <div className="mt-12 border-t border-light pt-4 md:flex md:items-center md:justify-between">
+            {/* <div className="flex gap-x-6 md:order-2">
               {navigation.social.map((item) => (
                 <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-700">
                   <span className="sr-only">{item.name}</span>
                   <item.icon aria-hidden="true" className="size-6" />
                 </a>
               ))}
+            </div> */}
+            <div className="flex flex-col items-center">
+            <img
+              alt="Company name"
+              src={OptmaticLogo.src}
+              className="h-9"
+            />
             </div>
-            <p className="mt-8 text-sm/6 text-gray-600 md:order-1 md:mt-0">
-              &copy; 2024 Your Company, Inc. All rights reserved.
+            <p className="mt-8 text-sm/6 text-light md:order-1 md:mt-0">
+              &copy; {new Date().getFullYear()} Optmatic. All rights reserved.
             </p>
           </div>
         </div>

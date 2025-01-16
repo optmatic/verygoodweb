@@ -80,7 +80,7 @@ export default function PrimaryHero() {
         {/* WAS <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24 md:pt-32"> */}
         <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24">
           <div className="leading-10">
-        <h1 className="text-5xl font-bold font-serif sm:text-6xl">
+        <h1 className="text-5xl pt-4 font-bold font-serif sm:text-6xl">
           <span className="text-white">{title1}</span>
           <span className="text-gray-950 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600">{title2}</span>
           <span className="text-white">{title3}</span>

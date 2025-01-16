@@ -8,6 +8,8 @@ import Link from 'next/link'
 
 import Logo from '@/images/optmatic-logo.svg'
 
+// Comment out the detailed dropdown array
+/*
 const detailedDropdown = [
   {
     name: "Hero sections",
@@ -79,6 +81,8 @@ const detailedDropdown = [
   },
 
 ]
+*/
+
 const resources = [
   {
     name: 'Subject page',
@@ -94,7 +98,8 @@ import { useState } from 'react'
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 export default function PrimaryNav() {
-  const [detailedDropdownPopoverOpen, setDetailedDropdownPopoverOpen] = useState(false);
+  // Remove or comment out the detailed dropdown state
+  // const [detailedDropdownPopoverOpen, setDetailedDropdownPopoverOpen] = useState(false);
   const [morePopoverOpen, setMorePopoverOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -144,64 +149,17 @@ export default function PrimaryNav() {
           </div>
           <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
             <div className="flex space-x-2">
+              {/* Comment out the detailed dropdown menu section
               <div className="h-10 flex items-center">
                 <div 
                   className="relative"
                   onMouseEnter={() => setDetailedDropdownPopoverOpen(true)}
                   onMouseLeave={() => setDetailedDropdownPopoverOpen(false)}
                 >
-                  <button className="group inline-flex items-center rounded-md text-md font-semibold text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 data-[open]:text-white py-2 px-3">
-                    <span>Detailed dropdown</span>
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className="ml-2 h-5 w-5 text-white group-hover:text-white/90 group-data-[open]:text-white group-data-[open]:group-hover:text-white"
-                    />
-                  </button>
-
-                  {detailedDropdownPopoverOpen && (
-                    <div
-                      className="absolute z-10 mt-0 pt-4 w-screen max-w-md transform transition lg:max-w-3xl"
-                    >
-                      <div className="overflow-hidden border border-optBlue/5 shadow-lg ring-1 ring-black ring-opacity-5">
-                        <div className="relative bg-deepBlue">
-                          <div className="max-h-[70vh] overflow-y-auto px-5 py-6 sm:px-4 sm:py-4">
-                            <div className="grid gap-6 lg:grid-cols-2">
-                              {detailedDropdown.map((item) => (
-                                <Link
-                                  key={item.name}
-                                  href={item.href}
-                                  className="-m-3 flex items-start p-3 hover:text-white/80 hover:bg-slightBlue"
-                                >
-                                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-lightestBlue text-white sm:h-12 sm:w-12">
-                                    <item.icon aria-hidden="true" className="h-6 w-6" />
-                                  </div>
-                                  <div className="ml-4">
-                                    <p className="text-md font-semibold text-white">{item.name}</p>
-                                    <p className="mt-1 text-sm text-white/80">{item.description}</p>
-                                  </div>
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="bg-deepBlue border-t border-slightBlue p-2 sm:p-4">
-                          <a href="#" className="-m-3 flow-root p-3 hover:bg-slightBlue">
-                            <div className="flex items-center">
-                              <div className="text-base font-medium text-white">Alt link</div>
-                              {/* <span className="ml-3 inline-flex items-center rounded-full bg-lightestBlue px-3 py-0.5 text-xs font-medium leading-5 text-darkerPrimary">
-                                Alt link 2
-                              </span> */}
-                            </div>
-                            <p className="mt-1 text-sm text-white/80">
-                              Empower your entire team with even more advanced tools.
-                            </p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                  ... detailed dropdown content ...
                 </div>
               </div>
+              */}
               <div className="h-10 flex items-center">
                 <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
                   Menu item
@@ -210,6 +168,11 @@ export default function PrimaryNav() {
               <div className="h-10 flex items-center">
                 <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
                   Menu item 2
+                </a>
+              </div>
+              <div className="h-10 flex items-center">
+                <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
+                  Menu item 3
                 </a>
               </div>
               <div className="h-10 flex items-center">
@@ -293,18 +256,9 @@ export default function PrimaryNav() {
                 </div>
                 <div className="mt-6">
                   <nav className="grid gap-6">
-                    {detailedDropdown.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="-m-3 flex items-center rounded-lg p-3"
-                      >
-                        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-deepBlue text-white ">
-                          <item.icon aria-hidden="true" className="h-6 w-6" />
-                        </div>
-                        <div className="ml-4 text-base font-semibold text-white">{item.name}</div>
-                      </Link>
-                    ))}
+                    {/*{detailedDropdown.map((item) => (
+                      ... detailed dropdown mobile content ...
+                    ))}*/}
                   </nav>
                 </div>
               </div>
