@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Alegreya, Alegreya_Sans } from "next/font/google";
 import "./globals.css";
 // import { Navbar } from "@/components/navigation/Navbar";
 import PrimaryNav from "@/components/navigation/PrimaryNav";
-import { GradientBackground } from "@/components/radiant/gradient";
+import Footer from "@/components/navigation/ContactFooter";// import { GradientBackground } from "@/components/radiant/gradient";
 import { Navigation } from "lucide-react";
 
 const geistSans = Geist({
@@ -53,6 +53,7 @@ export default function RootLayout({
           <main>
           {children}
           </main>
+          <Footer />
       </body>
     </html>
   );

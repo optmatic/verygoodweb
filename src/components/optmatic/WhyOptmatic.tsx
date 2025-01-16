@@ -4,13 +4,14 @@ import GradientButton3d from "./GradientButton3d"
 
 export default function WhyOptmatic() {
     return (
-    <div className="why-optmatic py-4 sm:py-8 lg:py-12 bg-slightBlue w-full">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row shadow-sm shadow-optBlue/10">
+    <div className="why-optmatic py-4 sm:py-8 lg:py-20 bg-slightBlue w-full">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row">
         {/* Left Content Section */}
         {/* Removed padding from here */}
-        <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
-          <div className="max-w-xl">
-            <p className="text-sm font-mono tracking-wider uppercase mb-4">WHY OPTMATIC?</p>
+        {/* <div className="flex-1 p-8 md:p-12 flex flex-col justify-center"> */}
+        <div className="flex-1 p-4 md:p-0 flex flex-col justify-center">
+          <div className="max-w-xl intro">
+            <p className="text-sm subheading tracking-wider uppercase mb-4">WHY OPTMATIC?</p>
             <h1 className="text-4xl font-bold lg:text-5xl mb-8 font-serif">
                 <hr className="w-full border-optBlue/20 mb-8" />
                 Ultra-customised, yet affordable digital solutions.
