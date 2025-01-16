@@ -4,8 +4,8 @@ import GradientButton3d from "./GradientButton3d"
 
 export default function WhyOptmatic() {
     return (
-    <div className="why-optmatic bg-slightBlue w-full">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row shadow-sm shadow-optBlue/20">
+    <div className="why-optmatic py-4 sm:py-8 lg:py-12 bg-slightBlue w-full">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row shadow-sm shadow-optBlue/10">
         {/* Left Content Section */}
         {/* Removed padding from here */}
         <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
@@ -21,7 +21,7 @@ export default function WhyOptmatic() {
             <p className="text-lg mb-12">
             Innovation doesn't have to come at a high cost. We offer affordable, high-quality services, ensuring your business thrives in the digital landscape without exceeding your budget.
             </p>
-            <GradientButton3d text="Book a demo"/>
+            <GradientButton3d text="Book a Call"/>
           </div>
         </div>
 

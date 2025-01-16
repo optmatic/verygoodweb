@@ -17,7 +17,7 @@ const title3 = " digital ecosystem.";
 
 export default function PrimaryHero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const rotatingWords = ['E-commerce', 'UI Design', 'Web Development', 'Mobile Apps', 'Search Engine Optimisation'];
+  const rotatingWords = ['E-commerce', 'Web Development', 'Site Management', 'WordPress', 'Web Applications'];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -80,7 +80,7 @@ export default function PrimaryHero() {
         {/* WAS <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24 md:pt-32"> */}
         <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24">
           <div className="leading-10">
-        <h1 className="mt-14 text-4xl font-bold font-serifsa sm:text-5xl xl:text-6xl">
+        <h1 className="text-5xl font-bold font-serif sm:text-6xl">
           <span className="text-white">{title1}</span>
           <span className="text-gray-950 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-600">{title2}</span>
           <span className="text-white">{title3}</span>
@@ -90,7 +90,7 @@ export default function PrimaryHero() {
           Optimising your digital presence is our forte. Entrust Optmatic&apos;s cutting-edge, data-driven approach for exceptional web development and optimisation.
           </p>
           <div className="mt-8 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-         <GradientButton3d text="Get in touch" link="/contact" targetVal="_self" type="primary" />
+         <GradientButton3d text="Why Optmatic?" link="" targetVal="_self" type="primary" />
           </div>
 
           <div className="mt-12  relative py-2 rounded-sm shadow-lg shadow-black/20 overflow-hidden whitespace-nowrap">

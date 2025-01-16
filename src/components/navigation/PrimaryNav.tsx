@@ -150,7 +150,7 @@ export default function PrimaryNav() {
                   onMouseEnter={() => setDetailedDropdownPopoverOpen(true)}
                   onMouseLeave={() => setDetailedDropdownPopoverOpen(false)}
                 >
-                  <button className="group inline-flex items-center rounded-md text-sm font-medium text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 data-[open]:text-white py-2 px-3">
+                  <button className="group inline-flex items-center rounded-md text-md font-semibold text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 data-[open]:text-white py-2 px-3">
                     <span>Detailed dropdown</span>
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -176,8 +176,8 @@ export default function PrimaryNav() {
                                     <item.icon aria-hidden="true" className="h-6 w-6" />
                                   </div>
                                   <div className="ml-4">
-                                    <p className="text-sm font-medium text-white">{item.name}</p>
-                                    <p className="mt-1 text-xs text-white/80">{item.description}</p>
+                                    <p className="text-md font-semibold text-white">{item.name}</p>
+                                    <p className="mt-1 text-sm text-white/80">{item.description}</p>
                                   </div>
                                 </Link>
                               ))}
@@ -203,12 +203,12 @@ export default function PrimaryNav() {
                 </div>
               </div>
               <div className="h-10 flex items-center">
-                <a href="#" className="text-sm font-medium text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
+                <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
                   Menu item
                 </a>
               </div>
               <div className="h-10 flex items-center">
-                <a href="#" className="text-sm font-medium text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
+                <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
                   Menu item 2
                 </a>
               </div>
@@ -218,7 +218,7 @@ export default function PrimaryNav() {
                   onMouseEnter={() => setMorePopoverOpen(true)}
                   onMouseLeave={() => setMorePopoverOpen(false)}
                 >
-                  <button className="group inline-flex items-center rounded-md text-sm font-medium text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 data-[open]:text-white py-2 px-3">
+                  <button className="group inline-flex items-center rounded-md text-md font-semibold text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 data-[open]:text-white py-2 px-3">
                     <span>More</span>
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -228,7 +228,7 @@ export default function PrimaryNav() {
 
                   {morePopoverOpen && (
                     <div
-                      className="absolute z-10 mt-0 pt-2 left-1/2 w-screen max-w-xs -translate-x-1/2 transform px-2 transition sm:px-0"
+                      className="absolute z-10 mt-0 pt-2 left-1/2 w-screen max-w-xs -translate-x-1/2 transform px-2 transition"
                     >
                       <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid bg-deepBlue py-4 sm:gap-8 sm:px-4 sm:py-4">
@@ -236,10 +236,10 @@ export default function PrimaryNav() {
                             <Link 
                               key={item.name} 
                               href={item.href} 
-                              className="-m-3 block p-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue"
+                              className="-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue"
                             >
-                              <p className="text-sm font-medium text-white">{item.name}</p>
-                              <p className="mt-1 text-xs text-white/80">{item.description}</p>
+                              <p className="text-md font-semibold text-white">{item.name}</p>
+                              <p className="mt-1 text-sm text-white/80">{item.description}</p>
                             </Link>
                           ))}
                         </div>
@@ -302,7 +302,7 @@ export default function PrimaryNav() {
                         <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-deepBlue text-white ">
                           <item.icon aria-hidden="true" className="h-6 w-6" />
                         </div>
-                        <div className="ml-4 text-base font-medium text-white">{item.name}</div>
+                        <div className="ml-4 text-base font-semibold text-white">{item.name}</div>
                       </Link>
                     ))}
                   </nav>
@@ -310,7 +310,7 @@ export default function PrimaryNav() {
               </div>
               <div className="px-5 py-6">
                 <div className="grid grid-cols-2 gap-4">
-                  <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                  <a href="#" className="text-base font-semibold text-gray-900 hover:text-gray-700">
                     Alt link
                   </a>
 
@@ -322,7 +322,7 @@ export default function PrimaryNav() {
                     Alt link
                   </a>
                   {resources.map((item) => (
-                    <Link key={item.name} href={item.href} className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    <Link key={item.name} href={item.href} className="text-base font-semibold text-gray-900 hover:text-gray-700">
                       {item.name}
                     </Link>
                   ))}
