@@ -85,13 +85,12 @@ const detailedDropdown = [
 
 const resources = [
   {
-    name: 'Subject page',
-    description: 'Example subject page',
-    href: '/subject-page',
+    name: 'Web App Development',
+    description: 'This is a description of the web app development service.',
+    href: '/web-app-development',
   },
-  { name: 'Example home', description: 'Learn how to maximize our platform to get the most out of it.', href: '/' },
-  { name: 'Sub item 3', description: 'See what meet-ups and other events we might be planning near you.', href: '#' },
-  { name: 'Sub item 4', description: 'Understand how we take your privacy seriously.', href: '#' },
+  { name: 'Site Management', description: 'This is a description of the site management service.', href: '/' },
+  { name: 'WordPress Solutions', description: 'This is a description of the WordPress solutions service.', href: '#' },
 ]
 
 import { useState } from 'react'
@@ -162,17 +161,17 @@ export default function PrimaryNav() {
               */}
               <div className="h-10 flex items-center">
                 <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
-                  Menu item
+                  Web Development
                 </a>
               </div>
               <div className="h-10 flex items-center">
                 <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
-                  Menu item 2
+                  E-commerce
                 </a>
               </div>
               <div className="h-10 flex items-center">
                 <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
-                  Menu item 3
+                  Contact Us
                 </a>
               </div>
               <div className="h-10 flex items-center">
