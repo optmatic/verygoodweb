@@ -1,7 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
+
+/* Subpage layout styles */
+.sublayout main {
+  @apply bg-light;
+}
+
+main {
+  @apply bg-lighterBlue/50;
+}
+
+
+
+
+/* ==================== */
+
+
+
+
 h1, h2, h3 {
   @apply font-serif;
 }
@@ -39,6 +57,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 .gradient-text {
   @apply bg-gradient-to-r from-optGreen to-optBlue bg-clip-text text-transparent;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-optGreen to-optBlue;
 }
 
 .subheading {

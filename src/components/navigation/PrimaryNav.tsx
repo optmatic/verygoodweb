@@ -160,17 +160,16 @@ export default function PrimaryNav() {
               </div>
               */}
               <div className="h-10 flex items-center">
-                <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
-                  Web Development
-                </a>
+                <a href="/web-development" className="text-md font-semibold text-white hover:text-white group py-2 px-3">
+                    Web Development </a>
               </div>
               <div className="h-10 flex items-center">
-                <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
+                <a href="/e-commerce" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
                   E-commerce
                 </a>
               </div>
               <div className="h-10 flex items-center">
-                <a href="#" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
+                <a href="/contact" className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3">
                   Contact Us
                 </a>
               </div>
@@ -263,16 +262,14 @@ export default function PrimaryNav() {
               </div>
               <div className="px-5 py-6">
                 <div className="grid grid-cols-2 gap-4">
-                  <a href="#" className="text-base font-semibold text-gray-900 hover:text-gray-700">
-                    Alt link
+                  <a href="/web-development" className="text-base gradient-text font-semibold text-gray-900 hover:text-gray-700">
+                    Web Development
                   </a>
-
-                  <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    Alt link
+                  <a href="/e-commerce" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    E-commerce
                   </a>
-
-                  <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    Alt link
+                  <a href="/contact" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    Contact Us
                   </a>
                   {resources.map((item) => (
                     <Link key={item.name} href={item.href} className="text-base font-semibold text-gray-900 hover:text-gray-700">

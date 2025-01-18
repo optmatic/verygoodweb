@@ -4,11 +4,10 @@ import React, { useState, useEffect, type ReactNode } from "react";
 // import Image from "next/image";
 import Link from "next/link";
 import GradientButton3d from "@/components/optmatic/GradientButton3d";
-import { ChevronRightIcon, HomeIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
+import { ChevronRightIcon, HomeIcon, ChevronDownIcon, LifebuoyIcon, NewspaperIcon, PhoneIcon } from '@heroicons/react/20/solid'
 // import { BuildingOfficeIcon, CreditCardIcon, UserIcon, UsersIcon } from '@heroicons/react/20/solid'
 import type { Metadata } from "next";
 import WaveBackground from "@/images/wave-bg.jpeg"
-import ContactUs from "@/components/ContactUs";
 
 interface BreadcrumbItem {
   label: string;
@@ -39,6 +38,12 @@ interface SubPageLayoutProps {
     readonly icon: React.ComponentType<{ className?: string; "aria-hidden"?: string }>;
   }[];
   metadata?: Metadata;
+  variant?: 'dark' | 'light';
+  cards?: {
+    name: string;
+    description: string;
+    icon: React.ComponentType<{ className?: string; "aria-hidden"?: string }>;
+  }[];
 }
 
 const classNames = (...classes: string[]) => {
@@ -57,6 +62,24 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
   activeComponentId,
   availableComponents = [],
   metadata,
+  variant = 'dark',
+  cards = [
+    {
+      name: 'Sales',
+      description: 'Consectetur vel non. Rerum ut consequatur nobis unde. Enim est quo corrupti consequatur.',
+      icon: PhoneIcon,
+    },
+    {
+      name: 'Technical Support',
+      description: 'Quod possimus sit modi rerum exercitationem quaerat atque tenetur ullam.',
+      icon: LifebuoyIcon,
+    },
+    {
+      name: 'Media Inquiries',
+      description: 'Ratione et porro eligendi est sed ratione rerum itaque. Placeat accusantium impedit eum odit.',
+      icon: NewspaperIcon,
+    },
+  ],
 }) => {
   const [currentActiveId, setCurrentActiveId] = useState(activeComponentId);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -169,36 +192,44 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
   }, [metadata]);
 
   return (
-    <div className="sublayout min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <div className="relative overflow-x-hidden overflow-y-hidden">
-        {/* Background gradient */}
+        {/* Background gradient - Updated with conditional styles */}
         <div 
-          className="absolute inset-0 w-full h-full"
+          className={`absolute inset-0 w-full h-full ${
+            variant === 'dark' ? 'bg-deepBlue' : 'bg-slightBlue'
+          }`}
           style={{
-            background: 'linear-gradient(to left, rgb(17 24 39 / 0.7) 40%, rgba(17, 24, 39, 0.8) 70%, rgba(17, 24, 39, 0.9) 100%)',
+            background: variant === 'dark' 
+              ? 'linear-gradient(to left, rgb(17 24 39) 40%, rgba(17, 24, 39, 0.8) 70%, rgba(17, 24, 39, 0.7) 100%)'
+              : 'linear-gradient(to left, rgb(249 250 251) 40%, rgba(249, 250, 251, 0.8) 70%, rgba(249, 250, 251, 0.7) 100%)',
           }}
         />
 
-        {/* Animated Wave Background */}
+        {/* Animated Wave Background - Updated opacity and filters */}
         <div 
           className="absolute right-0 top-0 w-full h-full z-10"
           style={{
             background: `url(${WaveBackground.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'right 25%',
-            opacity: '.15',
-            filter: 'contrast(1.2) brightness(.6) blur(1px)',
-            mixBlendMode: 'overlay',
+            opacity: variant === 'dark' ? '.15' : '.2',
+            filter: variant === 'dark' 
+              ? 'contrast(1.2) brightness(.6) blur(1px)'
+              : 'contrast(1) brightness(1) blur(1px)',
+            mixBlendMode: variant === 'dark' ? 'overlay' : 'multiply',
             animation: 'wave-move 15s ease-in-out infinite',
             transform: 'scale(1.4)',
           }}
         />
 
-        {/* Gradient Overlay */}
+        {/* Gradient Overlay - Updated with stronger gradient */}
         <div 
           className="absolute right-0 top-0 h-full z-20"
           style={{
-            background: 'linear-gradient(to right, rgb(17 24 39) 20%, rgba(17, 24, 39, 0.85) 40%, rgba(17, 24, 39, 0.6) 100%)',
+            background: variant === 'dark'
+              ? 'linear-gradient(to right, rgb(17 24 39) 20%, rgba(17, 24, 39, 0.95) 40%, rgba(17, 24, 39, 0.8) 100%)'
+              : 'linear-gradient(to right, rgb(249 250 251) 20%, rgba(249, 250, 251, 0.95) 40%, rgba(249, 250, 251, 0.8) 100%)',
             mixBlendMode: 'multiply',
           }}
         />
@@ -211,21 +242,21 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                 <nav aria-label="Breadcrumb" className="flex mb-6 sm:mb-4">
                   <ol role="list" className="flex items-center sm:space-x-4">
                     <li>
-                      <Link href="/" className="">
-                        <HomeIcon className="size-6 shrink-0 text-light" aria-hidden="true" />
+                      <Link href="/" className="text-optBlue/30">
+                        <HomeIcon className="size-5 shrink-0" aria-hidden="true" />
                         <span className="sr-only">Home</span>
                       </Link>
                     </li>
                     {breadcrumbPath.map((item, index) => (
                       <li key={item.href}>
                         <div className="flex items-center">
-                          <ChevronRightIcon className="size-5 shrink-0 text-light" aria-hidden="true" />
+                          <ChevronRightIcon className="size-5 shrink-0 text-gradient" aria-hidden="true" />
                           {item.href === '/' ? (
-                            <HomeIcon className="ml-4 size-5 shrink-0 text-light" aria-hidden="true" />
+                            <HomeIcon className="ml-4 size-5 shrink-0 text-riverBlue" aria-hidden="true" />
                           ) : (
                             <Link
                               href={item.href}
-                              className="ml-4 text-xs sm:text-sm font-mono uppercase gradient-text font-black"
+                              className="ml-4 text-xs sm:text-sm font-medium text-riverBlue hover:text-riverBlue/90"
                               aria-current={index === breadcrumbPath.length - 1 ? 'page' : undefined}
                             >
                               {item.label}
@@ -237,13 +268,17 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                   </ol>
                 </nav>
                 {title && (
-                  <h1 className="pr-2 max-w-2xl text-3xl font-semibold tracking-tight text-light sm:text-6xl lg:col-span-2 xl:col-auto">
+                  <h1 className={`pr-2 max-w-2xl text-3xl font-extrabold tracking-tight text-balance ${
+                    variant === 'dark' ? 'text-light' : 'text-gray-900'
+                  } sm:text-5xl lg:col-span-2 xl:col-auto`}>
                     {title}
                   </h1>
                 )}
                 {subtitle && (
                   <div className="mt-4 max-w-2xl lg:mt-6 xl:col-end-1 xl:row-start-1">
-                    <p className="text-md font-normal text-pretty text-white sm:text-lg">
+                    <p className={`text-md font-normal text-pretty ${
+                      variant === 'dark' ? 'text-white' : 'text-gray-600'
+                    } sm:text-lg`}>
                       {subtitle}
                     </p>
                     {buttonText && buttonLink && (
@@ -264,6 +299,19 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                 </div>
               )}
             </div>
+
+            {/* Add the cards section */}
+            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8">
+              {cards.map((card) => (
+                <div key={card.name} className="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10">
+                  <card.icon aria-hidden="true" className="h-7 w-5 flex-none text-indigo-400" />
+                  <div className="text-base/7">
+                    <h3 className="font-semibold text-white">{card.name}</h3>
+                    <p className="mt-2 text-gray-300">{card.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -271,11 +319,11 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
       {availableComponents.length > 0 && (
         <div className={classNames(
           'sticky z-40 transition-all duration-200',
-          isScrolled ? 'top-[132px] bg-deepBlue' : 'top-0 bg-deepBlue'
+          isScrolled ? 'top-[132px] bg-white' : 'top-0 bg-light'
         )}>
           <div className={classNames(
             'transition-all duration-200',
-            isScrolled ? 'bg-white shadow-lg' : 'bg-deepBlue'
+            isScrolled ? 'bg-white shadow-lg' : 'bg-light'
           )}>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               {/* Mobile tab alternative, will leave for now */}
@@ -283,7 +331,7 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                 <select
                   defaultValue={dynamicTabs.find((tab) => tab.current)?.name}
                   aria-label="Select a tab"
-                  className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-2 pr-8 pl-3 text-base text-light outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-deepBlue"
+                  className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-2 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                 >
                   {dynamicTabs.map((tab) => (
                     <option key={tab.name}>{tab.name}</option>
@@ -338,7 +386,6 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8">
           {wrapChildrenWithAnchors(children)}
         </div>
-        <ContactUs />
       </main>
     </div>
   );

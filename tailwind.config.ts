@@ -37,6 +37,7 @@ export default {
 			light: '#eff6ff',
 			optBlue: 'rgb(96 165 250)',
 			optGreen: 'rgb(74 222 128)',
+			lighterBlue: '#d6e6f3',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

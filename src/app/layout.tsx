@@ -5,7 +5,7 @@ import "./globals.css";
 import PrimaryNav from "@/components/navigation/PrimaryNav";
 import Footer from "@/components/navigation/ContactFooter";// import { GradientBackground } from "@/components/radiant/gradient";
 import { Navigation } from "lucide-react";
-
+import FooterLight from "@/components/navigation/ContactFooterLight";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -54,6 +54,7 @@ export default function RootLayout({
           {children}
           </main>
           <Footer />
+          <FooterLight />   
       </body>
     </html>
   );
