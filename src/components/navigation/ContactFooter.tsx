@@ -170,8 +170,8 @@ const navigation = {
               </div>
             </div>
           </div> */}
-          <div className="mt-12 border-t border-light pt-4 md:flex md:items-center md:justify-between">
-            {/* <div className="flex gap-x-6 md:order-2">
+          <div className="mt-12 lg:mt-24 border-t border-light pt-4 md:flex md:items-center md:justify-between">
+          {/* <div className="flex gap-x-6 md:order-2">
               {navigation.social.map((item) => (
                 <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-700">
                   <span className="sr-only">{item.name}</span>

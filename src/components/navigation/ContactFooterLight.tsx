@@ -19,7 +19,7 @@ import { GradientFooterBackground } from '../radiant/gradient'
               <GradientButton3d text="Get started" link="/contact" />
             </div>
           </div>
-          <div className="mt-12 border-t border-deepBlue pt-4 md:flex md:items-center md:justify-between">
+          <div className="mt-12 lg:mt-24 border-t border-deepBlue pt-4 md:flex md:items-center md:justify-between">
             <div className="flex flex-col items-center">
               <img
                 alt="Company name"
