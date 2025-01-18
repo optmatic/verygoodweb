@@ -4,7 +4,7 @@ import { GradientFooterBackground } from '../radiant/gradient'
   
   export default function Footer() {
     return (
-      <footer className="relative bg-white">
+      <footer className="relative bg-white border-t border-deepBlue/20">
         <GradientFooterBackground />
         <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-8 lg:px-0 lg:pt-32 lg:pb-16">
         {/* <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-0 lg:py-32"> */}

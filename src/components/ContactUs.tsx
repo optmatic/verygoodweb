@@ -1,10 +1,12 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import GradientButton3d from './optmatic/GradientButton3d'
 
 export default function ContactUs() {
   return (
-    <div className="bg-light">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
-        <div className="relative bg-white shadow-xl">
+    <div className="contact-form bg-lighter">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-0">
+      {/* <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8"> */}
+        <div className="relative bg-light border border-deepBlue/50 shadow-xl shadow-deepBlue/10">
           <h2 className="sr-only">Contact us</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3">
@@ -103,32 +105,31 @@ export default function ContactUs() {
                   </defs>
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-light">Contact information</h3>
-              <p className="mt-6 max-w-3xl text-base text-lighterBlue">
-                Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor
-                lacus arcu.
+              <h3 className="gradient-text subheading">Contact information</h3>
+              <p className="mt-2 max-w-3xl font-normal text-lighterBlue">
+               If your query is urgent, please contact us via the below channels.
               </p>
-              <dl className="mt-8 space-y-6">
+              <dl className="mt-8 space-y-2">
                 <dt>
                   <span className="sr-only">Phone number</span>
                 </dt>
                 <dd className="flex text-base text-lighterBlue">
                   <PhoneIcon aria-hidden="true" className="size-6 shrink-0 text-light" />
-                  <span className="ml-3">+1 (555) 123-4567</span>
+                  <span className="ml-3">0499 992 401</span>
                 </dd>
                 <dt>
                   <span className="sr-only">Email</span>
                 </dt>
                 <dd className="flex text-base text-lighterBlue">
                   <EnvelopeIcon aria-hidden="true" className="size-6 shrink-0 text-light" />
-                  <span className="ml-3">support@workcation.com</span>
+                  <span className="ml-3">tom@optmatic.com</span>
                 </dd>
               </dl>
             </div>
 
             {/* Contact form */}
             <div className="px-6 py-10 sm:px-10 lg:col-span-2 xl:p-12">
-              <h3 className="text-lg font-medium text-deepBlue">Send us a message</h3>
+              <h3 className="text-3xl lg:text-4xl font-bold text-deepBlue">Enquire with us today</h3>
               <form action="#" method="POST" className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                 <div>
                   <label htmlFor="first-name" className="block text-sm font-medium text-deepBlue">
@@ -225,13 +226,17 @@ export default function ContactUs() {
                     />
                   </div>
                 </div>
-                <div className="sm:col-span-2 sm:flex sm:justify-end">
+                {/* <div className="sm:col-span-2 sm:flex sm:justify-end">
                   <button
                     type="submit"
                     className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-optBlue px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-deepBlue focus:outline-none focus:ring-2 focus:ring-optBlue focus:ring-offset-2 sm:w-auto"
                   >
                     Submit
                   </button>
+                </div> */}
+
+                <div className="sm:col-span-2 sm:flex sm:justify-end">
+                    <GradientButton3d type="submit" text="Submit" />
                 </div>
               </form>
             </div>

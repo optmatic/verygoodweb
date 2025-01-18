@@ -3,22 +3,32 @@
 @tailwind utilities;
 
 
-/* Subpage layout styles */
-.sublayout main {
-  @apply bg-light;
+/* Contact form styles */
+.contact-form input {
+  @apply bg-lighterBlue border border-deepBlue/10 rounded-sm;
 }
 
-main {
-  @apply bg-lighterBlue/50;
+.contact-form label {
+  @apply text-deepBlue font-semibold;
 }
 
-
-
+.contact-form textarea {
+  @apply bg-lighterBlue border border-deepBlue/10 rounded-sm;
+}
 
 /* ==================== */
 
+/* Subpage layout styles */
+
+.sublayout main {
+  @apply bg-light;
+}
+/* ==================== */
 
 
+main {
+  @apply bg-lighterBlue;
+}
 
 h1, h2, h3 {
   @apply font-serif;

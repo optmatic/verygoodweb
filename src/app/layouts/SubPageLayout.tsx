@@ -338,7 +338,6 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8">
           {wrapChildrenWithAnchors(children)}
         </div>
-        <ContactUs />
       </main>
     </div>
   );
