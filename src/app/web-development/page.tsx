@@ -31,6 +31,8 @@ export default function WebDevelopment() {
       // availableComponents={components}
       imageSrc={WebDevFeature.src}
       imageAlt="Web Development Feature Image"
+      buttonText="Request a Site Audit"
+      buttonLink="/web-development"
     >
       <div>
         Your web development content goes here

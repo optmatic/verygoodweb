@@ -17,12 +17,18 @@ const title3 = " digital ecosystem.";
 
 export default function PrimaryHero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const rotatingWords = ['E-commerce', 'Web Development', 'Site Management', 'WordPress', 'Web Applications'];
+  const rotatingWords = [
+    { text: 'E-commerce', link: '/e-commerce' },
+    { text: 'Web Development', link: '/web-development' },
+    { text: 'Site Management', link: '/website-management' },
+    { text: 'WordPress', link: '/wordpress' },
+    { text: 'Web Applications', link: '/web-applications' }
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWordIndex((current) => (current + 1) % rotatingWords.length);
-    }, 3000); // Changed from 1000 to 3000 for better readability
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [rotatingWords.length]);
@@ -93,24 +99,18 @@ export default function PrimaryHero() {
          <GradientButton3d text="Why Optmatic?" link="" targetVal="_self" type="primary" />
           </div>
 
-          <div className="mt-12  relative py-2 rounded-sm shadow-lg shadow-black/20 overflow-hidden whitespace-nowrap">
+          <div className="mt-12 relative py-2 rounded-sm shadow-lg shadow-black/20 overflow-hidden whitespace-nowrap">
             <div 
               className="inline-flex scrolling-words"
-              style={{
-                // Removed the animation for the transition
-                // animation: `scroll ${rotatingWords.length * 3}s linear infinite`
-                // Commented out the animation to remove any slight movement
-                // animation: 'none' // Uncomment this line if you want to explicitly set no animation
-              }}
             >
-              {/* Double the words to create seamless loop */}
               {[...rotatingWords, ...rotatingWords].map((word, index) => (
-                <span 
+                <a 
+                  href={word.link}
                   key={index}
-                  className="text-white font-medium mx-4 cursor-pointer hover:italic"
+                  className="text-white font-medium mx-4 cursor-pointer hover:italic transition-all duration-300"
                 >
-                  {word}
-                </span>
+                  {word.text}
+                </a>
               ))}
             </div>
           </div>

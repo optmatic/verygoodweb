@@ -108,7 +108,7 @@ export default function PrimaryNav() {
             </div>
             <div className="flex items-center md:ml-12">
               <div className="hidden lg:block">
-                <PrimaryButton text="Request a Site Audit" link="/contact" targetVal="_self" type="primary" />
+                <PrimaryButton text="Schedule a Call" link="/contact" targetVal="_self" type="primary" />
               </div>
             </div>
           </div>

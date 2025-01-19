@@ -255,11 +255,11 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                 )}
               </div>
               {imageSrc && (
-                <div className="md:w-1/2 md:pl-[25px]">
+                <div className="md:pl-[25px] md:w-1/2 flex items-center justify-center">
                   <img
                     src={imageSrc}
                     alt={imageAlt || ""}
-                    className="rounded-md shadow-md shadow-riverBlueLight lg:h-64 lg:w-auto lg:object-cover object-top"
+                    className="rounded-md object-cover shadow-md shadow-riverBlueLight w-auto lg:min-w-[450px] h-auto max-h-[300px] object-contain"
                   />
                 </div>
               )}
