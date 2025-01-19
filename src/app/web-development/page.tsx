@@ -26,7 +26,7 @@ export default function WebDevelopment() {
         { label: "Web Development", href: "/web-development" }]}
       metadata={metadata}
       title="Web Development"
-      subtitle="We offer a range of web development services to help you achieve your business goals."
+      subtitle="We offer a range of web development services designed to help you achieve your business goals with precision and efficiency."
       // activeComponentId="web-development"
       // availableComponents={components}
       imageSrc={WebDevFeature.src}

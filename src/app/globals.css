@@ -16,6 +16,10 @@
   @apply bg-lighterBlue border border-deepBlue/10 rounded-sm;
 }
 
+.subtitle {
+  @apply !leading-6;
+}
+
 /* ==================== */
 
 /* Subpage layout styles */

@@ -1,7 +1,7 @@
 "use client"
 
 import ContactUs from "@/components/ContactUs";
-import SubPageLayout from "../layouts/SubPageLayout";
+import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 // import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 
 
@@ -21,7 +21,7 @@ export default function WebDevelopment() {
 //   ]
 
   return (
-    <SubPageLayout
+    <SubPageLayoutAlt
       breadcrumbPath={[
         { label: "Contact", href: "/contact" }]}
       metadata={metadata}
@@ -33,7 +33,7 @@ export default function WebDevelopment() {
     //   imageAlt="Web Development Feature Image"
     >
       <ContactUs />
-    </SubPageLayout>
+    </SubPageLayoutAlt>
   );
 }
 

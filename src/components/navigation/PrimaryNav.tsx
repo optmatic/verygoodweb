@@ -1,16 +1,26 @@
 'use client'
 
-// import { SquaresPlusIcon, CursorArrowRaysIcon, HomeIcon,DocumentIcon, ChatBubbleBottomCenterIcon, Square2StackIcon, GlobeAltIcon, FingerPrintIcon, BellIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
-import { useRef, useEffect, useState } from 'react'
+import { SquaresPlusIcon, CursorArrowRaysIcon, HomeIcon,DocumentIcon, ChatBubbleBottomCenterIcon, Square2StackIcon, GlobeAltIcon, FingerPrintIcon, BellIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
+import { useRef, useEffect } from 'react'
 import PrimaryButton from '@/components/optmatic/GradientButton3d'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
+import { mainMenuItems, moreMenuItems } from '@/config/navConfig'
+import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import Logo from '@/images/optmatic-logo.svg'
-import { styles } from '@/config/navStyles'
-import { mainMenuItems, moreMenuItems } from '@/config/navConfig'
+
+const resources = [
+  {
+    name: 'Web App Development',
+    description: 'This is a description of the web app development service.',
+    href: '/web-app-development',
+  },
+  { name: 'Site Management', description: 'This is a description of the site management service.', href: '/' },
+  { name: 'WordPress Solutions', description: 'This is a description of the WordPress solutions service.', href: '#' },
+]
+
+import { useState } from 'react'
 
 export default function PrimaryNav() {
   const [morePopoverOpen, setMorePopoverOpen] = useState(false)
@@ -35,9 +45,9 @@ export default function PrimaryNav() {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <nav className={styles.nav}>
+    <header className="relative bg-slightBlue sticky top-0 z-50 shadow-md shadow-optBlue/5 w-full">
+      <div className="mx-auto max-w-7xl">
+        <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
           <div>
             <a href="/" className="flex">
               <span className="sr-only">Your Company</span>
@@ -53,20 +63,23 @@ export default function PrimaryNav() {
           <div className="-my-2 -mr-2 md:hidden">
             <button 
               onClick={toggleMobileMenu}
-              className={styles.mobileMenuButton}
+              className="relative inline-flex items-center justify-center rounded-md bg-deepBlue p-2 text-white hover:bg-deepBlue/80 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-darkerPrimary"
             >
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open menu</span>
               <Bars3Icon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
-          <div className={styles.desktopMenu}>
+          <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
             <div className="flex space-x-2">
               {mainMenuItems.map((item) => (
                 <div key={item.name} className="h-10 flex items-center">
-                  <a href={item.href} className={styles.menuItem}>
+                  <Link 
+                    href={item.href} 
+                    className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3"
+                  >
                     {item.name}
-                  </a>
+                  </Link>
                 </div>
               ))}
               <div className="h-10 flex items-center">
@@ -75,28 +88,26 @@ export default function PrimaryNav() {
                   onMouseEnter={() => setMorePopoverOpen(true)}
                   onMouseLeave={() => setMorePopoverOpen(false)}
                 >
-                  <button className={styles.moreButton}>
+                  <button className="group inline-flex items-center rounded-md text-md font-semibold text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 data-[open]:text-white py-2 px-3">
                     <span>More</span>
                     <ChevronDownIcon
                       aria-hidden="true"
-                      className="ml-2 h-5 w-5 text-white group-hover:text-white/80"
+                      className="ml-2 h-5 w-5 text-white group-hover:text-white/80 group-data-[open]:text-gray-600 group-data-[open]:group-hover:text-gray-500"
                     />
                   </button>
 
                   {morePopoverOpen && (
-                    <div className={styles.dropdownContainer}>
-                      <div className="overflow-hidden rounded-lg bg-deepBlue shadow-lg ring-1 ring-black ring-opacity-5">
-                        <div className="p-4 space-y-2">
+                    <div className="absolute z-10 mt-0 pt-2 left-1/2 w-screen max-w-xs -translate-x-1/2 transform px-2 transition">
+                      <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div className="relative grid bg-deepBlue py-4 sm:gap-8 sm:px-4 sm:py-4">
                           {moreMenuItems.map((item) => (
                             <Link 
                               key={item.name} 
                               href={item.href} 
-                              className={styles.dropdownItem}
+                              className="-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue"
                             >
-                              <div>
-                                <p className="text-md font-semibold">{item.name}</p>
-                                <p className="text-sm text-white/80">{item.description}</p>
-                              </div>
+                              <p className="text-md font-semibold text-white">{item.name}</p>
+                              <p className="mt-1 text-sm text-white/80">{item.description}</p>
                             </Link>
                           ))}
                         </div>
@@ -147,9 +158,24 @@ export default function PrimaryNav() {
                 </div>
                 <div className="mt-6">
                   <nav className="grid gap-6">
-                    {/*{detailedDropdown.map((item) => (
-                      ... detailed dropdown mobile content ...
-                    ))}*/}
+                    {mainMenuItems.map((item) => (
+                      <Link 
+                        key={item.name} 
+                        href={item.href} 
+                        className="text-base font-semibold text-gray-900 hover:text-gray-700"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                    {moreMenuItems.map((item) => (
+                      <Link 
+                        key={item.name} 
+                        href={item.href} 
+                        className="text-base font-semibold text-gray-900 hover:text-gray-700"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
                   </nav>
                 </div>
               </div>
@@ -164,7 +190,7 @@ export default function PrimaryNav() {
                   <a href="/contact" className="text-base font-medium text-gray-900 hover:text-gray-700">
                     Contact Us
                   </a>
-                  {moreMenuItems.map((item) => (
+                  {resources.map((item) => (
                     <Link key={item.name} href={item.href} className="text-base font-semibold text-gray-900 hover:text-gray-700">
                       {item.name}
                     </Link>

@@ -53,7 +53,6 @@ export default function RootLayout({
           <main>
           {children}
           </main>
-          <FooterLight />   
       </body>
     </html>
   );

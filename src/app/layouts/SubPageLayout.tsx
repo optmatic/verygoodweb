@@ -9,6 +9,7 @@ import { ChevronRightIcon, HomeIcon, ChevronDownIcon } from '@heroicons/react/20
 import type { Metadata } from "next";
 import WaveBackground from "@/images/wave-bg.jpeg"
 import ContactUs from "@/components/ContactUs";
+import Footer from "@/components/navigation/ContactFooterLight";
 
 interface BreadcrumbItem {
   label: string;
@@ -243,7 +244,7 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                 )}
                 {subtitle && (
                   <div className="mt-4 max-w-2xl lg:mt-6 xl:col-end-1 xl:row-start-1">
-                    <p className="text-md font-normal text-pretty text-white sm:text-lg">
+                    <p className="subtitle text-md font-light leading-8 text-pretty text-white sm:text-lg">
                       {subtitle}
                     </p>
                     {buttonText && buttonLink && (
@@ -259,7 +260,7 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                   <img
                     src={imageSrc}
                     alt={imageAlt || ""}
-                    className="rounded-md object-cover shadow-md shadow-riverBlueLight w-auto lg:min-w-[450px] h-auto max-h-[300px] object-contain"
+                    className="rounded-sm object-cover saturate-150 border border-lighterBlue shadow-md shadow-deepBlue/70 w-auto lg:min-w-[450px] h-auto max-h-[300px] object-contain"
                   />
                 </div>
               )}
@@ -334,11 +335,13 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
         </div>
       )}
 
+
       <main className="flex-grow">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8">
           {wrapChildrenWithAnchors(children)}
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
