@@ -1,7 +1,7 @@
 "use client"
 
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
-import WebDevFeature from "@/images/features/website-dev-feature.webp"
+import WebDevFeature from "@/images/features/web-dev-abstraction.webp"
 import SubPageLayout from "@/app/layouts/SubPageLayout"
 import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 
@@ -29,8 +29,8 @@ export default function WebDevelopment() {
       subtitle="We offer a range of web development services to help you achieve your business goals."
       // activeComponentId="web-development"
       // availableComponents={components}
-    //   imageSrc={WebDevFeature.src}
-    //   imageAlt="Web Development Feature Image"
+      imageSrc={WebDevFeature.src}
+      imageAlt="Web Development Feature Image"
     >
       <div>
         Your web development content goes here

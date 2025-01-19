@@ -22,7 +22,7 @@ export default function WhyOptmatic() {
             <p className="text-lg mb-12">
             Innovation doesn't have to come at a high cost. We offer affordable, high-quality services, ensuring your business thrives in the digital landscape without exceeding your budget.
             </p>
-            <GradientButton3d text="Book a Call"/>
+            <GradientButton3d text="Book a Call" link="/contact" targetVal="_self"/>
           </div>
         </div>
 

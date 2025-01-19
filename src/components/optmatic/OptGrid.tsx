@@ -1,8 +1,8 @@
-import WebsiteDevelopmentFeature from "@/images/features/website-dev-feature.webp"
-import EcommerceFeature from "@/images/features/insights-img.jpeg"
-import WebAppFeature from "@/images/features/web-app-feature.webp"
-import SiteManagementFeature from "@/images/features/site-mgmt-feature.webp"
-import WordPressFeature from "@/images/features/wordpress-feature.webp"
+import WebsiteDevelopmentFeature from "@/images/features/web-dev-abstraction.webp"
+import EcommerceFeature from "@/images/features/ecommerce-feature-abstraction.webp"
+import WebAppFeature from "@/images/features/web-app-feature-abstraction.webp"
+import SiteManagementFeature from "@/images/features/website-mgmt-feature-abstract.webp"
+import WordPressFeature from "@/images/features/wordpress-feature-abstraction.webp"
 
 
 export default function OptGrid() {
@@ -14,7 +14,8 @@ export default function OptGrid() {
       image: WebsiteDevelopmentFeature.src,
       className: "lg:col-span-3",
       containerClassName: "min-h-[400px] max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]",
-      imageClassName: "object-left"
+      imageClassName: "object-left",
+      link: "/web-development",
     },
     {
       title: "E-commerce Solutions",
@@ -23,7 +24,8 @@ export default function OptGrid() {
       image: EcommerceFeature.src ,
       className: "lg:col-span-3",
       containerClassName: "min-h-[400px] lg:rounded-tr-[2rem]",
-      imageClassName: "object-left lg:object-right"
+      imageClassName: "object-left lg:object-bottom-right",
+      link: "/e-commerce",
     },
   ];
 
@@ -35,7 +37,8 @@ export default function OptGrid() {
       image: WebAppFeature.src,
       className: "lg:col-span-2",
       containerClassName: "min-h-[350px] lg:rounded-bl-[2rem]",
-      imageClassName: "object-left"
+      imageClassName: "object-left lg:object-bottom",
+      link: "/web-applications",
     },
     {
       title: "Site Management",
@@ -44,7 +47,8 @@ export default function OptGrid() {
       image: SiteManagementFeature.src,
       className: "lg:col-span-2",
       containerClassName: "min-h-[350px]",
-      imageClassName: ""
+      imageClassName: "object-bottom lg:object-right lg:object-bottom",
+      link: "/site-management",
     },
     {
       title: "WordPress Solutions",
@@ -53,7 +57,8 @@ export default function OptGrid() {
       image: WordPressFeature.src,
       className: "lg:col-span-2",
       containerClassName: "min-h-[350px] max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]",
-      imageClassName: ""
+      imageClassName: "object-left",
+      link: "/wordpress",
     },
   ];
 
@@ -73,10 +78,11 @@ export default function OptGrid() {
           {[...mainServices, ...subServices].map((item) => (
             <div key={item.title} className={`relative ${item.className}`}>
               <div className={`group relative h-full overflow-hidden rounded-lg ${item.containerClassName}`}>
-                <img
+              <a href={item.link} target="_self">
+              <img
                   alt={item.title}
                   src={item.image}
-                  className={`absolute h-full w-full object-cover ${item.imageClassName}`}
+                  className={`absolute h-full w-full object-cover transition-all duration-300 group-hover:saturate-150 group-hover:brightness-110 ${item.imageClassName}`}
                 />
                 <div className="absolute inset-0  bg-black/10" />
                 
@@ -90,9 +96,11 @@ export default function OptGrid() {
                   </p>
                   </div>
                 </div>
+              </a>
               </div>
             </div>
           ))}
+          
         </div>
       </div>
     </div>

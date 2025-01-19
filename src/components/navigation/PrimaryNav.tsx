@@ -85,16 +85,18 @@ export default function PrimaryNav() {
 
                   {morePopoverOpen && (
                     <div className={styles.dropdownContainer}>
-                      <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
-                        <div className="relative grid bg-deepBlue py-4 sm:gap-8 sm:px-4 sm:py-4">
+                      <div className="overflow-hidden rounded-lg bg-deepBlue shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div className="p-4 space-y-2">
                           {moreMenuItems.map((item) => (
                             <Link 
                               key={item.name} 
                               href={item.href} 
                               className={styles.dropdownItem}
                             >
-                              <p className="text-md font-semibold text-white">{item.name}</p>
-                              <p className="mt-1 text-sm text-white/80">{item.description}</p>
+                              <div>
+                                <p className="text-md font-semibold">{item.name}</p>
+                                <p className="text-sm text-white/80">{item.description}</p>
+                              </div>
                             </Link>
                           ))}
                         </div>

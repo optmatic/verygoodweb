@@ -6,6 +6,6 @@ export const styles = {
     desktopMenu: 'hidden md:flex md:flex-1 md:items-center md:justify-between',
     menuItem: 'text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3',
     moreButton: 'group inline-flex items-center rounded-md text-md font-semibold text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 data-[open]:text-white py-2 px-3',
-    dropdownContainer: 'absolute z-10 mt-0 pt-2 left-1/2 w-screen max-w-xs -translate-x-1/2 transform px-2 transition',
-    dropdownItem: '-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue',
+    dropdownContainer: 'absolute z-10 mt-3 w-[400px] -translate-x-1/3 transform px-2',
+    dropdownItem: 'block w-full rounded-lg px-4 py-2 text-left text-white hover:text-white/80 hover:bg-slightBlue',
   }
