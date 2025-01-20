@@ -13,15 +13,20 @@
 }
 
 .primary-nav a, .primary-nav button {
-@apply font-sans font-semibold text-white hover:gradient-text;
+@apply text-white hover:text-white shadow-sm shadow-deepBlue/10 rounded-md hover:shadow-optBlue/25 hover:no-underline;
+}
+
+/* exception for logo */
+.optmatic-logo {
+  @apply !shadow-none;
 }
 
 .more-name {
-  @apply font-sans font-semibold text-white hover:gradient-text;
+  @apply font-sans font-semibold text-white;
 }
 
 .more-menu .more-description {
-  @apply font-light hover:text-white;
+  @apply font-light;
 }
 
 /* Contact form styles */

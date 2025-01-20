@@ -49,7 +49,7 @@ export default function PrimaryNav() {
       <div className="mx-auto max-w-7xl">
         <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
           <div>
-            <a href="/" className="flex">
+            <a href="/" className="optmatic-logo flex">
               <span className="sr-only">Your Company</span>
               <Image
                 alt=""
