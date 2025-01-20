@@ -45,7 +45,7 @@ export default function PrimaryNav() {
   };
 
   return (
-    <header className="relative bg-slightBlue sticky top-0 z-50 shadow-md shadow-optBlue/5 w-full">
+    <header className="primary-nav relative bg-slightBlue sticky top-0 z-50 shadow-md shadow-optBlue/5 w-full">
       <div className="mx-auto max-w-7xl">
         <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
           <div>
@@ -97,18 +97,18 @@ export default function PrimaryNav() {
                   </button>
 
                   {morePopoverOpen && (
-                    <div className="absolute z-10 mt-0 pt-2 left-1/2 w-screen max-w-xs -translate-x-1/2 transform px-2 transition">
+                    <div className="more-menu absolute z-10 mt-0 pt-2 left-1/2 w-screen max-w-xs -translate-x-1/2 transform px-2 transition">
                       <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid bg-deepBlue py-4 sm:gap-8 sm:px-4 sm:py-4">
                           {moreMenuItems.map((item) => (
-                            <Link 
+                            <a 
                               key={item.name} 
                               href={item.href} 
                               className="-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue"
                             >
-                              <p className="text-md font-semibold text-white">{item.name}</p>
-                              <p className="mt-1 text-sm text-white/80">{item.description}</p>
-                            </Link>
+                              <p className="more-name text-md font-semibold text-white">{item.name}</p>
+                              <p className="more-description text-sm text-white/80">{item.description}</p>
+                            </a>
                           ))}
                         </div>
                       </div>
@@ -198,12 +198,6 @@ export default function PrimaryNav() {
                 </div>
                 <div className="mt-6 flex flex-col">
                   <PrimaryButton text="Schedule a Call" link="/contact" />
-                  <p className="mt-6 text-left text-base font-medium text-white">
-                    Optimise Hub -{' '}
-                    <a href="#" className="text-darkerPrimary underline decoration-lightAccent decoration-2 underline-offset-2 hover:text-darkerPrimary/70">
-                      Log in
-                    </a>
-                  </p>
                 </div>
               </div>
             </div>

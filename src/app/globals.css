@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+.gradient-text {
+  @apply bg-gradient-to-r from-optGreen to-optBlue bg-clip-text text-transparent;
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-optGreen to-optBlue bg-clip-text text-transparent;
+  }
+}
+
+.primary-nav a, .primary-nav button {
+@apply font-sans font-semibold text-white hover:gradient-text;
+}
+
+.more-name {
+  @apply font-sans font-semibold text-white hover:gradient-text;
+}
+
+.more-menu .more-description {
+  @apply font-light hover:text-white;
+}
 
 /* Contact form styles */
 .contact-form input {
@@ -69,9 +90,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 
-.gradient-text {
-  @apply bg-gradient-to-r from-optGreen to-optBlue bg-clip-text text-transparent;
-}
 
 .gradient-bg {
   @apply bg-gradient-to-r from-optGreen to-optBlue;
