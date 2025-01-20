@@ -5,12 +5,12 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from '@headlessui/react'
-import { Container } from '@/componeeeents/radiant/container'
+import { Container } from '@/components/radiant/container'
 import { Bars2Icon } from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
-import { Link } from '@/componeeeents/radiant/link'
+import { Link } from '@/components/radiant/link'
 import Logo from '@/images/optmatic-logo.svg'
-import { PlusGrid, PlusGridRow } from '@/componeeeents/radiant/plus-grid'
+import { PlusGrid, PlusGridRow } from '@/components/radiant/plus-grid'
 
 const links = [
   { href: '/pricing', label: 'Pricing' },

@@ -1,5 +1,5 @@
 import WhyOptmaticImg from "@/images/wave-bg.jpeg"
-import GradientButton from "@/componeeeents/optmatic/GradientButton"
+import GradientButton from "@/components/optmatic/GradientButton"
 
 export default function WhyOptmatic() {
     return (

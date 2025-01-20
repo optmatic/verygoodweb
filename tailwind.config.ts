@@ -28,16 +28,15 @@ export default {
   			serif: [
   				'Alegreya',
   				'serif'
-  			],
+  			]
   		},
   		colors: {
-  			// deepBlue: '#080a13',
-			deepBlue: '#0b1423',
-			slightBlue: '#0f1929',
-			light: '#eff6ff',
-			optBlue: 'rgb(96 165 250)',
-			optGreen: 'rgb(74 222 128)',
-			lighterBlue: '#e3ecfc',
+  			deepBlue: '#0b1423',
+  			slightBlue: '#0f1929',
+  			light: '#eff6ff',
+  			optBlue: 'rgb(96 165 250)',
+  			optGreen: 'rgb(74 222 128)',
+  			lighterBlue: '#e3ecfc',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -86,13 +85,17 @@ export default {
   		},
   		keyframes: {
   			scroll: {
-  				'0%': { transform: 'translateX(0)' },
-  				'100%': { transform: 'translateX(-50%)' },
-  			},
+  				'0%': {
+  					transform: 'translateX(0)'
+  				},
+  				'100%': {
+  					transform: 'translateX(-50%)'
+  				}
+  			}
   		},
   		animation: {
-  			scroll: 'scroll 20s linear infinite',
-  		},
+  			scroll: 'scroll 20s linear infinite'
+  		}
   	}
   },
   plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
