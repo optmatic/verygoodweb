@@ -16,8 +16,8 @@ const resources = [
     description: 'This is a description of the web app development service.',
     href: '/web-app-development',
   },
-  { name: 'Site Management', description: 'This is a description of the site management service.', href: '/' },
-  { name: 'WordPress Solutions', description: 'This is a description of the WordPress solutions service.', href: '#' },
+  { name: 'Site Management', description: 'This is a description of the site management service.', href: '/website-management' },
+  { name: 'WordPress Solutions', description: 'This is a description of the WordPress solutions service.', href: '/wordpress-solutions' },
 ]
 
 import { useState } from 'react'
@@ -80,7 +80,7 @@ export default function PrimaryNav() {
                   >
                     {item.name}
                   </Link>
-                </div>
+                </div>  
               ))}
               <div className="h-10 flex items-center">
                 <div 
@@ -197,7 +197,7 @@ export default function PrimaryNav() {
                   ))}
                 </div>
                 <div className="mt-6 flex flex-col">
-                  <PrimaryButton text="Book a Free Trial Lesson" link="#" />
+                  <PrimaryButton text="Schedule a Call" link="/contact" />
                   <p className="mt-6 text-left text-base font-medium text-white">
                     Optimise Hub -{' '}
                     <a href="#" className="text-darkerPrimary underline decoration-lightAccent decoration-2 underline-offset-2 hover:text-darkerPrimary/70">

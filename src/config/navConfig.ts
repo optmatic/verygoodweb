@@ -24,11 +24,11 @@ export const moreMenuItems = [
   {
     name: 'Site Management',
     description: 'This is a description of the site management service.',
-    href: '/',
+    href: '/website-management',
   },
   {
     name: 'WordPress Solutions',
     description: 'This is a description of the WordPress solutions service.',
-    href: '#',
+    href: '/wordpress-solutions',
   },
 ]
