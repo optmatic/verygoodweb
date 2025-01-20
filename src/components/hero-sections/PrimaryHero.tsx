@@ -1,6 +1,6 @@
 "use client";
 
-import { Container } from "@/componeeeents/radiant/container";
+import { Container } from "@/components/radiant/container";
 // import { Gradient } from "@/components/radiant/gradient";
 // import { Link } from "@/components/radiant/link";
 // import { Navbar } from "@/components/navigation/Navbar";

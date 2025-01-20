@@ -26,7 +26,7 @@ export default function SimpleContent({
 }: SimpleContentProps) {
   return (
     <div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-0">
+      <div className="mx-auto max-w-7xl py-12 px-6 lg:px-0">
         <div className="mx-auto intro max-w-2xl lg:mx-0 lg:max-w-none">
           <div className="intro max-w-lg border-deepBlue/7 0">
           <p className="subheading text-base/7 font-semibold">{badge}</p>

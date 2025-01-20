@@ -2,7 +2,7 @@
 
 import { SquaresPlusIcon, CursorArrowRaysIcon, HomeIcon,DocumentIcon, ChatBubbleBottomCenterIcon, Square2StackIcon, GlobeAltIcon, FingerPrintIcon, BellIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
 import { useRef, useEffect } from 'react'
-import PrimaryButton from '@/componeeeents/optmatic/GradientButton'
+import PrimaryButton from '@/components/optmatic/GradientButton'
 import Image from 'next/image'
 import Link from 'next/link'
 import { mainMenuItems, moreMenuItems } from '@/config/navConfig'

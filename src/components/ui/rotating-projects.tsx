@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import "../../app/css/rotations.css"
 
 // Sample project data
 const projects = [
@@ -53,14 +53,24 @@ const projects = [
 ]
 
 export default function RotatingProjects() {
+  const [isPaused, setIsPaused] = useState(false)
+
   return (
-    <section className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="w-full py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8">Our Past Projects</h2>
-        <Carousel className="w-full">
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {projects.map((project) => (
-              <CarouselItem key={project.id} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3">
+        <div 
+          className="relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className={`flex gap-4 animate-scroll ${isPaused ? 'pause-animation' : ''}`}>
+            {/* Double the projects array to create seamless loop */}
+            {[...projects, ...projects].map((project, index) => (
+              <div 
+                key={`${project.id}-${index}`}
+                className="flex-none w-[300px]"
+              >
                 <Card>
                   <CardContent className="p-4">
                     <Image
@@ -77,12 +87,10 @@ export default function RotatingProjects() {
                     </Button>
                   </CardContent>
                 </Card>
-              </CarouselItem>
+              </div>
             ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+          </div>
+        </div>
       </div>
     </section>
   )
