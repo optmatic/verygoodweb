@@ -9,7 +9,7 @@ interface SimpleContentProps {
   rightColumnContent: string;
   ctaText: string;
   ctaLink: string;
-  imageSrc: string;
+  imageSrc?: string;
   imageAlt?: string;
 }
 
@@ -20,8 +20,8 @@ export default function SimpleContent({
   rightColumnContent,
   ctaText,
   ctaLink,
-  imageSrc,
-  imageAlt = "",
+  // imageSrc,
+  // imageAlt = "",
 }: SimpleContentProps) {
   return (
     <div>

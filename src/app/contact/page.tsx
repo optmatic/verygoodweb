@@ -1,6 +1,6 @@
 "use client"
 
-import ContactUs from "@/components/ContactUs";
+import ContactUs from "@/componeeeents/ContactUs";
 import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 // import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 

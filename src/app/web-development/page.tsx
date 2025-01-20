@@ -3,7 +3,7 @@
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebDevFeature from "@/images/features/web-dev-abstraction.webp"
 import SubPageLayout from "@/app/layouts/SubPageLayout"
-import SimpleContent from "@/components/subpage-components/SimpleContent"
+import SimpleContent from "@/componeeeents/subpage-components/SimpleContent"
 const metadata = {
   title: "Web Development | Optmatic",
   description: "Web Development services for your business.",

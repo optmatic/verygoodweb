@@ -3,3 +3,8 @@
 @tailwind utilities;
 
 /* prose */
+
+.prose a {
+    @apply underline underline-offset-2 decoration-optBlue decoration-2;
+    @apply hover:text-deepBlue/70;
+}

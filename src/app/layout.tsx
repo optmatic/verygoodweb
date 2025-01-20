@@ -5,10 +5,10 @@ import "./css/prose.css";
 import "./css/topography.css";
 
 // import { Navbar } from "@/components/navigation/Navbar";
-import PrimaryNav from "@/components/navigation/PrimaryNav";
-import Footer from "@/components/navigation/ContactFooter";// import { GradientBackground } from "@/components/radiant/gradient";
+import PrimaryNav from "@/componeeeents/navigation/PrimaryNav";
+import Footer from "@/componeeeents/navigation/ContactFooter";// import { GradientBackground } from "@/components/radiant/gradient";
 import { Navigation } from "lucide-react";
-import FooterLight from "@/components/navigation/ContactFooterLight";
+import FooterLight from "@/componeeeents/navigation/ContactFooterLight";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

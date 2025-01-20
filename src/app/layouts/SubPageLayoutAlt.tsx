@@ -3,13 +3,13 @@
 import React, { useState, useEffect, type ReactNode } from "react";
 // import Image from "next/image";
 import Link from "next/link";
-import GradientButton3d from "@/components/optmatic/GradientButton";
+import GradientButton3d from "@/componeeeents/optmatic/GradientButton";
 import { ChevronRightIcon, HomeIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 // import { BuildingOfficeIcon, CreditCardIcon, UserIcon, UsersIcon } from '@heroicons/react/20/solid'
 import type { Metadata } from "next";
 import WaveBackground from "@/images/wave-bg.jpeg"
-import ContactUs from "@/components/ContactUs";
-import MinimalFooter from "@/components/navigation/MinimalFooter";
+import ContactUs from "@/componeeeents/ContactUs";
+import MinimalFooter from "@/componeeeents/navigation/MinimalFooter";
 
 interface BreadcrumbItem {
   label: string;

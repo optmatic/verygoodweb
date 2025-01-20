@@ -3,6 +3,8 @@
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebDevFeature from "@/images/features/web-app-feature-abstraction.webp"
 import SubPageLayout from "@/app/layouts/SubPageLayout"
+import SimpleContent from "@/componeeeents/subpage-components/SimpleContent";
+import RotatingProjects from "@/componeeeents/ui/rotating-projects";
 // import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 
 const metadata = {
@@ -34,9 +36,19 @@ export default function WebDevelopment() {
       buttonText="Request a Site Audit"
       buttonLink="/web-app-development"
     >
-      <div>
-        Your web application development content goes here
-      </div>
+    <SimpleContent 
+    badge="Deploy faster"
+    title="Expand your business capabilities"
+    leftColumnContent={`**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. _Lorem Ipsum_ has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, [remaining essentially unchanged](https://www.example.com).
+        `}
+              rightColumnContent={`Lorem Ipsum is simply dummy text of the **printing and typesetting industry**. _Lorem Ipsum_ has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the [this is a link](https://www.example.com) leap into electronic typesetting..
+`
+              }
+    ctaText="Learn More"
+    ctaLink="/web-app-development"
+   />
+         <RotatingProjects />
+
     </SubPageLayout>
   );
 }
