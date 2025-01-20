@@ -8,7 +8,7 @@ import { Container } from "@/components/radiant/container";
 // import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from 'react';
 import WaveBackground from "@/images/wave-bg.jpeg"
-import GradientButton3d from "../optmatic/GradientButton3d";
+import GradientButton3d from "../optmatic/GradientButton";
 
 
 const title1 = "Thrive in the";

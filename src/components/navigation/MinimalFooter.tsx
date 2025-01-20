@@ -1,4 +1,4 @@
-import GradientButton3d from '../optmatic/GradientButton3d'
+import GradientButton3d from '../optmatic/GradientButton'
 import OptmaticLogo from '@/images/optmatic-logo-dark.svg'
 import { GradientFooterBackground } from '../radiant/gradient'
   

@@ -3,8 +3,7 @@
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebDevFeature from "@/images/features/web-dev-abstraction.webp"
 import SubPageLayout from "@/app/layouts/SubPageLayout"
-import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
-
+import SimpleContent from "@/components/subpage-components/SimpleContent"
 const metadata = {
   title: "Web Development | Optmatic",
   description: "Web Development services for your business.",
@@ -34,9 +33,22 @@ export default function WebDevelopment() {
       buttonText="Request a Site Audit"
       buttonLink="/web-development"
     >
-      <div>
-        Your web development content goes here
-      </div>
+      <SimpleContent
+      badge="Channel your eliteness"
+      title="A better workflow"
+      leftColumnContent={`**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. _Lorem Ipsum_ has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, [remaining essentially unchanged](https://www.example.com).
+`}
+      rightColumnContent={`
+Another paragraph with markdown support.
+
+- List item 1
+- List item 2
+      `}
+      ctaText="Get started"
+      ctaLink="/get-started"
+      imageSrc="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png"
+      imageAlt="Screenshot of the project"
+    />
     </SubPageLayout>
   );
 }

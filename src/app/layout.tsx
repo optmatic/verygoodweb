@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Alegreya, Alegreya_Sans } from "next/font/google";
-import "./globals.css";
+import "./css/globals.css";
+import "./css/prose.css";
+import "./css/topography.css";
+
 // import { Navbar } from "@/components/navigation/Navbar";
 import PrimaryNav from "@/components/navigation/PrimaryNav";
 import Footer from "@/components/navigation/ContactFooter";// import { GradientBackground } from "@/components/radiant/gradient";

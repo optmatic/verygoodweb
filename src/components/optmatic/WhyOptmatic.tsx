@@ -1,6 +1,5 @@
 import WhyOptmaticImg from "@/images/wave-bg.jpeg"
-import GradientButton from "./GradientButton"
-import GradientButton3d from "./GradientButton3d"
+import GradientButton from "@/components/optmatic/GradientButton"
 
 export default function WhyOptmatic() {
     return (
@@ -22,7 +21,7 @@ export default function WhyOptmatic() {
             <p className="text-lg mb-12">
             Innovation doesn't have to come at a high cost. We offer affordable, high-quality services, ensuring your business thrives in the digital landscape without exceeding your budget.
             </p>
-            <GradientButton3d text="Book a Call" link="/contact" targetVal="_self"/>
+            <GradientButton text="Book a Call" link="/contact" targetVal="_self"/>
           </div>
         </div>
 
