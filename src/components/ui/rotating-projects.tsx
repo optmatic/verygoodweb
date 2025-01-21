@@ -3,52 +3,90 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import "../../app/css/rotations.css"
+import carcadia from "@/images/projects/carcadia.webp"
+import tprUI from "@/images/projects/tpr-ui.png"
+import rydeScreen from "@/images/projects/ryde-screen.webp"
+import rheumScreen from "@/images/projects/rheum-screen.webp"
+// import greenHorizons from "@/images/projects/green-horizons.png"
+import castflow from "@/images/projects/castflow-full.png"
 
-// Sample project data
-const projects = [
+type projectType = {
+  id: number
+  title?: string
+  alt?: string
+  tags?: string[]
+  image?: any
+  preview?: string
+  caption?: string
+  link?: string
+  scrollable?: boolean
+  objectFit?: 'cover' | 'contain'
+}
+
+// Project data
+const projects: projectType[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Carcadia",
+    image: carcadia.src,
+    // preview: "https://carcadia.com.au",
     caption: "A fully responsive online store with integrated payment systems.",
-    link: "#",
+    tags: ["e-commerce", "shopify"],
+    scrollable: true,
+    objectFit: 'cover',
+    // link: "#",
   },
   {
     id: 2,
-    title: "Portfolio Website",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "RYDE Realty",
+    image: rydeScreen.src,
+    // preview: "https://ryde.com.au",
     caption: "A sleek, modern portfolio for a digital artist showcasing their work.",
-    link: "#",
+    tags: ["real estate", "react", "tailwind"],
+    scrollable: true,
+    objectFit: 'cover',
+    
+    // link: "#",
   },
   {
     id: 3,
-    title: "Booking System",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "River City Rheumatology",
+    image: rheumScreen.src,
     caption: "An efficient booking system for a local spa with real-time availability.",
-    link: "#",
+    tags: ["web development", "react", "tailwind"],
+    scrollable: true,
+    objectFit: 'contain',
+    // link: "#",
   },
   {
     id: 4,
-    title: "Social Media Dashboard",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "TutorPro Resources",
+    image: tprUI.src,
     caption: "A comprehensive dashboard for managing multiple social media accounts.",
-    link: "#",
+    tags: ["landing page", "react", "tailwind"],
+    // link: "#",
+    scrollable: false,
+    objectFit: 'cover',
   },
+  // {
+  //   id: 5,
+  //   title: "Green Horizons",
+  //   image: greenHorizons.src,
+  //   caption: "A mobile app for tracking workouts and nutrition with personalized plans.",
+  //   // link: "#",
+  //   scrollable: false,
+  // },
   {
     id: 5,
-    title: "Fitness Tracking App",
-    image: "/placeholder.svg?height=200&width=300",
-    caption: "A mobile app for tracking workouts and nutrition with personalized plans.",
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "Educational Platform",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Castflow.io",
+    image: castflow.src,
     caption: "An interactive learning platform with courses, quizzes, and progress tracking.",
-    link: "#",
+    // link: "#",
+    tags: ["landing page", "astro", "tailwind"],
+    scrollable: true,
+    objectFit: 'cover',
   },
 ]
 
@@ -57,10 +95,10 @@ export default function RotatingProjects() {
 
   return (
     <section className="w-full py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Our Past Projects</h2>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-start mb-8 underline underline-offset-4 decoration-optBlue decoration-4">Recent work</h2>
         <div 
-          className="relative"
+          className="relative px-4"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -73,18 +111,35 @@ export default function RotatingProjects() {
               >
                 <Card>
                   <CardContent className="p-4">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={300}
-                      height={200}
-                      className="rounded-lg mb-4 w-full h-auto"
-                    />
-                    <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                    <div className={`relative w-full h-[200px] mb-4 rounded-lg overflow-hidden ${
+                      project.scrollable ? 'hover:overflow-y-auto' : 'overflow-hidden'
+                    }`}>
+                      <div className={`relative w-full hover:cursor-ns-resize border border-deepBlue rounded-lg ${
+                        project.scrollable ? 'aspect-[1/3]' : 'h-[200px]'
+                      }`}>
+                        <Image
+                          src={project.image || ''}
+                          alt={project.title || ''}
+                          fill
+                          className={`rounded-lg ${project.scrollable ? 'object-top' : 'object-center'} ${
+                            project.objectFit ? `object-${project.objectFit}` : 'object-contain'
+                          }`}
+                          sizes="300px"
+                        />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 underline underline-offset-2 decoration-optBlue decoration-2">{project.title}</h3>
                     <p className="text-sm text-gray-600 mb-4">{project.caption}</p>
-                    <Button asChild size="sm" className="w-full">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags?.map((tag, index) => (
+                        <span key={`${tag}-${index}`} className="capitalize text-xs bg-optBlue/10 border border-deepBlue/20 px-2 py-1 rounded-md">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {/* <Button asChild size="sm" className="w-full">
                       <a href={project.link}>Read More</a>
-                    </Button>
+                    </Button> */}
                   </CardContent>
                 </Card>
               </div>

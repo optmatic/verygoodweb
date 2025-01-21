@@ -10,8 +10,8 @@ export const mainMenuItems = [
     href: '/e-commerce',
   },
   {
-    name: 'Contact Us',
-    href: '/contact',
+    name: 'More Info',
+    href: '/more-info',
   },
 ]
 

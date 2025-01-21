@@ -4,6 +4,7 @@ import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebDevFeature from "@/images/features/web-dev-abstraction.webp"
 import SubPageLayout from "@/app/layouts/SubPageLayout"
 import SimpleContent from "@/components/subpage-components/SimpleContent"
+import RotatingProjects from "@/components/ui/rotating-projects";
 const metadata = {
   title: "Web Development | Optmatic",
   description: "Web Development services for your business.",
@@ -49,6 +50,8 @@ Another paragraph with markdown support.
       imageSrc="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png"
       imageAlt="Screenshot of the project"
     />
+    <hr className="mt-10"/>
+             <RotatingProjects />
     </SubPageLayout>
   );
 }

@@ -2,6 +2,7 @@
 
 import ContactUs from "@/components/ContactUs";
 import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
+import DarkButton from "@/components/optmatic/DarkButton";
 // import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 
 
@@ -23,9 +24,9 @@ export default function WebDevelopment() {
   return (
     <SubPageLayoutAlt
       breadcrumbPath={[
-        { label: "Contact", href: "/contact" }]}
+        { label: "More Info", href: "/more-info" }]}
       metadata={metadata}
-      title="Contact us today"
+      title="Important Information"
       subtitle="We offer a range of web development services to help you achieve your business goals."
       // activeComponentId="web-development"
       // availableComponents={components}
@@ -33,6 +34,8 @@ export default function WebDevelopment() {
     //   imageAlt="Web Development Feature Image"
     >
       <ContactUs />
+      <hr className="my-10 border-deepBlue"/>
+      <DarkButton link="/contact" text="Download our price list" /> 
     </SubPageLayoutAlt>
   );
 }
