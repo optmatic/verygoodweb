@@ -8,3 +8,33 @@
     @apply underline underline-offset-2 decoration-optBlue decoration-2;
     @apply hover:text-deepBlue/70;
 }
+
+.prose p {
+    @apply text-deepBlue;
+    @apply leading-normal;
+}
+
+.prose ul {
+  padding-left: 0;
+}
+.prose li::marker {
+    @apply text-deepBlue;
+}
+
+.prose ul > li {
+    list-style: none;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.prose ul > li::before {
+    content: '';
+    background-image: url('/crane.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.8em;
+    height: 0.8em;
+}
