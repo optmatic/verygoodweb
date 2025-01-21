@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.faq-question {
+    @apply text-xl font-sans font-semibold;
+    @apply hover:no-underline;
+}
+
+.faq-answer {
+    @apply text-sm;
+}

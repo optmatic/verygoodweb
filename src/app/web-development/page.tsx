@@ -60,7 +60,7 @@ Another paragraph with markdown support.
     />
     <hr className="mt-10"/>
     <RotatingProjects />
-    <Faqs darkMode={true} faqs={faqs} />
+    <Faqs darkMode={false} faqs={faqs} />
     </SubPageLayout>
   );
 }
