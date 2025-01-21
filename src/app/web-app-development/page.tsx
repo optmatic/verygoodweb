@@ -1,6 +1,6 @@
 "use client"
 
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
+// import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebDevFeature from "@/images/features/web-app-feature-abstraction.webp"
 import SubPageLayout from "@/app/layouts/SubPageLayout"
 import SimpleContent from "@/components/subpage-components/SimpleContent";
@@ -13,14 +13,14 @@ const metadata = {
 }
 
 export default function WebDevelopment() {
-  const components = [
+  // const components = [
     
-    {
-      id: "web-development",
-      name: "Web Development",
-      icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
-    }
-  ]
+  //   {
+  //     id: "web-development",
+  //     name: "Web Development",
+  //     icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
+  //   }
+  // ]
 
   return (
     <SubPageLayout

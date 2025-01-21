@@ -8,7 +8,7 @@ import { ChevronRightIcon, HomeIcon, ChevronDownIcon } from '@heroicons/react/20
 // import { BuildingOfficeIcon, CreditCardIcon, UserIcon, UsersIcon } from '@heroicons/react/20/solid'
 import type { Metadata } from "next";
 import WaveBackground from "@/images/wave-bg.jpeg"
-import ContactUs from "@/components/ContactUs";
+// import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/navigation/ContactFooterLight";
 
 interface BreadcrumbItem {

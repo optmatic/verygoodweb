@@ -19,7 +19,7 @@ export default function WhyOptmatic() {
             At Optmatic, we specialise in crafting bespoke digital strategies tailored to your unique goals. Every solution is designed to enhance your online presence and deliver measurable results.
             </p>
             <p className="text-lg mb-12">
-            Innovation doesn't have to come at a high cost. We offer affordable, high-quality services, ensuring your business thrives in the digital landscape without exceeding your budget.
+            Innovation doesn&apos;t have to come at a high cost. We offer affordable, high-quality services, ensuring your business thrives in the digital landscape without exceeding your budget.
             </p>
             <GradientButton text="Book a Call" link="/contact" targetVal="_self"/>
           </div>

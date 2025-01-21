@@ -1,5 +1,5 @@
 import InsightsImg from '@/images/insights-img.jpeg'
-import GradientHeading from './GradientHeading';
+// import GradientHeading from './GradientHeading';
 
 interface GridItem {
   title: string;

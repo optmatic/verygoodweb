@@ -1,6 +1,6 @@
 import ReactMarkdown from 'react-markdown';
 
-import BlackButton from '../optmatic/DarkButton';
+// import BlackButton from '../optmatic/DarkButton';
 import LightButton from '../optmatic/LightButton';
 
 interface SimpleContentProps {

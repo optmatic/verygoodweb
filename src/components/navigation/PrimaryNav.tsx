@@ -1,6 +1,6 @@
 'use client'
 
-import { SquaresPlusIcon, CursorArrowRaysIcon, HomeIcon,DocumentIcon, ChatBubbleBottomCenterIcon, Square2StackIcon, GlobeAltIcon, FingerPrintIcon, BellIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
+// import { SquaresPlusIcon, CursorArrowRaysIcon, HomeIcon,DocumentIcon, ChatBubbleBottomCenterIcon, Square2StackIcon, GlobeAltIcon, FingerPrintIcon, BellIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
 import { useRef, useEffect } from 'react'
 import PrimaryButton from '@/components/optmatic/GradientButton'
 import Image from 'next/image'
@@ -49,7 +49,7 @@ export default function PrimaryNav() {
       <div className="mx-auto max-w-7xl">
         <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
           <div>
-            <a href="/" className="optmatic-logo flex">
+            <Link href="/" className="optmatic-logo flex">
               <span className="sr-only">Your Company</span>
               <Image
                 alt=""
@@ -58,7 +58,7 @@ export default function PrimaryNav() {
                 width={250}
                 height={80}
               />
-            </a>
+            </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <button 

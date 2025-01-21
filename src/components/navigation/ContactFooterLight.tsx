@@ -13,7 +13,7 @@ import { GradientFooterBackground } from '../radiant/gradient'
               Ready to discuss your project? Let&apos;s get started.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg/8 text-deepBlue">
-              Excited to bring your vision to life? Let's kick off your project with a conversation!
+              Excited to bring your vision to life? Let&apos;s kick off your project with a conversation!
             </p>
             <div className="mt-8 flex justify-center">
               <GradientButton3d text="Get started" link="/contact" />

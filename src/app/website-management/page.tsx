@@ -1,6 +1,6 @@
 "use client"
 
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
+// import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebsiteManagementFeature from "@/images/features/website-mgmt-feature-abstract.webp"
 import SubPageLayout from "@/app/layouts/SubPageLayout"
 // import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
@@ -11,14 +11,14 @@ const metadata = {
 }
 
 export default function WebsiteManagement() {
-  const components = [
+  // const components = [
     
-    {
-      id: "website-management",
-      name: "Website Management",
-      icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
-    }
-  ]
+  //   {
+  //     id: "website-management",
+  //     name: "Website Management",
+  //     icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
+  //   }
+  // ]
 
   return (
     <SubPageLayout

@@ -1,6 +1,6 @@
 "use client"
 
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
+// import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WordPressSolutionsFeature from "@/images/features/wordpress-feature-abstraction.webp"
 import SubPageLayout from "@/app/layouts/SubPageLayout"
 // import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
@@ -11,14 +11,14 @@ const metadata = {
 }
 
 export default function WordPressSolutions() {
-  const components = [
+  // const components = [
     
-    {
-      id: "wordpress-solutions",
-      name: "WordPress Solutions",
-      icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
-    }
-  ]
+  //   {
+  //     id: "wordpress-solutions",
+  //     name: "WordPress Solutions",
+  //     icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
+  //   }
+  // ]
 
   return (
     <SubPageLayout

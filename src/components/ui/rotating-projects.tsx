@@ -17,7 +17,7 @@ type projectType = {
   title?: string
   alt?: string
   tags?: string[]
-  image?: any
+  image?: string
   preview?: string
   caption?: string
   link?: string

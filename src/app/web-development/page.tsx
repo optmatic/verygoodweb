@@ -1,24 +1,32 @@
 "use client"
 
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
+// import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebDevFeature from "@/images/features/web-dev-abstraction.webp"
 import SubPageLayout from "@/app/layouts/SubPageLayout"
 import SimpleContent from "@/components/subpage-components/SimpleContent"
 import RotatingProjects from "@/components/ui/rotating-projects";
+import Faqs from "@/components/ui/faqs";
 const metadata = {
   title: "Web Development | Optmatic",
   description: "Web Development services for your business.",
 }
 
+const faqs = [
+  {
+    question: "What is web development?",
+    answer: "Web development is the process of creating websites and web applications."
+  }
+]
+
 export default function WebDevelopment() {
-  const components = [
+  // const components = [
     
-    {
-      id: "web-development",
-      name: "Web Development",
-      icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
-    }
-  ]
+  //   {
+  //     id: "web-development",
+  //     name: "Web Development",
+  //     icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
+  //   }
+  // ]
 
   return (
     <SubPageLayout
@@ -52,6 +60,9 @@ Another paragraph with markdown support.
     />
     <hr className="mt-10"/>
              <RotatingProjects />
+    <hr className="my-10 border-deepBlue"/>
+    <Faqs darkMode={true} faqs={faqs} />
     </SubPageLayout>
   );
 }
+

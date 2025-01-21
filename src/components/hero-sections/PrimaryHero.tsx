@@ -6,7 +6,7 @@ import { Container } from "@/components/radiant/container";
 // import { Navbar } from "@/components/navigation/Navbar";
 // import { Button } from "@/components/radiant/button";
 // import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import WaveBackground from "@/images/wave-bg.jpeg"
 import GradientButton3d from "../optmatic/GradientButton";
 
@@ -16,7 +16,6 @@ const title2 = " ever-evolving";
 const title3 = " digital ecosystem.";
 
 export default function PrimaryHero() {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const rotatingWords = [
     { text: 'E-commerce', link: '/e-commerce' },
     { text: 'Web Development', link: '/web-development' },
@@ -24,14 +23,6 @@ export default function PrimaryHero() {
     { text: 'WordPress', link: '/wordpress' },
     { text: 'Web Applications', link: '/web-applications' }
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWordIndex((current) => (current + 1) % rotatingWords.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [rotatingWords.length]);
 
   return (
     <div className="relative bg-deepBlue overflow-x-hidden overflow-y-hidden">
