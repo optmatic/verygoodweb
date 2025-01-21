@@ -16,7 +16,7 @@ interface FAQAccordionProps {
 export default function FAQAccordion({ faqs = [], darkMode = false }: FAQAccordionProps) {
   return (
     <div
-      className={`w-full max-w-2xl mx-auto p-6 rounded-lg ${darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"}`}
+      className={`w-full max-w-7xl mx-auto p-6 ${darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"}`}
     >
       <h2 className={`text-2xl font-bold mb-6 ${darkMode ? "text-white" : "text-gray-900"}`}>
         Frequently Asked Questions

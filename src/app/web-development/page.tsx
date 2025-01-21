@@ -59,8 +59,7 @@ Another paragraph with markdown support.
       imageAlt="Screenshot of the project"
     />
     <hr className="mt-10"/>
-             <RotatingProjects />
-    <hr className="my-10 border-deepBlue"/>
+    <RotatingProjects />
     <Faqs darkMode={true} faqs={faqs} />
     </SubPageLayout>
   );
