@@ -5,8 +5,11 @@
 .faq-question {
     @apply text-xl font-sans font-semibold;
     @apply hover:no-underline;
+    @apply text-black;
 }
 
+
 .faq-answer {
-    @apply text-sm;
+    @apply text-base;
+    @apply text-black;
 }

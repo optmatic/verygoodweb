@@ -91,19 +91,12 @@ const projects: projectType[] = [
 ]
 
 export default function RotatingProjects() {
-  const [isPaused, setIsPaused] = useState(false)
-
   return (
-    <section className="w-full py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full py-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold text-start mb-8 underline underline-offset-4 decoration-optBlue decoration-4">Recent work</h2>
-        <div 
-          className="relative px-4"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          <div className={`flex gap-4 animate-scroll ${isPaused ? 'pause-animation' : ''}`}>
-            {/* Double the projects array to create seamless loop */}
+        <div className="relative overflow-hidden">
+          <div className="flex gap-4 animate-scroll hover:[animation-play-state:paused] w-fit">
             {[...projects, ...projects].map((project, index) => (
               <div 
                 key={`${project.id}-${index}`}

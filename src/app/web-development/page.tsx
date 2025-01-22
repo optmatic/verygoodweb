@@ -6,10 +6,37 @@ import SubPageLayout from "@/app/layouts/SubPageLayout"
 import SimpleContent from "@/components/subpage-components/SimpleContent"
 import RotatingProjects from "@/components/ui/rotating-projects";
 import Faqs from "@/components/ui/faqs";
+import FeatureSection from "@/components/optmatic/web-dev/FeatureSection3x2";
+import TechUsedDark from "@/components/optmatic/TechUsedDark";
+
 const metadata = {
   title: "Web Development | Optmatic",
   description: "Web Development services for your business.",
 }
+
+const features = [
+  {
+    name: "Custom web solutions tailored to your business needs",
+    description: "We create websites that are tailored to your business needs, ensuring that they are functional and efficient."
+  }, 
+  {
+    name: "Enhanced website performance for an improved user experience",
+    description: "We improve the performance of your website, ensuring that it is fast and efficient."
+  }, 
+  {
+    name: "Expert guidance throughout the development journey",
+    description: "We provide expert guidance throughout the development journey, ensuring that you are always informed and supported."
+  }, 
+  {
+    name: "Regular updates, maintenance, and post-launch support",
+    description: "We provide regular updates, maintenance, and post-launch support, ensuring that your website is always up to date and performing at its best."
+  }, 
+  {
+    name: "Regular updates, maintenance, and post-launch support",
+    description: "We provide regular updates, maintenance, and post-launch support, ensuring that your website is always up to date and performing at its best."
+  }, 
+  {}
+]
 
 const faqs = [
   {
@@ -17,6 +44,8 @@ const faqs = [
     answer: "Web development is the process of creating websites and web applications."
   }
 ]
+
+
 
 export default function WebDevelopment() {
   // const components = [
@@ -44,7 +73,7 @@ export default function WebDevelopment() {
     >
       <SimpleContent
       badge="Optimise Your Digital Presence"
-      title="A Streamlined Workflow"
+      title="Efficiency at Every Step"
       leftColumnContent={`We simplify the web development process to ensure it's smooth and efficient, saving you time and resources whilst delivering outstanding results.
 
 **With our services, you'll benefit from:**
@@ -62,9 +91,18 @@ Ready to elevate your digital presence? Let's collaborate to create a high-perfo
       imageSrc="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png"
       imageAlt="Screenshot of the project"
     />
-    <hr className="mt-10"/>
-    <RotatingProjects />
+    <FeatureSection 
+      darkMode={false}
+      features={features}
+      title="Everything you need"
+      subtitle="No server? No problem."
+      description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis."
+    />
+    <TechUsedDark />
+    <div className="mt-12">
     <Faqs darkMode={false} faqs={faqs} />
+    </div>
+    <RotatingProjects />
     </SubPageLayout>
   );
 }

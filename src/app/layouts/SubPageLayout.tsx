@@ -337,7 +337,7 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
 
 
       <main className="flex-grow">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+        <div className="py-16">
           {wrapChildrenWithAnchors(children)}
         </div>
       </main>
