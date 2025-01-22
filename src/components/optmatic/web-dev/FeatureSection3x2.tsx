@@ -18,26 +18,27 @@ import React from 'react'
   interface FeatureSectionProps {
     features?: FeatureItem[]
     darkMode?: boolean
-    title?: string
-    subtitle?: string
-    description?: string
+    title: string
+    subtitle: string
+    description: string
   }
   
   export default function FeatureSection({ 
     features = [], 
     darkMode = false,
-    title = "Everything you need",
-    subtitle = "No server? No problem.",
-    description = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis."
+    title,
+    subtitle,
+    description
   }: FeatureSectionProps) {
     return (
       <div className={`${darkMode ? 'bg-gray-900' : 'bg-white'} py-24 sm:py-32`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-base/7 font-semibold text-indigo-400">{title}</h2>
-            <p className={`mt-2 text-pretty text-4xl font-semibold tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'} sm:text-5xl`}>
-              {subtitle}
-            </p>
+          <p className="subheading text-base/7 font-semibold">{subtitle}</p>
+          <hr className="mt-2 mb-6" />
+          <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-deepBlue sm:text-5xl">
+            {title}
+          </h1>
             <p className={`mt-6 text-lg/8 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               {description}
             </p>

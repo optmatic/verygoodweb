@@ -8,6 +8,8 @@
   @apply bg-gradient-to-r from-optGreen to-optBlue bg-clip-text text-transparent;
 }
 
+
+
 @layer components {
   .gradient-text {
     @apply bg-gradient-to-r from-optGreen to-optBlue bg-clip-text text-transparent;
@@ -16,6 +18,11 @@
 
 .primary-nav a, .primary-nav button {
 @apply text-white hover:text-white shadow-sm shadow-deepBlue/10 rounded-md hover:shadow-optBlue/25 hover:no-underline;
+}
+
+/* Add this new rule to override the text-white for gradient-text links */
+.primary-nav a.gradient-text {
+  @apply bg-gradient-to-r from-optGreen to-optBlue bg-clip-text text-transparent hover:text-transparent;
 }
 
 /* exception for logo */

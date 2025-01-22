@@ -1,9 +1,18 @@
 // import { SquaresPlusIcon, GlobeAltIcon } from '@heroicons/react/24/outline'
 
 export const mainMenuItems = [
+ 
   {
     name: 'Web Development',
-    href: '#',
+    href: '/web-development',
+    hasDropdown: false,
+  },
+  {
+    name: 'E-commerce',
+    href: '/e-commerce',
+    hasDropdown: false
+  }, {
+    name: 'More',
     hasDropdown: true,
     dropdownItems: [
       {
@@ -20,32 +29,14 @@ export const mainMenuItems = [
         name: 'WordPress Solutions',
         description: 'Expert WordPress development and customization',
         href: '/wordpress-solutions',
+      }, 
+      {
+        name: 'Important Information',
+        description: 'Important information about our services',
+        href: '/more-info',
       }
+
     ]
-  },
-  {
-    name: 'E-commerce',
-    href: '/e-commerce',
-    hasDropdown: false
-  },
-  {
-    name: 'More Info',
-    href: '/more-info',
-    hasDropdown: false
   },
 ]
 
-export const webDevelopmentMenuItems = [
-  {
-    name: 'Web App Development',
-    href: '/web-app-development',
-  },
-  {
-    name: 'Site Management',
-    href: '/website-management',
-  },
-  {
-    name: 'WordPress Solutions',
-    href: '/wordpress-solutions',
-  }
-]

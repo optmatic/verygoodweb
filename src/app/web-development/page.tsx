@@ -94,8 +94,8 @@ Ready to elevate your digital presence? Let's collaborate to create a high-perfo
     <FeatureSection 
       darkMode={false}
       features={features}
-      title="Everything you need"
-      subtitle="No server? No problem."
+      title="Everything you H"
+      subtitle="GET. SET. GO."
       description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis."
     />
     <TechUsedDark />

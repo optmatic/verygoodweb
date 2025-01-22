@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { mainMenuItems } from '@/config/navConfig'
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { usePathname } from 'next/navigation'
 
 import Logo from '@/images/optmatic-logo.svg'
 
@@ -21,11 +22,14 @@ const resources = [
 ]
 
 import { useState } from 'react'
+import LightButton from '../optmatic/LightButton'
+import DarkButton from '../optmatic/DarkButton'
 
 export default function PrimaryNav() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -48,13 +52,13 @@ export default function PrimaryNav() {
     <header className="primary-nav relative bg-slightBlue sticky top-0 z-50 shadow-md shadow-optBlue/5 w-full">
       <div className="mx-auto max-w-7xl">
         <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
-          <div>
+          <div className="flex-shrink-0">
             <Link href="/" className="optmatic-logo flex">
               <span className="sr-only">Your Company</span>
               <Image
                 alt=""
                 src={Logo.src}
-                className="md:mr-10"
+                
                 width={250}
                 height={80}
               />
@@ -70,8 +74,8 @@ export default function PrimaryNav() {
               <Bars3Icon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
-          <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
-            <div className="flex space-x-2">
+          <div className="hidden md:flex md:flex-1 md:items-center">
+            <div className="flex flex-1 justify-center space-x-2">
               {mainMenuItems.map((item) => (
                 <div key={item.name} className="h-10 flex items-center">
                   {item.hasDropdown ? (
@@ -93,14 +97,14 @@ export default function PrimaryNav() {
                           <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
                             <div className="relative grid bg-deepBlue py-4 sm:gap-8 sm:px-4 sm:py-4">
                               {item.dropdownItems.map((dropdownItem) => (
-                                <a
+                                <Link
                                   key={dropdownItem.name}
-                                  href={dropdownItem.href}
+                                  href={dropdownItem.href || '#'}
                                   className="-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue"
                                 >
                                   <p className="text-md font-semibold text-white">{dropdownItem.name}</p>
                                   <p className="text-sm text-white/80">{dropdownItem.description}</p>
-                                </a>
+                                </Link>
                               ))}
                             </div>
                           </div>
@@ -109,8 +113,12 @@ export default function PrimaryNav() {
                     </div>
                   ) : (
                     <Link
-                      href={item.href}
-                      className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3"
+                      href={item.href || '#'}
+                      className={`text-md font-semibold ${
+                        pathname === item.href 
+                          ? 'gradient-text hover:no-underline' 
+                          : 'text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2'
+                      } py-2 px-3`}
                     >
                       {item.name}
                     </Link>
@@ -118,9 +126,9 @@ export default function PrimaryNav() {
                 </div>
               ))}
             </div>
-            <div className="flex items-center md:ml-12">
+            <div className="flex justify-end items-center ml-6">
               <div className="hidden lg:block">
-                <PrimaryButton text="Schedule a Call" link="/contact" targetVal="_self" type="primary" />
+                <PrimaryButton text="Contact us" link="/contact" targetVal="_self" type="primary" />
               </div>
             </div>
           </div>
@@ -160,13 +168,36 @@ export default function PrimaryNav() {
                 <div className="mt-6">
                   <nav className="grid gap-6">
                     {mainMenuItems.map((item) => (
-                      <Link 
-                        key={item.name} 
-                        href={item.href} 
-                        className="text-base font-semibold text-gray-900 hover:text-gray-700"
-                      >
-                        {item.name}
-                      </Link>
+                      <div key={item.name}>
+                        {item.hasDropdown && item.dropdownItems ? (
+                          <>
+                            {item.dropdownItems.map((dropdownItem) => (
+                              <Link 
+                                key={dropdownItem.name} 
+                                href={dropdownItem.href || '#'}
+                                className={`text-base font-semibold ${
+                                  pathname === dropdownItem.href 
+                                    ? 'gradient-text' 
+                                    : 'text-gray-900 hover:text-gray-700'
+                                }`}
+                              >
+                                {dropdownItem.name}
+                              </Link>
+                            ))}
+                          </>
+                        ) : (
+                          <Link 
+                            href={item.href || '#'}
+                            className={`text-base font-semibold ${
+                              pathname === item.href 
+                                ? 'gradient-text' 
+                                : 'text-gray-900 hover:text-gray-700'
+                            }`}
+                          >
+                            {item.name}
+                          </Link>
+                        )}
+                      </div>
                     ))}
                   </nav>
                 </div>
@@ -183,7 +214,15 @@ export default function PrimaryNav() {
                     Contact Us
                   </a>
                   {resources.map((item) => (
-                    <Link key={item.name} href={item.href} className="text-base font-semibold text-gray-900 hover:text-gray-700">
+                    <Link 
+                      key={item.name} 
+                      href={item.href || '#'}
+                      className={`text-base font-semibold ${
+                        pathname === item.href 
+                          ? 'gradient-text' 
+                          : 'text-gray-900 hover:text-gray-700'
+                      }`}
+                    >
                       {item.name}
                     </Link>
                   ))}
