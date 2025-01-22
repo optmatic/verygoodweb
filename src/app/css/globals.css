@@ -94,7 +94,7 @@ p, nav {
   }
 
   & hr {
-    @apply mt-2 mb-6;
+    @apply mt-2 mb-6 border-deepBlue/40;
   }
 }
 

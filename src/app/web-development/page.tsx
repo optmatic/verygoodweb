@@ -2,12 +2,13 @@
 
 // import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebDevFeature from "@/images/features/web-dev-abstraction.webp"
-import SubPageLayout from "@/app/layouts/SubPageLayout"
+import SubPageLayoutAlt from "@/app/layouts/SubPageLayoutAlt"
 import SimpleContent from "@/components/subpage-components/SimpleContent"
 import RotatingProjects from "@/components/ui/rotating-projects";
 import Faqs from "@/components/ui/faqs";
 import FeatureSection from "@/components/optmatic/web-dev/FeatureSection3x2";
 import TechUsedDark from "@/components/optmatic/TechUsedDark";
+import MinimalFooter from "@/components/navigation/MinimalFooter";
 
 const metadata = {
   title: "Web Development | Optmatic",
@@ -58,7 +59,7 @@ export default function WebDevelopment() {
   // ]
 
   return (
-    <SubPageLayout
+    <SubPageLayoutAlt
       breadcrumbPath={[
         { label: "Web Development", href: "/web-development" }]}
       metadata={metadata}
@@ -91,19 +92,21 @@ Ready to elevate your digital presence? Let's collaborate to create a high-perfo
       imageSrc="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png"
       imageAlt="Screenshot of the project"
     />
-    <FeatureSection 
+    {/* <FeatureSection 
       darkMode={false}
       features={features}
       title="Everything you H"
       subtitle="GET. SET. GO."
       description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis."
-    />
-    <TechUsedDark />
-    <div className="mt-12">
-    <Faqs darkMode={false} faqs={faqs} />
-    </div>
-    <RotatingProjects />
-    </SubPageLayout>
+    /> */}
+    {/* <TechUsedDark /> */}
+    {/* <div className="mt-12"> */}
+    {/* <Faqs darkMode={false} faqs={faqs} /> */}
+    {/* </div> */}
+    {/* <RotatingProjects /> */}
+    </SubPageLayoutAlt>
+
   );
 }
+
 

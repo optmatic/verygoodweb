@@ -341,7 +341,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
           {wrapChildrenWithAnchors(children)}
         </div>
       </main>
-      <MinimalFooter />
+      <MinimalFooter isDark={true} />
     </div>
   );
 };
