@@ -5,7 +5,7 @@ import { useRef, useEffect } from 'react'
 import PrimaryButton from '@/components/optmatic/GradientButton'
 import Image from 'next/image'
 import Link from 'next/link'
-import { mainMenuItems, moreMenuItems } from '@/config/navConfig'
+import { mainMenuItems } from '@/config/navConfig'
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import Logo from '@/images/optmatic-logo.svg'
@@ -23,7 +23,7 @@ const resources = [
 import { useState } from 'react'
 
 export default function PrimaryNav() {
-  const [morePopoverOpen, setMorePopoverOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
@@ -74,48 +74,49 @@ export default function PrimaryNav() {
             <div className="flex space-x-2">
               {mainMenuItems.map((item) => (
                 <div key={item.name} className="h-10 flex items-center">
-                  <Link 
-                    href={item.href} 
-                    className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3"
-                  >
-                    {item.name}
-                  </Link>
-                </div>  
-              ))}
-              <div className="h-10 flex items-center">
-                <div 
-                  className="relative"
-                  onMouseEnter={() => setMorePopoverOpen(true)}
-                  onMouseLeave={() => setMorePopoverOpen(false)}
-                >
-                  <button className="group inline-flex items-center rounded-md text-md font-semibold text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 data-[open]:text-white py-2 px-3">
-                    <span>Other Services</span>
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className="ml-2 h-5 w-5 text-white group-hover:text-white/80 group-data-[open]:text-gray-600 group-data-[open]:group-hover:text-gray-500"
-                    />
-                  </button>
+                  {item.hasDropdown ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setActiveDropdown(item.name)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                    >
+                      <button className="group inline-flex items-center rounded-md text-md font-semibold text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 py-2 px-3">
+                        <span>{item.name}</span>
+                        <ChevronDownIcon
+                          aria-hidden="true"
+                          className="ml-2 h-5 w-5 text-white group-hover:text-white/80"
+                        />
+                      </button>
 
-                  {morePopoverOpen && (
-                    <div className="more-menu absolute z-10 mt-0 pt-2 left-1/2 w-screen max-w-xs -translate-x-1/2 transform px-2 transition">
-                      <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
-                        <div className="relative grid bg-deepBlue py-4 sm:gap-8 sm:px-4 sm:py-4">
-                          {moreMenuItems.map((item) => (
-                            <a 
-                              key={item.name} 
-                              href={item.href} 
-                              className="-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue"
-                            >
-                              <p className="more-name text-md font-semibold text-white">{item.name}</p>
-                              <p className="more-description text-sm text-white/80">{item.description}</p>
-                            </a>
-                          ))}
+                      {activeDropdown === item.name && item.dropdownItems && (
+                        <div className="absolute z-10 mt-0 pt-2 w-screen max-w-xs -translate-x-1/4 transform px-2 transition">
+                          <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
+                            <div className="relative grid bg-deepBlue py-4 sm:gap-8 sm:px-4 sm:py-4">
+                              {item.dropdownItems.map((dropdownItem) => (
+                                <a
+                                  key={dropdownItem.name}
+                                  href={dropdownItem.href}
+                                  className="-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue"
+                                >
+                                  <p className="text-md font-semibold text-white">{dropdownItem.name}</p>
+                                  <p className="text-sm text-white/80">{dropdownItem.description}</p>
+                                </a>
+                              ))}
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-md font-semibold text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2 py-2 px-3"
+                    >
+                      {item.name}
+                    </Link>
                   )}
                 </div>
-              </div>
+              ))}
             </div>
             <div className="flex items-center md:ml-12">
               <div className="hidden lg:block">
@@ -159,15 +160,6 @@ export default function PrimaryNav() {
                 <div className="mt-6">
                   <nav className="grid gap-6">
                     {mainMenuItems.map((item) => (
-                      <Link 
-                        key={item.name} 
-                        href={item.href} 
-                        className="text-base font-semibold text-gray-900 hover:text-gray-700"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                    {moreMenuItems.map((item) => (
                       <Link 
                         key={item.name} 
                         href={item.href} 

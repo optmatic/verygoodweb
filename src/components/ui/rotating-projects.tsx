@@ -99,13 +99,13 @@ export default function RotatingProjects() {
         <h2 className="text-4xl md:text-5xl font-bold text-start mb-8 underline underline-offset-4 decoration-optBlue decoration-4">Recent work</h2>
         <div className="relative overflow-hidden">
           <div 
-            className="flex gap-4 w-fit hover:pause-animation"
+            className="flex gap-4 w-fit [&:hover>*]:hover:pause"
             style={{ animation: 'scroll 60s linear infinite' }}
           >
             {[...projects, ...projects].map((project, index) => (
               <div 
                 key={`${project.id}-${index}`}
-                className="flex-none w-[300px]"
+                className="flex-none w-[300px] animate-scroll"
               >
                 <Card>
                   <CardContent className="p-4">

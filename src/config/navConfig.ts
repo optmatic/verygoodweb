@@ -3,32 +3,49 @@
 export const mainMenuItems = [
   {
     name: 'Web Development',
-    href: '/web-development',
+    href: '#',
+    hasDropdown: true,
+    dropdownItems: [
+      {
+        name: 'Web App Development',
+        description: 'Custom web applications tailored to your needs',
+        href: '/web-app-development',
+      },
+      {
+        name: 'Site Management',
+        description: 'Comprehensive website maintenance and updates',
+        href: '/website-management',
+      },
+      {
+        name: 'WordPress Solutions',
+        description: 'Expert WordPress development and customization',
+        href: '/wordpress-solutions',
+      }
+    ]
   },
   {
     name: 'E-commerce',
     href: '/e-commerce',
+    hasDropdown: false
   },
   {
     name: 'More Info',
     href: '/more-info',
+    hasDropdown: false
   },
 ]
 
-export const moreMenuItems = [
+export const webDevelopmentMenuItems = [
   {
     name: 'Web App Development',
-    description: 'This is a description of the web app development service.',
     href: '/web-app-development',
   },
   {
     name: 'Site Management',
-    description: 'This is a description of the site management service.',
     href: '/website-management',
   },
   {
     name: 'WordPress Solutions',
-    description: 'This is a description of the WordPress solutions service.',
     href: '/wordpress-solutions',
-  },
+  }
 ]
