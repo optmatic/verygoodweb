@@ -18,7 +18,7 @@ export default function GradientButton3d({ text, link, targetVal, type }: { text
                 <a 
                     href={link} 
                     target={targetVal} 
-                    className={`${baseClasses} focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                    className={`${baseClasses} focus:outline-none`}
                 >
                     <span className="absolute inset-0 w-full h-full transition duration-200 ease-out bg-optBlue/30 transform translate-x-1 translate-y-1 bg-lightBlue border-2 border-deepBlue group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-green-400 to-blue-600 border-2 border-gray-900 group-hover:bg-gradient-to-bl"></span>

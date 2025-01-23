@@ -3,7 +3,7 @@ import GradientButton from "@/components/optmatic/GradientButton"
 
 export default function WhyOptmatic() {
     return (
-    <div className="why-optmatic py-4 sm:py-8 lg:py-20 bg-slightBlue w-full">
+    <div id="why-optmatic" className="why-optmatic py-4 sm:py-8 lg:py-20 bg-slightBlue w-full">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row">
         {/* Left Content Section */}
         {/* Removed padding from here */}

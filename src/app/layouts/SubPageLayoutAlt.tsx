@@ -311,14 +311,14 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
                       className={classNames(
                         tab.current
                           ? 'border-light text-light'
-                          : 'border-transparent text-light hover:border-gradient-bg group-hover:gradient-text',
+                          : 'border-transparent hover:border-light group-hover:bg-gradient-to-r group-hover:from-optBlue/70 group-hover:to-deepBlue group-hover:bg-clip-text group-hover:text-transparent',
                         'group inline-flex items-center border-b-2 p-2 text-sm font-medium transition-colors duration-200',
                       )}
                     >
                       <tab.icon
                         aria-hidden="true"
                         className={classNames(
-                          tab.current ? 'text-riverBlue' : 'text-light group-hover:text-gradient-text',
+                          tab.current ? 'text-light' : 'text-light group-hover:text-gradient-text',
                           'mr-2 -ml-0.5 size-5',
                         )}
                       />

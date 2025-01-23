@@ -36,8 +36,16 @@ const alegreyaSans = Alegreya_Sans({
 
 
 export const metadata: Metadata = {
-  title: "dev - Optmatic",
-  description: "Optmatic - dev",
+  title: "[optmatic] - Web Development & E-commerce",
+  description: "This is the website of Optmatic, a web development and e-commerce company.",
+  icons: {
+    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
 };
 
 

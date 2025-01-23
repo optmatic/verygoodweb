@@ -89,8 +89,8 @@ export default function WebDevelopment() {
 Ready to elevate your digital presence? Let's collaborate to create a high-performing website that meets your goals and adapts as your business grows.`}
       ctaText="Get started"
       ctaLink="/get-started"
-      imageSrc="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png"
-      imageAlt="Screenshot of the project"
+      // imageSrc="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png"
+      // imageAlt="Screenshot of the project"
     />
     {/* <FeatureSection 
       darkMode={false}

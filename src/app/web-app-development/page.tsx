@@ -37,17 +37,24 @@ export default function WebDevelopment() {
       buttonText="Request a Site Audit"
       buttonLink="/web-app-development"
     >
-    <SimpleContent 
-    badge="Deploy faster"
-    title="Expand your business capabilities"
-    leftColumnContent={`**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. _Lorem Ipsum_ has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, [remaining essentially unchanged](https://www.example.com).
-        `}
-              rightColumnContent={`Lorem Ipsum is simply dummy text of the **printing and typesetting industry**. _Lorem Ipsum_ has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the [this is a link](https://www.example.com) leap into electronic typesetting..
-`
-              }
-    ctaText="Learn More"
-    ctaLink="/web-app-development"
-   />
+    <SimpleContent
+  badge="Enhance Your Online Store"
+  title="Efficiency in Every Detail"
+  leftColumnContent={`Our e-commerce development process is focused on creating seamless, efficient experiences for both you and your customers. From design to functionality, we ensure your store is optimized for success.
+
+**With our services, you'll benefit from:**
+
+- Custom-built online stores using Shopify/Liquid, WooCommerce, and FourthWall integrations
+- Enhanced user experience for smoother navigation and faster checkouts
+- Integration of secure payment gateways and essential e-commerce tools
+- Scalable designs that grow with your business
+`}
+  rightColumnContent={`We specialize in building e-commerce platforms that are both visually appealing and built to convert. By leveraging the capabilities of Shopify, WooCommerce, and FourthWall, we ensure your store has the tools it needs to thrive.
+
+Ready to grow your online business? Let’s work together to create a high-performing e-commerce website that drives sales and engages your customers.`}
+  ctaText="Get started"
+  ctaLink="/get-started"
+  />
     </SubPageLayoutAlt>
   );
 }
