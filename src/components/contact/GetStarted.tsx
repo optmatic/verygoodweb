@@ -12,27 +12,27 @@ export default function GetStarted() {
           className="h-64 w-full object-cover bg-deepBlue/50 opacity-90 saturate-100 sm:h-80 lg:absolute lg:h-full"
         />
       </div>
-      <div className="pb-24 pt-16 sm:pb-32 sm:pt-16 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
+      <div className="pt-16 sm:pb-16 sm:pt-16 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2">
         <div className="px-6 lg:px-8">
           <div className="mx-auto intro max-w-xl lg:mx-0 lg:max-w-lg">
           <div className="intro max-w-lg border-deepBlue/7 0">
-          <p className="subheading text-base/7 font-semibold">CONTACT US TODAY</p>
+          <p className="subheading text-base/7 text-deepBlue font-semibold">CONTACT US TODAY</p>
           <hr className="mt-2 mb-6 !border-deepBlue/20" />
-          <h3 className="mt-2 mb-8 text-pretty text-4xl font-semibold tracking-tight text-deepBlue sm:text-5xl">
+          <h3 className="mt-2 mb-4 text-pretty text-4xl font-semibold tracking-tight text-deepBlue sm:text-5xl">
             Let's build something remarkable
           </h3>
           </div>
-            <p className="mt-2 text-lg/8 text-gray-600">
+            <p className="mt-2 text-lg/8 leading-6 text-deepBlue">
               Tell us about your vision, and we'll help turn it into an innovative and high-performing solution. Our team
               works closely with you to ensure precision and excellence in every step of the process.
             </p>
-            <form action="#" method="POST" className="mt-16">
+            <form action="#" method="POST" className="mt-12">
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
                   <label htmlFor="first-name" className="block text-sm/6 font-semibold text-gray-900">
                     First name
                   </label>
-                  <div className="mt-2.5">
+                  <div className="mt-1">
                     <input
                       id="first-name"
                       name="first-name"
@@ -46,7 +46,7 @@ export default function GetStarted() {
                   <label htmlFor="last-name" className="block text-sm/6 font-semibold text-gray-900">
                     Last name
                   </label>
-                  <div className="mt-2.5">
+                  <div className="mt-1">
                     <input
                       id="last-name"
                       name="last-name"
@@ -60,7 +60,7 @@ export default function GetStarted() {
                   <label htmlFor="email" className="block text-sm/6 font-semibold text-gray-900">
                     Email
                   </label>
-                  <div className="mt-2.5">
+                  <div className="mt-1">
                     <input
                       id="email"
                       name="email"
@@ -74,7 +74,7 @@ export default function GetStarted() {
                   <label htmlFor="company" className="block text-sm/6 font-semibold text-gray-900">
                     Company name
                   </label>
-                  <div className="mt-2.5">
+                  <div className="mt-1">
                     <input
                       id="company"
                       name="company"
@@ -88,7 +88,7 @@ export default function GetStarted() {
                   <label htmlFor="website" className="block text-sm/6 font-semibold text-gray-900">
                     Website (optional)
                   </label>
-                  <div className="mt-2.5">
+                  <div className="mt-1">
                     <input
                       id="website"
                       name="website"
@@ -103,7 +103,7 @@ export default function GetStarted() {
                     Project details
                   </label>
                   <p className="text-gray-400">Tell us about your goals, ideas, or challenges (max 500 characters).</p>
-                  <div className="mt-2.5">
+                  <div className="mt-1">
                     <textarea
                       id="message"
                       name="message"
@@ -113,7 +113,7 @@ export default function GetStarted() {
                   </div>
                 </div>
               </div>
-              <div className="mt-10 flex justify-end border-t border-gray-900/10 pt-8">
+              <div className="mt-10 flex justify-end border-t !border-deepBlue/20 pt-8">
                 <DarkButton text="Submit your enquiry" type="submit" />
               </div>
             </form>

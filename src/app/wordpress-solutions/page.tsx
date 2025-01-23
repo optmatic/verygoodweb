@@ -34,7 +34,7 @@ export default function WordPressSolutions() {
       imageSrc={WordPressSolutionsFeature.src}
       imageAlt="WordPress Solutions Feature Image"
       buttonText="Request a Site Audit"
-      buttonLink="/wordpress-solutions"
+      buttonLink="/site-audit"
     >
       <SimpleContent
       badge="Optimise Your Digital Presence"

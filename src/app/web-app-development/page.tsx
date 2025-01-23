@@ -13,15 +13,7 @@ const metadata = {
   description: "Web Application Development services for your business.",
 }
 
-export default function WebDevelopment() {
-  // const components = [
-    
-  //   {
-  //     id: "web-development",
-  //     name: "Web Development",
-  //     icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
-  //   }
-  // ]
+export default function WebAppDevelopment() {
 
   return (
     <SubPageLayoutAlt
@@ -30,12 +22,10 @@ export default function WebDevelopment() {
       metadata={metadata}
       title="Web Application Development"
       subtitle="We offer a range of web application development services designed to help you achieve your business goals with precision and efficiency."
-      // activeComponentId="web-development"
-      // availableComponents={components}
       imageSrc={WebDevFeature.src}
       imageAlt="Web Development Feature Image"
       buttonText="Request a Site Audit"
-      buttonLink="/web-app-development"
+      buttonLink="/site-audit"
     >
     <SimpleContent
   badge="Enhance Your Online Store"

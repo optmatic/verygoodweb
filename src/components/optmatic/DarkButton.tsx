@@ -1,4 +1,4 @@
-export default function WhiteButton({ text, link, targetVal, type }: { text: string, link?: string, targetVal?: string, type?: string }) {
+export default function DarkButton({ text, link, targetVal, type }: { text: string, link?: string, targetVal?: string, type?: string }) {
     const baseClasses = `relative inline-block px-4 py-2 font-medium group`
     
     return (

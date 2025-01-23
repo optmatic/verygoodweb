@@ -43,11 +43,11 @@ export default function SimpleContent({
               <ReactMarkdown className="prose">{rightColumnContent}</ReactMarkdown>
             </div>
           </div>
-          <div className="mt-10 flex">
-            {/* <BlackButton text={ctaText} link={ctaLink} targetVal="_self"/> */}
-            <LightButton text={ctaText} link={ctaLink} targetVal="_self"/>
-
-          </div>
+          {ctaText && ctaLink && (
+            <div>
+              <LightButton text={ctaText} link={ctaLink} targetVal="_self"/>
+            </div>
+          )}
         </div>
       </div>
     </div>
