@@ -12,7 +12,7 @@ export default function WhyOptmatic() {
           <div className="max-w-xl intro">
             <p className="text-sm subheading tracking-wider uppercase mb-4">WHY OPTMATIC?</p>
             <h1 className="text-4xl font-bold lg:text-5xl mb-8 font-serif">
-                <hr className="w-full border-optBlue/20 mb-8" />
+                <hr className="w-full border-1 !border-optBlue/20 mb-8" />
                 Ultra-customised, yet <span className="gradient-text">affordable</span> digital solutions.
             </h1>
             <p className="text-lg mb-4 leading-relaxed">
@@ -26,7 +26,7 @@ export default function WhyOptmatic() {
         </div>
 
         {/* Right Image Section */}
-        <div className="flex-1 relative">
+        <div className="flex-1 relative shadow-sm shadow-optBlue/20">
           <img
             src={WhyOptmaticImg.src}
             alt="Professional working with laptop in a scenic setting"

@@ -204,8 +204,8 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
         />
 
         {/* Content */}
-        <div className="relative z-30 py-8 lg:py-14">
-          <div className={`pt-12 ${availableComponents.length > 0 ? 'pb-12' : 'pb-12 sm:pt-12'} mx-auto max-w-7xl px-6 lg:px-8`}>
+        <div className="relative z-30 py-4 lg:py-8">
+          <div className={`pt-8 ${availableComponents.length > 0 ? 'pb-8' : 'pb-8 sm:pt-8'} mx-auto max-w-7xl px-6 lg:px-8`}>
             <div className="flex flex-col md:flex-row items-start justify-between">
               <div className="lg:gap-y-8 md:w-1/2 mb-8 md:mb-0">
                 <nav aria-label="Breadcrumb" className="flex mb-6 sm:mb-4">
@@ -271,11 +271,11 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
       {availableComponents.length > 0 && (
         <div className={classNames(
           'sticky z-40 transition-all duration-200',
-          isScrolled ? 'top-[132px] bg-deepBlue' : 'top-0 bg-deepBlue'
+          isScrolled ? 'top-[127px] bg-[#242b3a]' : 'top-0 bg-[#242b3a]'
         )}>
           <div className={classNames(
             'transition-all duration-200',
-            isScrolled ? 'bg-white shadow-lg' : 'bg-deepBlue'
+            isScrolled ? 'bg-deepBlue shadow-lg' : 'bg-[#242b3a]'
           )}>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               {/* Mobile tab alternative, will leave for now */}
@@ -311,7 +311,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
                       className={classNames(
                         tab.current
                           ? 'border-riverBlue text-riverBlue'
-                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                          : 'border-transparent text-light hover:border-gray-300 hover:gradient-text',
                         'group inline-flex items-center border-b-2 p-2 text-sm font-medium transition-colors duration-200',
                       )}
                     >

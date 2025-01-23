@@ -49,7 +49,7 @@ export default function PrimaryNav() {
   };
 
   return (
-    <header className="primary-nav relative bg-slightBlue sticky top-0 z-50 shadow-md shadow-optBlue/5 w-full">
+    <header className="primary-nav relative bg-slightBlue sticky top-0 z-50 shadow-md shadow-optBlue/10 w-full">
       <div className="mx-auto max-w-7xl">
         <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
           <div className="flex-shrink-0">
@@ -84,7 +84,7 @@ export default function PrimaryNav() {
                       onMouseEnter={() => setActiveDropdown(item.name)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
-                      <button className="group inline-flex items-center rounded-md text-md font-semibold text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 py-2 px-3">
+                      <button className="group inline-flex items-center rounded-md text-md font-light text-white hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-darkerPrimary focus:ring-offset-2 py-2 px-3">
                         <span>{item.name}</span>
                         <ChevronDownIcon
                           aria-hidden="true"
@@ -100,10 +100,15 @@ export default function PrimaryNav() {
                                 <Link
                                   key={dropdownItem.name}
                                   href={dropdownItem.href || '#'}
-                                  className="-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue"
+                                  className={`-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue
+                                    ${dropdownItem.name === 'Important Information' ? 'bg-gradient-to-r from-red-900/30 to-deepBlue border-l-2 border-l-red-500' : ''}`}
                                 >
-                                  <p className="text-md font-semibold text-white">{dropdownItem.name}</p>
-                                  <p className="text-sm text-white/80">{dropdownItem.description}</p>
+                                  <p className={`text-md font-normal ${dropdownItem.name === 'Important Information' ? 'text-red-400' : 'text-white'}`}>
+                                    {dropdownItem.name}
+                                  </p>
+                                  <p className={`text-xs ${dropdownItem.name === 'Important Information' ? 'text-red-400/80' : 'text-white/80'}`}>
+                                    {dropdownItem.description}
+                                  </p>
                                 </Link>
                               ))}
                             </div>
@@ -114,7 +119,7 @@ export default function PrimaryNav() {
                   ) : (
                     <Link
                       href={item.href || '#'}
-                      className={`text-md font-semibold ${
+                      className={`text-md font-light ${
                         pathname === item.href 
                           ? 'gradient-text hover:no-underline' 
                           : 'text-white hover:underline underline-offset-4 decoration-lightAccent decoration-2'
@@ -175,7 +180,7 @@ export default function PrimaryNav() {
                               <Link 
                                 key={dropdownItem.name} 
                                 href={dropdownItem.href || '#'}
-                                className={`text-base font-semibold ${
+                                className={`text-base font-light ${
                                   pathname === dropdownItem.href 
                                     ? 'gradient-text' 
                                     : 'text-gray-900 hover:text-gray-700'
@@ -188,7 +193,7 @@ export default function PrimaryNav() {
                         ) : (
                           <Link 
                             href={item.href || '#'}
-                            className={`text-base font-semibold ${
+                            className={`text-base font-light ${
                               pathname === item.href 
                                 ? 'gradient-text' 
                                 : 'text-gray-900 hover:text-gray-700'
@@ -204,20 +209,20 @@ export default function PrimaryNav() {
               </div>
               <div className="px-5 py-6">
                 <div className="grid grid-cols-2 gap-4">
-                  <a href="/web-development" className="text-base gradient-text font-semibold text-gray-900 hover:text-gray-700">
+                  <a href="/web-development" className="text-base gradient-text font-light text-gray-900 hover:text-gray-700">
                     Web Development
                   </a>
-                  <a href="/e-commerce" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                  <a href="/e-commerce" className="text-base font-light text-gray-900 hover:text-gray-700">
                     E-commerce
                   </a>
-                  <a href="/contact" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                  <a href="/contact" className="text-base font-light text-gray-900 hover:text-gray-700">
                     Contact Us
                   </a>
                   {resources.map((item) => (
                     <Link 
                       key={item.name} 
                       href={item.href || '#'}
-                      className={`text-base font-semibold ${
+                      className={`text-base font-light ${
                         pathname === item.href 
                           ? 'gradient-text' 
                           : 'text-gray-900 hover:text-gray-700'
