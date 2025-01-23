@@ -27,9 +27,19 @@ import DarkButton from '../optmatic/DarkButton'
 
 export default function PrimaryNav() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const mobileMenuRef = useRef<HTMLDivElement>(null)
-  const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -49,7 +59,7 @@ export default function PrimaryNav() {
   };
 
   return (
-    <header className="primary-nav relative bg-slightBlue sticky top-0 z-50 shadow-md shadow-optBlue/10 w-full">
+    <header className={`primary-nav relative bg-slightBlue sticky top-0 z-50 w-full ${!isScrolled ? 'shadow-md shadow-optBlue/10' : ''}`}>
       <div className="mx-auto max-w-7xl">
         <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
           <div className="flex-shrink-0">
