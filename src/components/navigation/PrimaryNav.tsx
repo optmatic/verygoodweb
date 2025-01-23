@@ -111,12 +111,12 @@ export default function PrimaryNav() {
                                   key={dropdownItem.name}
                                   href={dropdownItem.href || '#'}
                                   className={`-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue
-                                    ${dropdownItem.name === 'Important Information' ? 'bg-gradient-to-r from-red-900/30 to-deepBlue border-l-2 border-l-red-500' : ''}`}
+                                    ${dropdownItem.name === 'Important Information' ? 'bg-gradient-to-r from-optBlue/40 to-deepBlue border-l-2 border-l-emerald-400' : ''}`}
                                 >
-                                  <p className={`text-md font-normal ${dropdownItem.name === 'Important Information' ? 'text-red-400' : 'text-white'}`}>
+                                  <p className={`text-md font-normal ${dropdownItem.name === 'Important Information' ? 'gradient-text' : 'text-white'}`}>
                                     {dropdownItem.name}
                                   </p>
-                                  <p className={`text-xs ${dropdownItem.name === 'Important Information' ? 'text-red-400/80' : 'text-white/80'}`}>
+                                  <p className={`text-xs ${dropdownItem.name === 'Important Information' ? 'text-light' : 'text-white/80'}`}>
                                     {dropdownItem.description}
                                   </p>
                                 </Link>

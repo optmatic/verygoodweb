@@ -275,7 +275,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
         )}>
           <div className={classNames(
             'transition-all duration-200',
-            isScrolled ? 'bg-deepBlue shadow-lg' : 'bg-[#242b3a]'
+            isScrolled ? 'bg-slightBlue shadow-lg' : 'bg-[#242b3a]'
           )}>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               {/* Mobile tab alternative, will leave for now */}
@@ -285,7 +285,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
                   aria-label="Select a tab"
                   className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-
                   
-                  py-2 pr-8 pl-3 text-base text-light outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-deepBlue"
+                  py-2 pr-8 pl-3 text-base text-light outline-1 -outline-offset-1 outline-light focus:outline-2 focus:-outline-offset-2 focus:outline-gradient-text"
                 >
                   {dynamicTabs.map((tab) => (
                     <option key={tab.name}>{tab.name}</option>
@@ -293,7 +293,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
                 </select>
                 <ChevronDownIcon
                   aria-hidden="true"
-                  className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-gray-500"
+                  className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-light"
                 />
               </div>
               <div className="hidden sm:block">
@@ -310,15 +310,15 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
                       aria-current={tab.current ? 'page' : undefined}
                       className={classNames(
                         tab.current
-                          ? 'border-riverBlue text-riverBlue'
-                          : 'border-transparent text-light hover:border-gray-300 hover:gradient-text',
+                          ? 'border-light text-light'
+                          : 'border-transparent text-light hover:border-gradient-bg group-hover:gradient-text',
                         'group inline-flex items-center border-b-2 p-2 text-sm font-medium transition-colors duration-200',
                       )}
                     >
                       <tab.icon
                         aria-hidden="true"
                         className={classNames(
-                          tab.current ? 'text-riverBlue' : 'text-gray-400 group-hover:text-gray-500',
+                          tab.current ? 'text-riverBlue' : 'text-light group-hover:text-gradient-text',
                           'mr-2 -ml-0.5 size-5',
                         )}
                       />
@@ -330,7 +330,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
             </div>
             <div className={classNames(
               'border-b w-full',
-              isScrolled ? 'border-gray-100' : 'border-gray-200'
+              isScrolled ? 'border-slightBlue' : 'border-slightBlue'
             )} />
           </div>
         </div>
