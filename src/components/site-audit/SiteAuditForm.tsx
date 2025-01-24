@@ -95,7 +95,9 @@ export default function SiteAuditForm() {
 
   return (
     <>
-      <Button onClick={() => setIsOpen(true)}>Request Site Audit</Button>
+      <Button  onClick={() => setIsOpen(true)}>
+        Request Site Audit
+      </Button>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
