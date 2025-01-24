@@ -10,6 +10,7 @@ import Step2 from "@/components/site-audit/step2"
 import Step3 from "@/components/site-audit/step3"
 import Step4 from "@/components/site-audit/step4"
 import { useToast } from "@/hooks/use-toast"
+import "@/app/css/site-audit.css"
 
 export default function SiteAuditForm() {
   const [isOpen, setIsOpen] = useState(false)
