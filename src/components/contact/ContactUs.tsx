@@ -1,5 +1,5 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
-import GradientButton3d from './optmatic/GradientButton'
+import GradientButton3d from '@/components/optmatic/GradientButton'
 
 export default function ContactUs() {
   return (

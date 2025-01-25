@@ -1,6 +1,6 @@
 "use client"
 
-import ContactUs from "@/components/ContactUs";
+import ContactUs from "@/components/contact/ContactUs";
 import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 import DarkButton from "@/components/optmatic/DarkButton";
 import RotatingProjects from "@/components/ui/rotating-projects";
