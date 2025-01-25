@@ -17,34 +17,38 @@ export default function WebAppDevelopment() {
 
   return (
     <SubPageLayoutAlt
-      breadcrumbPath={[
-        { label: "Web Application Development", href: "/web-app-development" }]}
-      metadata={metadata}
-      title="Web Application Development"
-      subtitle="We offer a range of web application development services designed to help you achieve your business goals with precision and efficiency."
-      imageSrc={WebDevFeature.src}
-      imageAlt="Web Development Feature Image"
-      buttonText="Request a Site Audit"
-      buttonLink="/site-audit"
-    >
-    <SimpleContent
-  badge="Enhance Your Online Store"
-  title="Efficiency in Every Detail"
-  leftColumnContent={`Our e-commerce development process is focused on creating seamless, efficient experiences for both you and your customers. From design to functionality, we ensure your store is optimized for success.
+  breadcrumbPath={[
+    { label: "Web Application Development", href: "/web-app-development" }
+  ]}
+  metadata={metadata}
+  title="Web Application Development"
+  subtitle="We offer a range of web application development services designed to help you achieve your business goals with precision and efficiency."
+  imageSrc={WebDevFeature.src}
+  imageAlt="Web Development Feature Image"
+  buttonText="Request a Site Audit"
+  buttonLink="/site-audit"
+>
+  <SimpleContent
+    badge="Build Smarter, Scale Faster"
+    title="Tailored Solutions for Your Business"
+    leftColumnContent={`Our web application development process focuses on creating scalable, user-centric platforms tailored to your business needs. From building robust client portals to improving existing systems, we prioritise functionality, performance, and security.
 
 **With our services, you'll benefit from:**
 
-- Custom-built online stores using Shopify/Liquid, WooCommerce, and FourthWall integrations
-- Enhanced user experience for smoother navigation and faster checkouts
-- Integration of secure payment gateways and essential e-commerce tools
-- Scalable designs that grow with your business
+- Custom web apps built using React for dynamic, high-performance experiences
+- Secure and user-friendly client portals to enhance customer interaction and accessibility
+- Scalable architectures designed to grow alongside your business
+- Continuous support and improvements for existing platforms
 `}
-  rightColumnContent={`We specialize in building e-commerce platforms that are both visually appealing and built to convert. By leveraging the capabilities of Shopify, WooCommerce, and FourthWall, we ensure your store has the tools it needs to thrive.
+    rightColumnContent={`We specialise in crafting intuitive, feature-rich web applications that solve real business challenges. By leveraging React, we deliver engaging and interactive user experiences designed to drive efficiency and innovation.
 
-Ready to grow your online business? Let’s work together to create a high-performing e-commerce website that drives sales and engages your customers.`}
-  ctaText="Get started"
-  ctaLink="/get-started"
+Looking to enhance your business processes or deliver seamless user experiences? Let us help you build or improve your web application today.`}
+    ctaText="Start Your Project"
+    ctaLink="/get-started"
   />
-    </SubPageLayoutAlt>
+</SubPageLayoutAlt>
+
+  
+
   );
 }

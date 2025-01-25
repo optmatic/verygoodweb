@@ -79,7 +79,7 @@ export default function GetStarted() {
                       id="company"
                       name="company"
                       type="text"
-                      autoComplete="organization"
+                      autoComplete="organisation"
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-optBlue"
                     />
                   </div>
@@ -96,6 +96,69 @@ export default function GetStarted() {
                       placeholder="https://"
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-optBlue"
                     />
+                  </div>
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="block text-sm/6 font-semibold text-gray-900">
+                    Expected budget
+                  </label>
+                  <div className="mt-2 space-y-4">
+                    {[
+                      {
+                        id: 'budget-1k',
+                        value: 'less-1k',
+                        label: 'Less than $1,000',
+                        description: 'Ideal for micro-projects or basic solutions'
+                      },
+                      {
+                        id: 'budget-1k-2.5k',
+                        value: '1k-2.5k',
+                        label: '$1,000 - $2,500',
+                        description: 'Great for simple, static websites or basic e-commerce setups'
+                      },
+                      {
+                        id: 'budget-2.5k-7k',
+                        value: '2.5k-7k',
+                        label: '$2,500 - $7,000',
+                        description: 'Perfect for growing businesses needing dynamic features'
+                      },
+                      {
+                        id: 'budget-7k-15k',
+                        value: '7k-15k',
+                        label: '$7,000 - $15,000',
+                        description: 'Designed for businesses requiring advanced functionality'
+                      },
+                      {
+                        id: 'budget-15k-25k',
+                        value: '15k-25k',
+                        label: '$15,000 - $25,000',
+                        description: 'Great for high-performing solutions with scalability'
+                      },
+                      {
+                        id: 'budget-25k-plus',
+                        value: '25k-plus',
+                        label: '$25,000+',
+                        description: 'Tailored enterprise solutions with extensive customisation'
+                      },
+                    ].map((option) => (
+                      <div key={option.id} className="flex items-start">
+                        <div className="flex h-6 items-center">
+                          <input
+                            id={option.id}
+                            name="budget"
+                            type="radio"
+                            value={option.value}
+                            className="h-4 w-4 text-optBlue focus:ring-optBlue"
+                          />
+                        </div>
+                        <div className="ml-3">
+                          <label htmlFor={option.id} className="text-sm font-medium text-gray-900">
+                            {option.label}
+                          </label>
+                          <p className="text-sm text-gray-500">{option.description}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
                 <div className="sm:col-span-2">

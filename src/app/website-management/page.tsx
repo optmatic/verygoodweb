@@ -24,38 +24,38 @@ export default function WebsiteManagement() {
 
   return (
     <SubPageLayoutAlt
-      breadcrumbPath={[
-    { label: "Website Management", href: "/website-management" }]}
-      metadata={metadata}
-      title="Website Management"
-      subtitle="We offer a range of website management services designed to help you achieve your business goals with precision and efficiency."
-      // activeComponentId="web-development"
-      // availableComponents={components}
-      imageSrc={WebsiteManagementFeature.src}
-      imageAlt="Website Management Feature Image"
-      buttonText="Request a Site Audit"
-      buttonLink="/site-audit"
-    >
-      <SimpleContent
-      badge="Optimise Your Digital Presence"
-      title="Efficiency at Every Step"
-      leftColumnContent={`We simplify the web development process to ensure it's smooth and efficient, saving you time and resources whilst delivering outstanding results.
+  breadcrumbPath={[
+    { label: "Website Management", href: "/website-management" }
+  ]}
+  metadata={metadata}
+  title="Website Management"
+  subtitle="We offer a range of website management services designed to help you achieve your business goals with precision and efficiency."
+  imageSrc={WebsiteManagementFeature.src}
+  imageAlt="Website Management Feature Image"
+  buttonText="Request a Site Audit"
+  buttonLink="/site-audit"
+>
+  <SimpleContent
+    badge="Streamline Your Online Presence"
+    title="Comprehensive Management for Your Website"
+    leftColumnContent={`Our website management services ensure your site remains functional, secure, and up to date. Whether it's routine maintenance or implementing new features, we provide everything needed to keep your website performing at its best.
 
 **With our services, you'll benefit from:**
 
-- Custom web solutions tailored to your business needs
-- Enhanced website performance for an improved user experience
-- Expert guidance throughout the development journey
-- Regular updates, maintenance, and post-launch support.
+- Proactive updates to ensure your website runs smoothly and securely
+- Regular performance monitoring and optimisation to maintain speed and reliability
+- Content updates and enhancements tailored to your business goals
+- Seamless integration of new features and tools to elevate user experience
 `}
-      rightColumnContent={`Our approach ensures that your website isn't just visually appealing but also fully functional and optimised for performance. We prioritise user experience, ensuring that your visitors have a seamless interaction with your site, which helps boost engagement and conversions.
+    rightColumnContent={`A well-managed website is essential for maintaining your online presence and ensuring customer satisfaction. Our team specialises in managing all aspects of your site, so you can focus on growing your business.
 
-Ready to elevate your digital presence? Let's collaborate to create a high-performing website that meets your goals and adapts as your business grows.`}
-      ctaText="Learn More"
-      ctaLink="/website-management"
-      imageSrc="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png"
-      imageAlt="Screenshot of the project"
-    />
-    </SubPageLayoutAlt>
+From technical updates to strategic content improvements, we provide the expertise needed to ensure your website not only runs efficiently but also stands out in a competitive digital landscape.
+
+Ready to optimise your website? Let us handle the details so you can focus on what matters most.`}
+    ctaText="Get started"
+    ctaLink="/get-started"
+  />
+</SubPageLayoutAlt>
+
   );
 }

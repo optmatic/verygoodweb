@@ -44,7 +44,7 @@ export default function SimpleContent({
             </div>
           </div>
           {ctaText && ctaLink && (
-            <div>
+            <div className='mt-8'>
               <LightButton text={ctaText} link={ctaLink} targetVal="_self"/>
             </div>
           )}

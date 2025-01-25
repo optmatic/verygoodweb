@@ -23,32 +23,37 @@ export default function WordPressSolutions() {
   // ]
 
   return (
-    <SubPageLayoutAlt 
-      breadcrumbPath={[
-    { label: "WordPress Solutions", href: "/wordpress-solutions" }]}
-      metadata={metadata}
-      title="WordPress Solutions"
-      subtitle="We offer a range of WordPress solutions services designed to help you achieve your business goals with precision and efficiency."
-      // activeComponentId="web-development"
-      // availableComponents={components}
-      imageSrc={WordPressSolutionsFeature.src}
-      imageAlt="WordPress Solutions Feature Image"
-      buttonText="Request a Site Audit"
-      buttonLink="/site-audit"
-    >
-      <SimpleContent
-      badge="Optimise Your Digital Presence"
-      title="Efficiency at Every Step"
-      leftColumnContent={`We simplify the web development process to ensure it's smooth and efficient, saving you time and resources whilst delivering outstanding results.
-`}
-      rightColumnContent={`Our approach ensures that your website isn't just visually appealing but also fully functional and optimised for performance. We prioritise user experience, ensuring that your visitors have a seamless interaction with your site, which helps boost engagement and conversions.
+    <SubPageLayoutAlt
+  breadcrumbPath={[
+    { label: "WordPress Solutions", href: "/wordpress-solutions" }
+  ]}
+  metadata={metadata}
+  title="WordPress Solutions"
+  subtitle="We offer a range of WordPress solutions designed to help you achieve your business goals with precision and efficiency."
+  imageSrc={WordPressSolutionsFeature.src}
+  imageAlt="WordPress Solutions Feature Image"
+  buttonText="Request a Site Audit"
+  buttonLink="/site-audit"
+>
+  <SimpleContent
+    badge="Empowering Your WordPress Website"
+    title="Customised Solutions for Your Business"
+    leftColumnContent={`Our WordPress services focus on delivering tailored solutions to enhance functionality, performance, and user experience. Whether you're building a new site or improving an existing one, we ensure your WordPress website stands out.
 
-Ready to elevate your digital presence? Let's collaborate to create a high-performing website that meets your goals and adapts as your business grows.`}
-      ctaText="Learn More"
-      ctaLink="/wordpress-solutions"
-      imageSrc="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png"
-      imageAlt="Screenshot of the project"
+**With our services, you'll benefit from:**
+
+- Custom WordPress theme and plugin development for unique functionality
+- Performance optimisation to improve loading times and overall user experience
+- Secure, scalable designs to grow alongside your business
+- Ongoing updates and maintenance to keep your site running smoothly
+`}
+    rightColumnContent={`As experts in WordPress development and management, we provide solutions that combine creativity with robust functionality. From custom builds to enhancing existing websites, we ensure your site is optimised for success.
+
+Whether you need a complete overhaul, bespoke features, or regular updates, we have the expertise to deliver. Let us help you make the most of your WordPress website and achieve your business objectives.`}
+    ctaText="Get started"
+      ctaLink="/get-started"
     />
-    </SubPageLayoutAlt>
+  </SubPageLayoutAlt>
+
   );
 }

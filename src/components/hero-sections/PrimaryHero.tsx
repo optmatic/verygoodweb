@@ -90,7 +90,7 @@ export default function PrimaryHero() {
          <GradientButton3d text="Why Optmatic?" link="#why-optmatic" targetVal="_self" type="primary" />
           </div>
 
-          <div className="mt-12 relative py-2 rounded-sm shadow-lg shadow-black/20 overflow-hidden whitespace-nowrap">
+          <div className="border border-optBlue/10 shadow-lg shadow-optBlue/5 mt-12 relative py-2 rounded-sm overflow-hidden whitespace-nowrap">
             <div 
               className="inline-flex scrolling-words"
             >

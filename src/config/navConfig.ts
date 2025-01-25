@@ -27,7 +27,7 @@ export const mainMenuItems = [
       },
       {
         name: 'WordPress Solutions',
-        description: 'Expert WordPress development and customization',
+        description: 'Expert WordPress development and customisation',
         href: '/wordpress-solutions',
       }, 
       {
