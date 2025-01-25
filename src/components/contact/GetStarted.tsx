@@ -32,7 +32,7 @@ export default function GetStarted() {
                   <label htmlFor="first-name" className="block text-sm/6 font-semibold text-gray-900">
                     First name
                   </label>
-                  <div className="mt-1">
+                  <div>
                     <input
                       id="first-name"
                       name="first-name"
@@ -46,7 +46,7 @@ export default function GetStarted() {
                   <label htmlFor="last-name" className="block text-sm/6 font-semibold text-gray-900">
                     Last name
                   </label>
-                  <div className="mt-1">
+                  <div>
                     <input
                       id="last-name"
                       name="last-name"
@@ -60,7 +60,7 @@ export default function GetStarted() {
                   <label htmlFor="email" className="block text-sm/6 font-semibold text-gray-900">
                     Email
                   </label>
-                  <div className="mt-1">
+                  <div>
                     <input
                       id="email"
                       name="email"
@@ -74,7 +74,7 @@ export default function GetStarted() {
                   <label htmlFor="company" className="block text-sm/6 font-semibold text-gray-900">
                     Company name
                   </label>
-                  <div className="mt-1">
+                  <div>
                     <input
                       id="company"
                       name="company"
@@ -88,7 +88,7 @@ export default function GetStarted() {
                   <label htmlFor="website" className="block text-sm/6 font-semibold text-gray-900">
                     Website (optional)
                   </label>
-                  <div className="mt-1">
+                  <div>
                     <input
                       id="website"
                       name="website"
@@ -165,8 +165,8 @@ export default function GetStarted() {
                   <label htmlFor="message" className="block text-sm/6 font-semibold text-gray-900">
                     Project details
                   </label>
-                  <p className="text-gray-400">Tell us about your goals, ideas, or challenges (max 500 characters).</p>
-                  <div className="mt-1">
+                  <p className="text-black text-sm/6 mb-2">Tell us about your goals, ideas, or challenges (max 500 characters).</p>
+                  <div>
                     <textarea
                       id="message"
                       name="message"
