@@ -6,11 +6,11 @@ import SubPageLayoutAlt from "@/app/layouts/SubPageLayoutAlt"
 import SimpleContent from "@/components/subpage-components/SimpleContent";
 
 const metadata = {
-  title: "E-commerce | Optmatic",
-  description: "E-commerce services for your business.",
+  title: "E-commerce web development | Optmatic",
+  description: "Optmatic creates powerful e-commerce platforms that drive sales, enhance user experiences, and support your business growth.",
 }
 
-export default function WebDevelopment() {
+export default function Ecommerce() {
   // const components = [
     
   //   {

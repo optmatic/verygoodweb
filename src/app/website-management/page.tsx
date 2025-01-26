@@ -8,8 +8,8 @@ import SimpleContent from "@/components/subpage-components/SimpleContent";
 // import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 
 const metadata = {
-  title: "Web Development | Optmatic",
-  description: "Web Development services for your business.",
+  title: "Website Management | Optmatic",
+  description: "Let Optmatic handle the technical and strategic aspects of your website, so you can focus on what matters most—your business.",
 }
 
 export default function WebsiteManagement() {

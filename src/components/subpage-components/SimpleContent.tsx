@@ -8,8 +8,8 @@ interface SimpleContentProps {
   title: string;
   leftColumnContent: string;
   rightColumnContent: string;
-  ctaText: string;
-  ctaLink: string;
+  ctaText?: string;
+  ctaLink?: string;
   imageSrc?: string;
   imageAlt?: string;
 }

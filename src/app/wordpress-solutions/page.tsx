@@ -9,7 +9,7 @@ import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 
 const metadata = {
   title: "WordPress Solutions | Optmatic",
-  description: "WordPress Solutions services for your business.",
+  description: "Transform your WordPress website into a powerful tool for growth with our customised, expert solutions.",
 }
 
 export default function WordPressSolutions() {

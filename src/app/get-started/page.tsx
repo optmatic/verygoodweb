@@ -7,8 +7,8 @@ import SubPageLayoutAlt from "@/app/layouts/SubPageLayoutAlt"
 import GetStartedUI from "@/components/contact/GetStarted";
 
 const metadata = {
-  title: "E-commerce | Optmatic",
-  description: "E-commerce services for your business.",
+  title: "Get Started | Optmatic",
+  description: "Interested in working with Optmatic? Complete the form below and we'll get back to you as soon as possible.",
 }
 
 export default function GetStartedPage() {

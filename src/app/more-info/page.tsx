@@ -9,19 +9,19 @@ import { DownloadPriceList } from "@/components/price-list/DownloadPriceList";
 
 
 const metadata = {
-  title: "Contact us | Optmatic",
-  description: "Contact us for any questions or enquiries.",
+  title: "More Information | Optmatic",
+  description: "Learn more about Optmatic and our services.",
 }
 
 export default function MoreInfo() {
-  const components = [
+  // const components = [
     
-    {
-      id: "contact",
-      name: "Contact",
-      icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
-    }
-  ]
+  //   {
+  //     id: "contact",
+  //     name: "Contact",
+  //     icon: QuestionMarkCircleIcon as React.ComponentType<unknown>
+  //   }
+  // ]
 
   return (
     <SubPageLayoutAlt
