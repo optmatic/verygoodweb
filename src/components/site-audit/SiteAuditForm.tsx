@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { ToastAction } from "@/components/ui/toast"
+// import { ToastAction } from "@/components/ui/toast"
 import Step1 from "@/components/site-audit/step1"
 import Step2 from "@/components/site-audit/step2"
 import Step3 from "@/components/site-audit/step3"
@@ -12,10 +12,25 @@ import Step4 from "@/components/site-audit/step4"
 import { useToast } from "@/hooks/use-toast"
 import "@/app/css/site-audit.css"
 
+interface FormData {
+  websiteUrl: string;
+  businessType: string;
+  mainGoal: string;
+  targetAudience: string;
+  competitors: string;
+  currentChallenges: string;
+  desiredOutcome: string;
+  timeline: string;
+  budget: string;
+  name: string;
+  email: string;
+  phone: string;
+}
+
 export default function SiteAuditForm() {
   const [isOpen, setIsOpen] = useState(false)
   const [currentStep, setCurrentStep] = useState(1)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     websiteUrl: "",
     businessType: "",
     mainGoal: "",
@@ -106,10 +121,30 @@ export default function SiteAuditForm() {
           </DialogHeader>
           <Progress value={progress} className="w-full" />
           <form onSubmit={handleSubmit}>
-            {currentStep === 1 && <Step1 formData={formData} setFormData={setFormData} />}
-            {currentStep === 2 && <Step2 formData={formData} setFormData={setFormData} />}
-            {currentStep === 3 && <Step3 formData={formData} setFormData={setFormData} />}
-            {currentStep === 4 && <Step4 formData={formData} setFormData={setFormData} />}
+            {currentStep === 1 && (
+              <Step1
+                formData={formData}
+                setFormData={setFormData}
+              />
+            )}
+            {currentStep === 2 && (
+              <Step2
+                formData={formData}
+                setFormData={(data) => setFormData(prev => ({ ...prev, ...data }))}
+              />
+            )}
+            {currentStep === 3 && (
+              <Step3
+                formData={formData}
+                setFormData={(data) => setFormData(prev => ({ ...prev, ...data }))}
+              />
+            )}
+            {currentStep === 4 && (
+              <Step4
+                formData={formData}
+                setFormData={(data) => setFormData(prev => ({ ...prev, ...data }))}
+              />
+            )}
             <div className="flex justify-between mt-4">
               <Button type="button" onClick={handlePrevious} disabled={currentStep === 1}>
                 Previous

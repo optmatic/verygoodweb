@@ -2,9 +2,9 @@
 
 import ContactUs from "@/components/contact/ContactUs";
 import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
-import DarkButton from "@/components/optmatic/DarkButton";
-import RotatingProjects from "@/components/ui/rotating-projects";
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
+// import DarkButton from "@/components/optmatic/DarkButton";
+// import RotatingProjects from "@/components/ui/rotating-projects";
+// import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 
 
 const metadata = {

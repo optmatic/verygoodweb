@@ -1,7 +1,13 @@
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Step3FormData, SiteAuditFormData } from '@/types'
 
-export default function Step3({ formData, setFormData }: { formData: any; setFormData: any }) {
+interface Step3Props {
+  formData: Step3FormData;
+  setFormData: (data: Partial<SiteAuditFormData>) => void;
+}
+
+export default function Step3({ formData, setFormData }: Step3Props) {
   return (
     <div className="space-y-4">
       <div>

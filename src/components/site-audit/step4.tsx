@@ -1,7 +1,13 @@
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Step4FormData, SiteAuditFormData } from '@/types'
 
-export default function Step4({ formData, setFormData }: { formData: any, setFormData: (data: any) => void }) {
+interface Step4Props {
+  formData: Step4FormData;
+  setFormData: (data: Partial<SiteAuditFormData>) => void;
+}
+
+export default function Step4({ formData, setFormData }: Step4Props) {
   return (
     <div className="space-y-4">
       <div>

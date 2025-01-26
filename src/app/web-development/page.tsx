@@ -4,47 +4,47 @@
 import WebDevFeature from "@/images/features/web-dev-abstraction.webp"
 import SubPageLayoutAlt from "@/app/layouts/SubPageLayoutAlt"
 import SimpleContent from "@/components/subpage-components/SimpleContent"
-import RotatingProjects from "@/components/ui/rotating-projects";
-import Faqs from "@/components/ui/faqs";
-import FeatureSection from "@/components/optmatic/web-dev/FeatureSection3x2";
-import TechUsedDark from "@/components/optmatic/TechUsedDark";
-import MinimalFooter from "@/components/navigation/MinimalFooter";
+// import RotatingProjects from "@/components/ui/rotating-projects";
+// import Faqs from "@/components/ui/faqs";
+// import FeatureSection from "@/components/optmatic/web-dev/FeatureSection3x2";
+// import TechUsedDark from "@/components/optmatic/TechUsedDark";
+// import MinimalFooter from "@/components/navigation/MinimalFooter";
 
 const metadata = {
   title: "Web Development | Optmatic",
   description: "Web Development services for your business.",
 }
 
-const features = [
-  {
-    name: "Custom web solutions tailored to your business needs",
-    description: "We create websites that are tailored to your business needs, ensuring that they are functional and efficient."
-  }, 
-  {
-    name: "Enhanced website performance for an improved user experience",
-    description: "We improve the performance of your website, ensuring that it is fast and efficient."
-  }, 
-  {
-    name: "Expert guidance throughout the development journey",
-    description: "We provide expert guidance throughout the development journey, ensuring that you are always informed and supported."
-  }, 
-  {
-    name: "Regular updates, maintenance, and post-launch support",
-    description: "We provide regular updates, maintenance, and post-launch support, ensuring that your website is always up to date and performing at its best."
-  }, 
-  {
-    name: "Regular updates, maintenance, and post-launch support",
-    description: "We provide regular updates, maintenance, and post-launch support, ensuring that your website is always up to date and performing at its best."
-  }, 
-  {}
-]
+// const features = [
+//   {
+//     name: "Custom web solutions tailored to your business needs",
+//     description: "We create websites that are tailored to your business needs, ensuring that they are functional and efficient."
+//   }, 
+//   {
+//     name: "Enhanced website performance for an improved user experience",
+//     description: "We improve the performance of your website, ensuring that it is fast and efficient."
+//   }, 
+//   {
+//     name: "Expert guidance throughout the development journey",
+//     description: "We provide expert guidance throughout the development journey, ensuring that you are always informed and supported."
+//   }, 
+//   {
+//     name: "Regular updates, maintenance, and post-launch support",
+//     description: "We provide regular updates, maintenance, and post-launch support, ensuring that your website is always up to date and performing at its best."
+//   }, 
+//   {
+//     name: "Regular updates, maintenance, and post-launch support",
+//     description: "We provide regular updates, maintenance, and post-launch support, ensuring that your website is always up to date and performing at its best."
+//   }, 
+//   {}
+// ]
 
-const faqs = [
-  {
-    question: "What is web development?",
-    answer: "Web development is the process of creating websites and web applications."
-  }
-]
+// const faqs = [
+//   {
+//     question: "What is web development?",
+//     answer: "Web development is the process of creating websites and web applications."
+//   }
+// ]
 
 
 

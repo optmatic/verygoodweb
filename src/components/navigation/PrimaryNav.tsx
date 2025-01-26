@@ -22,8 +22,8 @@ const resources = [
 ]
 
 import { useState } from 'react'
-import LightButton from '../optmatic/LightButton'
-import DarkButton from '../optmatic/DarkButton'
+// import LightButton from '../optmatic/LightButton'
+// import DarkButton from '../optmatic/DarkButton'
 
 export default function PrimaryNav() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);

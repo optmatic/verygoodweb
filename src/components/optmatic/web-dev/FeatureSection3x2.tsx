@@ -1,10 +1,10 @@
 import {
-    ArrowPathIcon,
+    // ArrowPathIcon,
     CloudArrowUpIcon,
-    Cog6ToothIcon,
-    FingerPrintIcon,
-    LockClosedIcon,
-    ServerIcon,
+    // Cog6ToothIcon,
+    // FingerPrintIcon,
+    // LockClosedIcon,
+    // ServerIcon,
   } from '@heroicons/react/20/solid'
 import React from 'react'
   

@@ -1,5 +1,5 @@
 import WaveImage from "@/images/wave-bg.jpeg";
-import GradientButton3d from "../optmatic/GradientButton";
+// import GradientButton3d from "../optmatic/GradientButton";
 import DarkButton from "../optmatic/DarkButton";
 import React from "react";
 
@@ -13,6 +13,7 @@ export default function GetStarted() {
 
     // Add your Web3Forms access key
     formData.append("access_key", "21455ef4-d6aa-4abd-858a-8376cb4f30d2");
+    formData.append("subject", "New Get Started Request");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -51,11 +52,11 @@ export default function GetStarted() {
           <p className="subheading text-base/7 text-deepBlue font-semibold">CONTACT US TODAY</p>
           <hr className="mt-2 mb-6 !border-deepBlue/20" />
           <h3 className="mt-2 mb-4 text-pretty text-4xl font-semibold tracking-tight text-deepBlue sm:text-5xl">
-            Let's build something remarkable
+            Let&apos;s build something remarkable
           </h3>
           </div>
             <p className="mt-2 text-lg/8 leading-6 text-deepBlue">
-              Tell us about your vision, and we'll help turn it into an innovative and high-performing solution. Our team
+              Tell us about your vision, and we&apos;ll help turn it into an innovative and high-performing solution. Our team
               works closely with you to ensure precision and excellence in every step of the process.
             </p>
             <form onSubmit={onSubmit} className="mt-12">
@@ -69,6 +70,7 @@ export default function GetStarted() {
                       id="first-name"
                       name="first-name"
                       type="text"
+                      required
                       autoComplete="given-name"
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-optBlue"
                     />
@@ -83,6 +85,7 @@ export default function GetStarted() {
                       id="last-name"
                       name="last-name"
                       type="text"
+                      required
                       autoComplete="family-name"
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-optBlue"
                     />
@@ -97,6 +100,7 @@ export default function GetStarted() {
                       id="email"
                       name="email"
                       type="email"
+                      required
                       autoComplete="email"
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-optBlue"
                     />
@@ -203,6 +207,7 @@ export default function GetStarted() {
                       id="message"
                       name="message"
                       rows={4}
+                      required
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-optBlue"
                     />
                   </div>

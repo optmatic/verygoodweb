@@ -4,7 +4,7 @@
 import WebDevFeature from "@/images/features/web-app-feature-abstraction.webp"
 // import SubPageLayout from "@/app/layouts/SubPageLayout"
 import SimpleContent from "@/components/subpage-components/SimpleContent";
-import RotatingProjects from "@/components/ui/rotating-projects";
+// import RotatingProjects from "@/components/ui/rotating-projects";
 import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 // import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 

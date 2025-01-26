@@ -2,7 +2,7 @@
 
 // import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebsiteManagementFeature from "@/images/features/website-mgmt-feature-abstract.webp"
-import SubPageLayout from "@/app/layouts/SubPageLayout"
+// import SubPageLayout from "@/app/layouts/SubPageLayout"
 import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 import SimpleContent from "@/components/subpage-components/SimpleContent";
 // import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";

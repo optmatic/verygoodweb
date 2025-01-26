@@ -1,12 +1,24 @@
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+interface FormData {
+  websiteUrl: string;
+  businessType: string;
+  mainGoal: string;
+  targetAudience: string;
+  competitors: string;
+  currentChallenges: string;
+  desiredOutcome: string;
+  timeline: string;
+  budget: string;
+  name: string;
+  email: string;
+  phone: string;
+}
+
 interface Step1Props {
-  formData: {
-    websiteUrl: string;
-    businessType: string;
-  };
-  setFormData: (data: any) => void;
+  formData: FormData;
+  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
 }
 
 export default function Step1({ formData, setFormData }: Step1Props) {
