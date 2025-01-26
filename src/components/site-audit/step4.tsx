@@ -35,7 +35,7 @@ export default function Step4({ formData, setFormData }: { formData: any, setFor
           type="tel"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          placeholder="+1 (555) 123-4567"
+          placeholder="+61 412 345 678"
           required
         />
       </div>

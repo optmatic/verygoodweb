@@ -12,7 +12,7 @@ export default function GetStarted() {
     const formData = new FormData(event.target as HTMLFormElement);
 
     // Add your Web3Forms access key
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", "21455ef4-d6aa-4abd-858a-8376cb4f30d2");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
