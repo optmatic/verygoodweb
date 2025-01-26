@@ -18,33 +18,34 @@ export default function SiteAudit() {
 
   return (
     <SubPageLayoutAlt
-      breadcrumbPath={[
-        { label: "Site Audit", href: "/site-audit" }]}
-      metadata={metadata}
-      title="Request a Site Audit"
-      subtitle="We offer a range of web development services to help you achieve your business goals."
-    >
+    breadcrumbPath={[
+      { label: "Site Audit", href: "/site-audit" }
+    ]}
+    metadata={metadata}
+    title="Request a Site Audit"
+    subtitle="Gain valuable insights into your website’s performance, usability, and overall effectiveness with a professional audit tailored to your business."
+  >
     <SimpleContent
-        badge="Optimise Your Digital Presence"
-        title="Efficiency at Every Step"
-        leftColumnContent={`We simplify the web development process to ensure it's smooth and efficient, saving you time and resources whilst delivering outstanding results.
-
-**With our services, you'll benefit from:**
-
-- Custom web solutions tailored to your business needs
-- Enhanced website performance for an improved user experience
-- Expert guidance throughout the development journey
-- Regular updates, maintenance, and post-launch support.
-`}
-        rightColumnContent={`Our approach ensures that your website isn't just visually appealing but also fully functional and optimised for performance. We prioritise user experience, ensuring that your visitors have a seamless interaction with your site, which helps boost engagement and conversions.
-
-Ready to elevate your digital presence? Let's collaborate to create a high-performing website that meets your goals and adapts as your business grows.`} ctaText={""} ctaLink={""}      // ctaText="Get started"
-/>
-      <div className="-mt-4 pb-10">
-        <SiteAuditForm />
-      </div>
-
+      badge="Limited Offer: Free for the Next 24 Requests!"
+      title="Comprehensive Website Analysis"
+      leftColumnContent={`A professional site audit can reveal hidden issues and untapped potential within your website. Our thorough audits are designed to give you a clear picture of how your website is performing and what can be improved.
     
-    </SubPageLayoutAlt>
+  **Our site audit includes:**
+    
+  - **Performance Review**: Analysis of loading speed, responsiveness, and technical functionality  
+  - **SEO Assessment**: Evaluation of on-page SEO, keywords, and ranking opportunities  
+  - **User Experience Audit**: Insights into navigation, accessibility, and overall usability  
+  - **Security Check**: Identification of vulnerabilities and recommendations for safeguarding your site  
+  `}
+      rightColumnContent={`Whether you’re looking to increase traffic, improve user engagement, or streamline your website’s functionality, our audit provides actionable insights tailored to your goals.
+  
+  The next **24 site audits** we perform are completely free! Don’t miss this opportunity to gain valuable insights and actionable recommendations at no cost.
+  
+  With our expertise, we go beyond surface-level issues to provide practical solutions that deliver measurable results. Let us help you identify opportunities to elevate your website’s performance and effectiveness.`}
+      ctaText="Claim Your Free Audit"
+      ctaLink="/get-started"
+    />
+  </SubPageLayoutAlt>
+  
   );
 }

@@ -29,7 +29,7 @@ export default function WebsiteManagement() {
   ]}
   metadata={metadata}
   title="Website Management"
-  subtitle="We offer a range of website management services designed to help you achieve your business goals with precision and efficiency."
+  subtitle="Let us handle the technical and strategic aspects of your website, so you can focus on what matters most—your business."
   imageSrc={WebsiteManagementFeature.src}
   imageAlt="Website Management Feature Image"
   buttonText="Request a Site Audit"

@@ -25,10 +25,10 @@ export default function WebDevelopment() {
   return (
     <SubPageLayoutAlt
       breadcrumbPath={[
-        { label: "More Info", href: "/more-info" }]}
+        { label: "Contact", href: "/more-info" }]}
       metadata={metadata}
       title="Contact Us"
-      subtitle="We offer a range of web development services to help you achieve your business goals."
+      subtitle="Get in touch with us to discuss your project or learn more about our services."
       // activeComponentId="web-development"
       // availableComponents={components}
     //   imageSrc={WebDevFeature.src}

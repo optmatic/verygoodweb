@@ -26,7 +26,7 @@ export default function WebDevelopment() {
         { label: "E-commerce", href: "/e-commerce" }]}
       metadata={metadata}
       title="E-commerce"
-      subtitle="We offer a range of e-commerce services designed to help you achieve your business goals with precision and efficiency."
+      subtitle="We create powerful e-commerce platforms that drive sales, enhance user experiences, and support your business growth."
       // activeComponentId="web-development"
       // availableComponents={components}
       imageSrc={EcommerceFeature.src}

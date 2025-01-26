@@ -22,7 +22,7 @@ export default function WebAppDevelopment() {
   ]}
   metadata={metadata}
   title="Web Application Development"
-  subtitle="We offer a range of web application development services designed to help you achieve your business goals with precision and efficiency."
+  subtitle="We build powerful, user-driven web applications that streamline processes, enhance functionality, and grow with your business."
   imageSrc={WebDevFeature.src}
   imageAlt="Web Development Feature Image"
   buttonText="Request a Site Audit"

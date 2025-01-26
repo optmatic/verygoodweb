@@ -38,7 +38,7 @@ export default function OptGrid() {
       className: "lg:col-span-2",
       containerClassName: "min-h-[350px] lg:rounded-bl-[2rem]",
       imageClassName: "object-left lg:object-bottom",
-      link: "/web-applications",
+      link: "/web-app-development",
     },
     {
       title: "Site Management",
@@ -58,7 +58,7 @@ export default function OptGrid() {
       className: "lg:col-span-2",
       containerClassName: "min-h-[350px] max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]",
       imageClassName: "object-left",
-      link: "/wordpress",
+      link: "/wordpress-solutions",
     },
   ];
 

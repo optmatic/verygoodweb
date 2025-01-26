@@ -20,8 +20,8 @@ export default function PrimaryHero() {
     { text: 'E-commerce', link: '/e-commerce' },
     { text: 'Web Development', link: '/web-development' },
     { text: 'Site Management', link: '/website-management' },
-    { text: 'WordPress', link: '/wordpress' },
-    { text: 'Web Applications', link: '/web-applications' }
+    { text: 'WordPress', link: '/wordpress-solutions' },
+    { text: 'Web Applications', link: '/web-app-development' }
   ];
 
   return (

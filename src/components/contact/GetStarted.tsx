@@ -1,8 +1,40 @@
 import WaveImage from "@/images/wave-bg.jpeg";
 import GradientButton3d from "../optmatic/GradientButton";
 import DarkButton from "../optmatic/DarkButton";
+import React from "react";
 
 export default function GetStarted() {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    // Add your Web3Forms access key
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Thank you for your enquiry. We'll be in touch soon!");
+        (event.target as HTMLFormElement).reset();
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setResult("Something went wrong. Please try again later.");
+    }
+  };
+
   return (
     <div className="relative border border-deepBlue/30 shadow-lg bg-light">
       <div className="lg:absolute lg:inset-0 lg:left-1/2">
@@ -26,7 +58,7 @@ export default function GetStarted() {
               Tell us about your vision, and we'll help turn it into an innovative and high-performing solution. Our team
               works closely with you to ensure precision and excellence in every step of the process.
             </p>
-            <form action="#" method="POST" className="mt-12">
+            <form onSubmit={onSubmit} className="mt-12">
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
                   <label htmlFor="first-name" className="block text-sm/6 font-semibold text-gray-900">
@@ -176,8 +208,13 @@ export default function GetStarted() {
                   </div>
                 </div>
               </div>
-              <div className="mt-10 flex justify-end border-t !border-deepBlue/20 pt-8">
+              <div className="mt-10 flex flex-col gap-4 border-t !border-deepBlue/20 pt-8">
                 <DarkButton text="Submit your enquiry" type="submit" />
+                {result && (
+                  <p className={`text-center ${result.includes("thank you") ? "text-green-600" : "text-red-600"}`}>
+                    {result}
+                  </p>
+                )}
               </div>
             </form>
           </div>

@@ -13,7 +13,7 @@ const metadata = {
   description: "Contact us for any questions or enquiries.",
 }
 
-export default function WebDevelopment() {
+export default function MoreInfo() {
   const components = [
     
     {
@@ -29,14 +29,12 @@ export default function WebDevelopment() {
         { label: "More Info", href: "/more-info" }]}
       metadata={metadata}
       title="Important Information"
-      subtitle="We offer a range of web development services to help you achieve your business goals."
-      activeComponentId="web-development"
-      availableComponents={components}
+      // subtitle="We offer a range of web development services to help you achieve your business goals."
+      // activeComponentId="web-development"
+      // availableComponents={components}
     //   imageSrc={WebDevFeature.src}
     //   imageAlt="Web Development Feature Image"
     >
-      <ContactUs />
-      <hr className="my-10 border-deepBlue/20"/>
       <div className="flex flex-col items-start pb-10"> 
         <h3 className="text-3xl md:text-4xl font-bold text-start mb-4 underline underline-offset-4 decoration-optBlue decoration-4">Our Pricing</h3>
         <p className="text-lg md:text-xl text-start mb-8">We offer a range of pricing options to suit your business needs.</p>

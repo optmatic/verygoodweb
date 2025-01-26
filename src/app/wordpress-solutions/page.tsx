@@ -29,7 +29,7 @@ export default function WordPressSolutions() {
   ]}
   metadata={metadata}
   title="WordPress Solutions"
-  subtitle="We offer a range of WordPress solutions designed to help you achieve your business goals with precision and efficiency."
+  subtitle="Transform your WordPress website into a powerful tool for growth with our customised, expert solutions."
   imageSrc={WordPressSolutionsFeature.src}
   imageAlt="WordPress Solutions Feature Image"
   buttonText="Request a Site Audit"

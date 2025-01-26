@@ -16,7 +16,7 @@ import { GradientFooterBackground } from '../radiant/gradient'
               Excited to bring your vision to life? Let&apos;s kick off your project with a conversation!
             </p>
             <div className="mt-8 flex justify-center">
-              <GradientButton3d text="Get started" link="/contact" />
+              <GradientButton3d text="Get started" link="/get-started" />
             </div>
           </div>
           <div className="mt-12 lg:mt-24 border-t border-deepBlue pt-4 md:flex md:items-center md:justify-between">
