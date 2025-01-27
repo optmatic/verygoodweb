@@ -86,7 +86,7 @@ export default function ContactUs() {
 
   return (
     <div className="contact-form bg-lighter">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-0">
+      <div className="mx-auto max-w-7xl py-16">
       {/* <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8"> */}
         <div className="relative bg-light border border-deepBlue/50 shadow-xl shadow-deepBlue/10">
           <h2 className="sr-only">Contact us</h2>

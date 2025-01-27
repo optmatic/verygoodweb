@@ -45,7 +45,7 @@ export default function GetStarted() {
           className="h-64 w-full object-cover bg-deepBlue/50 opacity-90 saturate-100 sm:h-80 lg:absolute lg:h-full"
         />
       </div>
-      <div className="pt-16 sm:pb-16 sm:pt-16 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2">
+      <div className="py-16 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2">
         <div className="px-6 lg:px-8">
           <div className="mx-auto intro max-w-xl lg:mx-0 lg:max-w-lg">
           <div className="intro max-w-lg border-deepBlue/7 0">
