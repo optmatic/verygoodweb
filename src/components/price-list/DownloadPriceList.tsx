@@ -49,27 +49,29 @@ export function DownloadPriceList() {
       console.log("Download response:", response)
 
       if (response.success) {
-        // Convert base64 string back to blob
-        const byteCharacters = atob(response.fileData)
-        const byteNumbers = new Array(byteCharacters.length)
-        for (let i = 0; i < byteCharacters.length; i++) {
-          byteNumbers[i] = byteCharacters.charCodeAt(i)
-        }
-        const byteArray = new Uint8Array(byteNumbers)
-        const blob = new Blob([byteArray], { type: 'application/pdf' })
+        // Create blob using a more reliable method
+        const binaryString = window.atob(response.fileData);
+        const bytes = new Uint8Array(binaryString.length);
+        const arrayBuffer = bytes.map((byte, i) => binaryString.charCodeAt(i));
+        const blob = new Blob([new Uint8Array(arrayBuffer)], { type: 'application/pdf' });
+
+        // Create and trigger download using a more compatible approach
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.style.display = 'none';
+        link.href = url;
+        link.download = 'price-list-optmatic-2025.pdf';
         
-        // Create download link
-        const url = window.URL.createObjectURL(blob)
-        const link = document.createElement('a')
-        link.href = url
-        link.download = 'price-list-optmatic-2025.pdf'
-        document.body.appendChild(link)
-        link.click()
+        // Ensure link is properly added and removed
+        document.body.appendChild(link);
+        link.click();
         
-        // Cleanup
-        document.body.removeChild(link)
-        window.URL.revokeObjectURL(url)
-        
+        // Small timeout to ensure download starts before cleanup
+        setTimeout(() => {
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(url);
+        }, 100);
+
         setSubmitStatus("Thank you! Your price list has been downloaded.")
         // Close dialog after 3 seconds
         setTimeout(() => {
