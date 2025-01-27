@@ -69,7 +69,7 @@ export default function ContactUs() {
       } else {
         setError(data.message || 'Something went wrong. Please try again.')
       }
-    } catch (err) {
+    } catch {
       setError('Failed to submit form. Please try again.')
     } finally {
       setIsSubmitting(false)
@@ -220,7 +220,7 @@ export default function ContactUs() {
               
               {/* Add success message */}
               {success && (
-                <div className="mt-4 text-optGreen text-md font-semibold">Thank you for your message. We'll get back to you soon!</div>
+                <div className="mt-4 text-optGreen text-md font-semibold">Thank you for your message. We&apos;ll get back to you soon!</div>
               )}
 
               <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">

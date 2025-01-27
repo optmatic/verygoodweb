@@ -3,23 +3,23 @@
 // import { SquaresPlusIcon, CursorArrowRaysIcon, HomeIcon,DocumentIcon, ChatBubbleBottomCenterIcon, Square2StackIcon, GlobeAltIcon, FingerPrintIcon, BellIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
 import { useRef, useEffect } from 'react'
 import PrimaryButton from '@/components/optmatic/GradientButton'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 import { mainMenuItems } from '@/config/navConfig'
-import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { ChevronDownIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
 
 import Logo from '@/images/optmatic-logo.svg'
 
-const resources = [
-  {
-    name: 'Web App Development',
-    description: 'This is a description of the web app development service.',
-    href: '/web-app-development',
-  },
-  { name: 'Site Management', description: 'This is a description of the site management service.', href: '/website-management' },
-  { name: 'WordPress Solutions', description: 'This is a description of the WordPress solutions service.', href: '/wordpress-solutions' },
-]
+// const resources = [
+//   {
+//     name: 'Web App Development',
+//     description: 'This is a description of the web app development service.',
+//     href: '/web-app-development',
+//   },
+//   { name: 'Site Management', description: 'This is a description of the site management service.', href: '/website-management' },
+//   { name: 'WordPress Solutions', description: 'This is a description of the WordPress solutions service.', href: '/wordpress-solutions' },
+// ]
 
 import { useState } from 'react'
 // import LightButton from '../optmatic/LightButton'
@@ -28,18 +28,9 @@ import { useState } from 'react'
 export default function PrimaryNav() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -54,12 +45,22 @@ export default function PrimaryNav() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
-    <header className="primary-nav relative bg-slightBlue sticky top-0 z-50 w-full shadow-md shadow-optBlue/10">
+    <header className={`primary-nav relative bg-slightBlue sticky top-0 z-50 w-full shadow-md shadow-optBlue/10 
+      ${isScrolled ? 'bg-opacity-95 backdrop-blur-sm' : ''}`}>
       <div className="mx-auto max-w-7xl">
 
         {/* <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10"> */}

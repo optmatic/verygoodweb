@@ -75,7 +75,7 @@ export default function PrimaryHero() {
       {/* Adjust container z-index to be above the wave */}
       <Container className="relative z-40">
         {/* WAS <div className="max-w-3xl pb-16 pt-16 sm:pb-24 sm:pt-24 md:pt-32"> */}
-        <div className="max-w-3xl px-4 md:px-8 pb-16 pt-16 sm:pb-24 sm:pt-24">
+        <div className="max-w-3xl px-0 sm:px-4 md:px-8 pb-16 pt-16 sm:pb-24 sm:pt-24">
           <div className="leading-10">
         <h1 className="text-5xl pt-4 font-bold font-serif sm:text-6xl">
           <span className="text-white">{title1}</span>
