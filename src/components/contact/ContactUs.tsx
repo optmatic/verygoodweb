@@ -1,7 +1,89 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import GradientButton3d from '@/components/optmatic/GradientButton'
+import { useState } from 'react'
 
 export default function ContactUs() {
+  // Update state management
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  })
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  // Update form handler
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError('')
+    setSuccess(false)
+    setIsSubmitting(true)
+
+    // Check required fields (excluding phone as it's optional)
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.subject || !formData.message) {
+      setError('Please fill in all required fields')
+      setIsSubmitting(false)
+      return
+    }
+
+    // Basic email validation
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      setError('Please enter a valid email address')
+      setIsSubmitting(false)
+      return
+    }
+
+    try {
+      const form = new FormData()
+      form.append('access_key', '21455ef4-d6aa-4abd-858a-8376cb4f30d2')
+      form.append('subject', 'New Contact Us Request')
+      form.append('firstName', formData.firstName)
+      form.append('lastName', formData.lastName)
+      form.append('email', formData.email)
+      form.append('phone', formData.phone)
+      form.append('subject', formData.subject)
+      form.append('message', formData.message)
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: form
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSuccess(true)
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        })
+      } else {
+        setError(data.message || 'Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      setError('Failed to submit form. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  // Add change handler
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }))
+  }
+
   return (
     <div className="contact-form bg-lighter">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-0">
@@ -130,15 +212,28 @@ export default function ContactUs() {
             {/* Contact form */}
             <div className="px-6 py-10 sm:px-10 lg:col-span-2 xl:p-12">
               <h3 className="text-3xl lg:text-4xl font-bold text-deepBlue">Enquire with us today</h3>
-              <form action="#" method="POST" className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+              
+              {/* Add error message */}
+              {error && (
+                <div className="mt-4 text-red-600 text-md font-semibold">{error}</div>
+              )}
+              
+              {/* Add success message */}
+              {success && (
+                <div className="mt-4 text-optGreen text-md font-semibold">Thank you for your message. We'll get back to you soon!</div>
+              )}
+
+              <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                 <div>
                   <label htmlFor="first-name" className="block text-sm font-medium text-deepBlue">
                     First name
                   </label>
                   <div className="mt-1">
                     <input
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      name="firstName"
                       id="first-name"
-                      name="first-name"
                       type="text"
                       autoComplete="given-name"
                       className="block w-full rounded-md border border-lighterBlue px-4 py-3 text-deepBlue shadow-sm focus:border-optBlue focus:ring-optBlue"
@@ -151,8 +246,10 @@ export default function ContactUs() {
                   </label>
                   <div className="mt-1">
                     <input
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      name="lastName"
                       id="last-name"
-                      name="last-name"
                       type="text"
                       autoComplete="family-name"
                       className="block w-full rounded-md border border-lighterBlue px-4 py-3 text-deepBlue shadow-sm focus:border-optBlue focus:ring-optBlue"
@@ -165,8 +262,10 @@ export default function ContactUs() {
                   </label>
                   <div className="mt-1">
                     <input
-                      id="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       name="email"
+                      id="email"
                       type="email"
                       autoComplete="email"
                       className="block w-full rounded-md border border-lighterBlue px-4 py-3 text-deepBlue shadow-sm focus:border-optBlue focus:ring-optBlue"
@@ -184,8 +283,10 @@ export default function ContactUs() {
                   </div>
                   <div className="mt-1">
                     <input
-                      id="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       name="phone"
+                      id="phone"
                       type="text"
                       autoComplete="tel"
                       aria-describedby="phone-optional"
@@ -199,8 +300,10 @@ export default function ContactUs() {
                   </label>
                   <div className="mt-1">
                     <input
-                      id="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       name="subject"
+                      id="subject"
                       type="text"
                       className="block w-full rounded-md border border-lighterBlue px-4 py-3 text-deepBlue shadow-sm focus:border-optBlue focus:ring-optBlue"
                     />
@@ -217,26 +320,21 @@ export default function ContactUs() {
                   </div>
                   <div className="mt-1">
                     <textarea
-                      id="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       name="message"
+                      id="message"
                       rows={4}
                       aria-describedby="message-max"
                       className="block w-full rounded-md border border-lighterBlue px-4 py-3 text-deepBlue shadow-sm focus:border-optBlue focus:ring-optBlue"
-                      defaultValue={''}
                     />
                   </div>
                 </div>
-                {/* <div className="sm:col-span-2 sm:flex sm:justify-end">
-                  <button
-                    type="submit"
-                    className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-optBlue px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-deepBlue focus:outline-none focus:ring-2 focus:ring-optBlue focus:ring-offset-2 sm:w-auto"
-                  >
-                    Submit
-                  </button>
-                </div> */}
-
                 <div className="sm:col-span-2 sm:flex sm:justify-end">
-                    <GradientButton3d type="submit" text="Submit" />
+                  <GradientButton3d 
+                    type="submit" 
+                    text={isSubmitting ? "Sending..." : "Submit"}
+                  />
                 </div>
               </form>
             </div>

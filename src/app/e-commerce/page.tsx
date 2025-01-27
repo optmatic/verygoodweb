@@ -2,7 +2,7 @@
 
 // import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import EcommerceFeature from "@/images/features/ecommerce-feature-abstraction.webp"
-import SubPageLayoutAlt from "@/app/layouts/SubPageLayoutAlt"
+import SubPageLayoutAlt from "@/app/layouts/SubPageLayout"
 import SimpleContent from "@/components/subpage-components/SimpleContent";
 
 const metadata = {

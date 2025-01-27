@@ -9,19 +9,44 @@ export default function Contact() {
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [result, setResult] = useState("")
+  const [errors, setErrors] = useState<{ [key: string]: string }>({})
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setErrors({})
+
+    // Validate required fields
+    const formData = new FormData(e.currentTarget)
+    const requiredFields = ['first-name', 'last-name', 'email', 'message']
+    const newErrors: { [key: string]: string } = {}
+
+    requiredFields.forEach(field => {
+      if (!formData.get(field)) {
+        newErrors[field] = 'This field is required'
+      }
+    })
+
+    // Validate email format
+    const email = formData.get('email') as string
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors['email'] = 'Please enter a valid email address'
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
+      return
+    }
+
     setLoading(true)
     setResult("Sending....")
 
-    const formData = new FormData(e.currentTarget)
-    formData.append("access_key", "21455ef4-d6aa-4abd-858a-8376cb4f30d2")
+    const formDataToSend = new FormData(e.currentTarget)
+    formDataToSend.append("access_key", "21455ef4-d6aa-4abd-858a-8376cb4f30d2")
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        body: formDataToSend
       })
 
       const data = await response.json()
@@ -72,9 +97,14 @@ export default function Contact() {
                 name="first-name"
                 type="text"
                 autoComplete="given-name"
-                placeholder="First name"
-                className="block w-full px-3.5 py-2  text-white outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white"
+                placeholder="First name *"
+                className={`block w-full px-3.5 py-2 text-white outline outline-1 -outline-offset-1 ${
+                  errors['first-name'] ? 'outline-red-500' : 'outline-gray-300'
+                } placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white`}
               />
+              {errors['first-name'] && (
+                <p className="mt-1 text-sm text-red-500">{errors['first-name']}</p>
+              )}
             </div>
           </div>
           <div>
@@ -162,11 +192,16 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
-                placeholder="Message"
+                placeholder="Message *"
                 rows={4}
-                className="block w-full px-3.5 py-2 text-white outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white"
+                className={`block w-full px-3.5 py-2 text-white outline outline-1 -outline-offset-1 ${
+                  errors['message'] ? 'outline-red-500' : 'outline-gray-300'
+                } placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white`}
                 defaultValue={''}
               />
+              {errors['message'] && (
+                <p className="mt-1 text-sm text-red-500">{errors['message']}</p>
+              )}
             </div>
           </div>
           {/* <Field className="flex gap-x-4 sm:col-span-2">

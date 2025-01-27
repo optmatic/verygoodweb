@@ -37,7 +37,7 @@ export default function GetStarted() {
   };
 
   return (
-    <div className="relative border border-deepBlue/30 shadow-lg bg-light">
+    <div className="my-16 relative border border-deepBlue/30 shadow-lg bg-light">
       <div className="lg:absolute lg:inset-0 lg:left-1/2">
         <img
           alt=""

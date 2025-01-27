@@ -2,7 +2,7 @@
 
 // import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import WebDevFeature from "@/images/features/web-dev-abstraction.webp"
-import SubPageLayoutAlt from "@/app/layouts/SubPageLayoutAlt"
+import SubPageLayoutAlt from "@/app/layouts/SubPageLayout"
 import SimpleContent from "@/components/subpage-components/SimpleContent"
 // import RotatingProjects from "@/components/ui/rotating-projects";
 // import Faqs from "@/components/ui/faqs";

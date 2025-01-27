@@ -71,6 +71,7 @@ export default function SiteAuditForm() {
       formDataToSubmit.append(key, value)
     })
     formDataToSubmit.append("access_key", "21455ef4-d6aa-4abd-858a-8376cb4f30d2")
+    formDataToSubmit.append("subject", "New Site Audit Request")
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {

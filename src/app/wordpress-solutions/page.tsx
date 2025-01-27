@@ -4,7 +4,7 @@
 import WordPressSolutionsFeature from "@/images/features/wordpress-feature-abstraction.webp"
 // import SubPageLayout from "@/app/layouts/SubPageLayout"
 import SimpleContent from "@/components/subpage-components/SimpleContent";
-import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
+import SubPageLayoutAlt from "../layouts/SubPageLayout";
 // import SubPageLayoutAlt from "../layouts/SubPageLayoutAlt";
 
 const metadata = {

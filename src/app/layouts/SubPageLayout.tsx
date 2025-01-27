@@ -4,13 +4,12 @@ import React, { useState, useEffect, type ReactNode } from "react";
 // import Image from "next/image";
 import Link from "next/link";
 import GradientButton3d from "@/components/optmatic/GradientButton";
-// import LightButton from "@/components/optmatic/LightButton";
 import { ChevronRightIcon, HomeIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 // import { BuildingOfficeIcon, CreditCardIcon, UserIcon, UsersIcon } from '@heroicons/react/20/solid'
 import type { Metadata } from "next";
 import WaveBackground from "@/images/wave-bg.jpeg"
 // import ContactUs from "@/components/ContactUs";
-import Footer from "@/components/navigation/ContactFooterLight";
+import MinimalFooter from "@/components/navigation/MinimalFooter";
 
 interface BreadcrumbItem {
   label: string;
@@ -25,7 +24,7 @@ interface TabItem {
   componentId: string;
 }
 
-interface SubPageLayoutProps {
+interface SubPageLayoutAltProps {
   children: ReactNode;
   title?: string;
   subtitle?: string;
@@ -47,7 +46,7 @@ const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ')
 }
 
-const SubPageLayout: React.FC<SubPageLayoutProps> = ({
+const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
   children,
   title,
   subtitle,
@@ -171,7 +170,7 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
   }, [metadata]);
 
   return (
-    <div className="sublayout min-h-screen flex flex-col">
+    <div className="sublayout-alt min-h-screen flex flex-col">
       <div className="relative overflow-x-hidden overflow-y-hidden">
         {/* Background gradient */}
         <div 
@@ -180,7 +179,6 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
             background: 'linear-gradient(to left, rgb(17 24 39 / 0.7) 40%, rgba(17, 24, 39, 0.8) 70%, rgba(17, 24, 39, 0.9) 100%)',
           }}
         />
-
         {/* Animated Wave Background */}
         <div 
           className="absolute right-0 top-0 w-full h-full z-10"
@@ -206,8 +204,8 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
         />
 
         {/* Content */}
-        <div className="relative z-30 py-8 lg:py-14">
-          <div className={`pt-12 ${availableComponents.length > 0 ? 'pb-12' : 'pb-12 sm:pt-12'} mx-auto max-w-7xl px-6 lg:px-8`}>
+        <div className="relative z-30 py-4 lg:py-8">
+          <div className={`pt-8 ${availableComponents.length > 0 ? 'pb-8' : 'pb-8 sm:pt-8'} mx-auto max-w-7xl px-8 xl:px-6`}>
             <div className="flex flex-col md:flex-row items-start justify-between">
               <div className="lg:gap-y-8 md:w-1/2 mb-8 md:mb-0">
                 <nav aria-label="Breadcrumb" className="flex mb-6 sm:mb-4">
@@ -239,7 +237,7 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                   </ol>
                 </nav>
                 {title && (
-                  <h1 className="pr-2 max-w-2xl text-3xl font-semibold tracking-tight text-light sm:text-6xl lg:col-span-2 xl:col-auto">
+                  <h1 className="pr-2 max-w-2xl text-3xl font-semibold tracking-tight text-light text-4xl sm:text-6xl lg:col-span-2 xl:col-auto">
                     {title}
                   </h1>
                 )}
@@ -257,7 +255,7 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                 )}
               </div>
               {imageSrc && (
-                <div className="md:pl-[25px] md:w-1/2 flex items-center justify-center">
+                <div className="hidden md:block md:pl-[25px] md:w-1/2 flex items-center justify-center">
                   <img
                     src={imageSrc}
                     alt={imageAlt || ""}
@@ -273,19 +271,21 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
       {availableComponents.length > 0 && (
         <div className={classNames(
           'sticky z-40 transition-all duration-200',
-          isScrolled ? 'top-[132px] bg-deepBlue' : 'top-0 bg-deepBlue'
+          isScrolled ? 'top-[127px] bg-[#242b3a]' : 'top-0 bg-[#242b3a]'
         )}>
           <div className={classNames(
             'transition-all duration-200',
-            isScrolled ? 'bg-white shadow-lg' : 'bg-deepBlue'
+            isScrolled ? 'bg-slightBlue shadow-lg' : 'bg-[#242b3a]'
           )}>
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl px-8 xl:px-6">
               {/* Mobile tab alternative, will leave for now */}
               <div className="grid grid-cols-1 hidden">
                 <select
                   defaultValue={dynamicTabs.find((tab) => tab.current)?.name}
                   aria-label="Select a tab"
-                  className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-2 pr-8 pl-3 text-base text-light outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-deepBlue"
+                  className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-
+                  
+                  py-2 pr-8 pl-3 text-base text-light outline-1 -outline-offset-1 outline-light focus:outline-2 focus:-outline-offset-2 focus:outline-gradient-text"
                 >
                   {dynamicTabs.map((tab) => (
                     <option key={tab.name}>{tab.name}</option>
@@ -293,7 +293,7 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                 </select>
                 <ChevronDownIcon
                   aria-hidden="true"
-                  className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-gray-500"
+                  className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-light"
                 />
               </div>
               <div className="hidden sm:block">
@@ -310,15 +310,15 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
                       aria-current={tab.current ? 'page' : undefined}
                       className={classNames(
                         tab.current
-                          ? 'border-riverBlue text-riverBlue'
-                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                          ? 'border-light text-light'
+                          : 'border-transparent hover:border-light group-hover:bg-gradient-to-r group-hover:from-optBlue/70 group-hover:to-deepBlue group-hover:bg-clip-text group-hover:text-transparent',
                         'group inline-flex items-center border-b-2 p-2 text-sm font-medium transition-colors duration-200',
                       )}
                     >
                       <tab.icon
                         aria-hidden="true"
                         className={classNames(
-                          tab.current ? 'text-riverBlue' : 'text-gray-400 group-hover:text-gray-500',
+                          tab.current ? 'text-light' : 'text-light group-hover:text-gradient-text',
                           'mr-2 -ml-0.5 size-5',
                         )}
                       />
@@ -330,21 +330,22 @@ const SubPageLayout: React.FC<SubPageLayoutProps> = ({
             </div>
             <div className={classNames(
               'border-b w-full',
-              isScrolled ? 'border-gray-100' : 'border-gray-200'
+              isScrolled ? 'border-slightBlue' : 'border-slightBlue'
             )} />
           </div>
         </div>
       )}
 
-
       <main className="flex-grow">
-        <div className="py-16">
+      {/* <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8"> */}
+
+        <div className="mx-auto max-w-7xl px-8 xl:px-6 py-8">
           {wrapChildrenWithAnchors(children)}
         </div>
       </main>
-      <Footer />
+      <MinimalFooter isDark={true} />
     </div>
   );
 };
 
-export default SubPageLayout;
+export default SubPageLayoutAlt;
