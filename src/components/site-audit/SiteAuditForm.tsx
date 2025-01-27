@@ -46,6 +46,7 @@ export default function SiteAuditForm() {
   })
   const [result, setResult] = useState("")
   const { toast } = useToast()
+  const [showThankYou, setShowThankYou] = useState(false)
 
   const totalSteps = 4
   const progress = (currentStep / totalSteps) * 100
@@ -83,11 +84,7 @@ export default function SiteAuditForm() {
 
       if (data.success) {
         setResult("Form Submitted Successfully")
-        toast({
-          title: "Success",
-          description: "Your audit request has been submitted successfully!",
-        })
-        setIsOpen(false)
+        setShowThankYou(true)
         setCurrentStep(1)
         setFormData({} as typeof formData)
       } else {
@@ -116,51 +113,69 @@ export default function SiteAuditForm() {
         Request Site Audit
       </Button>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Site Audit Request</DialogTitle>
-          </DialogHeader>
-          <Progress value={progress} className="w-full" />
-          <form onSubmit={handleSubmit}>
-            {currentStep === 1 && (
-              <Step1
-                formData={formData}
-                setFormData={setFormData}
-              />
-            )}
-            {currentStep === 2 && (
-              <Step2
-                formData={formData}
-                setFormData={(data) => setFormData(prev => ({ ...prev, ...data }))}
-              />
-            )}
-            {currentStep === 3 && (
-              <Step3
-                formData={formData}
-                setFormData={(data) => setFormData(prev => ({ ...prev, ...data }))}
-              />
-            )}
-            {currentStep === 4 && (
-              <Step4
-                formData={formData}
-                setFormData={(data) => setFormData(prev => ({ ...prev, ...data }))}
-              />
-            )}
-            <div className="flex justify-between mt-4">
-              <Button type="button" onClick={handlePrevious} disabled={currentStep === 1}>
-                Previous
-              </Button>
-              {currentStep < totalSteps ? (
-                <Button type="button" onClick={handleNext}>
-                  Next
-                </Button>
-              ) : (
-                <Button type="submit">Submit</Button>
+        {!showThankYou ? (
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Site Audit Request</DialogTitle>
+            </DialogHeader>
+            <Progress value={progress} className="w-full" />
+            <form onSubmit={handleSubmit}>
+              {currentStep === 1 && (
+                <Step1
+                  formData={formData}
+                  setFormData={setFormData}
+                />
               )}
+              {currentStep === 2 && (
+                <Step2
+                  formData={formData}
+                  setFormData={(data) => setFormData(prev => ({ ...prev, ...data }))}
+                />
+              )}
+              {currentStep === 3 && (
+                <Step3
+                  formData={formData}
+                  setFormData={(data) => setFormData(prev => ({ ...prev, ...data }))}
+                />
+              )}
+              {currentStep === 4 && (
+                <Step4
+                  formData={formData}
+                  setFormData={(data) => setFormData(prev => ({ ...prev, ...data }))}
+                />
+              )}
+              <div className="flex justify-between mt-4">
+                <Button type="button" onClick={handlePrevious} disabled={currentStep === 1}>
+                  Previous
+                </Button>
+                {currentStep < totalSteps ? (
+                  <Button type="button" onClick={handleNext}>
+                    Next
+                  </Button>
+                ) : (
+                  <Button type="submit">Submit</Button>
+                )}
+              </div>
+            </form>
+            {result && <p className="mt-4 text-sm text-center">{result}</p>}
+          </DialogContent>
+        ) : (
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Thank You!</DialogTitle>
+            </DialogHeader>
+            <div className="py-6 text-center">
+              <p className="mb-4">Thank you for requesting a site audit. We have received your submission and will review it shortly.</p>
+              <p className="mb-6">We'll be in touch with you soon!</p>
+              <Button onClick={() => {
+                setShowThankYou(false)
+                setIsOpen(false)
+              }}>
+                Close
+              </Button>
             </div>
-          </form>
-          {result && <p className="mt-4 text-sm text-center">{result}</p>}
-        </DialogContent>
+          </DialogContent>
+        )}
       </Dialog>
     </>
   )
