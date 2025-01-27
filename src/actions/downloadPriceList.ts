@@ -1,8 +1,5 @@
 'use server'
 
-import { promises as fs } from 'fs'
-import path from 'path'
-
 interface DownloadResponse {
   success: boolean;
   fileData: string;
