@@ -122,14 +122,14 @@ export default function GetStarted() {
                 </div>
                 <div className="sm:col-span-2">
                   <label htmlFor="website" className="block text-sm/6 font-semibold text-gray-900">
-                    Website (optional)
+                    Website
                   </label>
                   <div>
                     <input
                       id="website"
                       name="website"
-                      type="url"
-                      placeholder="https://"
+                      type="text"
+                      placeholder="example.com"
                       className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-optBlue"
                     />
                   </div>
