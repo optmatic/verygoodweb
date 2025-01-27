@@ -17,6 +17,7 @@ import { downloadPriceList } from "@/actions/downloadPriceList"
 export function DownloadPriceList() {
   const [open, setOpen] = useState(false)
   const [submitStatus, setSubmitStatus] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -31,6 +32,9 @@ export function DownloadPriceList() {
         <form
           action={async (formData: FormData) => {
             try {
+              setIsLoading(true)
+              setSubmitStatus("")
+
               // First, submit to Web3Forms
               formData.append("access_key", "21455ef4-d6aa-4abd-858a-8376cb4f30d2");
               formData.append("subject", "New Price List Download Request");
@@ -70,12 +74,19 @@ export function DownloadPriceList() {
                 // Cleanup
                 document.body.removeChild(link)
                 window.URL.revokeObjectURL(url)
-                setOpen(false)
-                setSubmitStatus("Form submitted successfully!")
+                
+                setSubmitStatus("Thank you! Your price list has been downloaded.")
+                // Close dialog after 3 seconds
+                setTimeout(() => {
+                  setOpen(false)
+                  setSubmitStatus("")
+                }, 3000)
               }
             } catch (error) {
               console.error("Error:", error);
               setSubmitStatus("An error occurred. Please try again.");
+            } finally {
+              setIsLoading(false)
             }
           }}
           className="space-y-4"
@@ -93,11 +104,13 @@ export function DownloadPriceList() {
             <Input id="email" name="email" type="email" required />
           </div>
           {submitStatus && (
-            <div className={`text-sm ${submitStatus.includes("error") ? "text-red-500" : "text-green-500"}`}>
+            <div className={`text-sm ${submitStatus.includes("error") ? "text-red-500" : "text-green-500 font-medium"}`}>
               {submitStatus}
             </div>
           )}
-          <Button type="submit">Submit and Download</Button>
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? "Processing..." : "Submit and Download"}
+          </Button>
         </form>
       </DialogContent>
     </Dialog>
