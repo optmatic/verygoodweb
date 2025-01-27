@@ -59,29 +59,29 @@ export default function PrimaryNav() {
   };
 
   return (
-    <header className={`primary-nav relative bg-slightBlue sticky top-0 z-50 w-full ${!isScrolled ? 'shadow-md shadow-optBlue/10' : ''}`}>
+    <header className="primary-nav relative bg-slightBlue sticky top-0 z-50 w-full shadow-md shadow-optBlue/10">
       <div className="mx-auto max-w-7xl">
-        <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
+
+        {/* <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10"> */}
+        
+        <nav className="flex items-center justify-between py-6 md:justify-start md:space-x-10 px-2 xs:px-6 lg:px-4">
           <div className="flex-shrink-0">
             <Link href="/" className="optmatic-logo flex">
               <span className="sr-only">Your Company</span>
-              <Image
-                alt=""
+              <img
+                alt="Optmatic logo"
                 src={Logo.src}
-                
-                width={250}
-                height={80}
+                className="w-[200px] h-[70px] sm:w-[250px] sm:h-[80px]"
               />
             </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <button 
               onClick={toggleMobileMenu}
-              className="relative inline-flex items-center justify-center rounded-md bg-deepBlue p-2 text-white hover:bg-deepBlue/80 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-darkerPrimary"
+              className="relative inline-flex items-center justify-center rounded-md bg-deepBlue px-4 py-2 text-white hover:bg-deepBlue/80 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-darkerPrimary"
             >
               <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open menu</span>
-              <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+              <span className="text-sm font-medium">MENU</span>
             </button>
           </div>
           <div className="hidden md:flex md:flex-1 md:items-center">
@@ -152,98 +152,76 @@ export default function PrimaryNav() {
 
       {mobileMenuOpen && (
         <>
-          <div className="fixed inset-0 bg-black bg-opacity-25 z-40" aria-hidden="true" />
+          <div className="fixed inset-0 bg-deepBlue/95 z-40" aria-hidden="true" />
           <div 
             ref={mobileMenuRef}
-            className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden z-50"
+            className="fixed inset-0 z-50 overflow-y-auto bg-deepBlue shadow-md shadow-optBlue/10"
           >
-            <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-              <div className="px-5 pb-6 pt-5">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Image
-                      alt="Your Company"
-                      src={Logo.src}
-                      className="h-10 w-auto"
-                      width={100}
-                      height={100}
-                    />
-                  </div>
-                  <div className="-mr-2">
-                    <button
-                      onClick={toggleMobileMenu}
-                      className="relative inline-flex items-center justify-center rounded-md bg-deepBlue p-2 text-white hover:bg-slightBlue hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-darkerPrimary"
-                    >
-                      <span className="absolute -inset-0.5" />
-                      <span className="sr-only">Close menu</span>
-                      <XMarkIcon aria-hidden="true" className="h-6 w-6" />
-                    </button>
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <nav className="grid gap-6">
-                    {mainMenuItems.map((item) => (
-                      <div key={item.name}>
-                        {item.hasDropdown && item.dropdownItems ? (
-                          <>
-                            {item.dropdownItems.map((dropdownItem) => (
-                              <Link 
-                                key={dropdownItem.name} 
-                                href={dropdownItem.href || '#'}
-                                className={`text-base font-light ${
-                                  pathname === dropdownItem.href 
-                                    ? 'gradient-text' 
-                                    : 'text-gray-900 hover:text-gray-700'
-                                }`}
-                              >
-                                {dropdownItem.name}
-                              </Link>
-                            ))}
-                          </>
-                        ) : (
-                          <Link 
-                            href={item.href || '#'}
-                            className={`text-base font-light ${
-                              pathname === item.href 
-                                ? 'gradient-text' 
-                                : 'text-gray-900 hover:text-gray-700'
-                            }`}
-                          >
-                            {item.name}
-                          </Link>
-                        )}
-                      </div>
-                    ))}
-                  </nav>
-                </div>
-              </div>
-              <div className="px-5 py-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <a href="/web-development" className="text-base gradient-text font-light text-gray-900 hover:text-gray-700">
-                    Web Development
-                  </a>
-                  <a href="/e-commerce" className="text-base font-light text-gray-900 hover:text-gray-700">
-                    E-commerce
-                  </a>
-                  <a href="/contact" className="text-base font-light text-gray-900 hover:text-gray-700">
-                    Contact Us
-                  </a>
-                  {resources.map((item) => (
-                    <Link 
-                      key={item.name} 
-                      href={item.href || '#'}
-                      className={`text-base font-light ${
-                        pathname === item.href 
-                          ? 'gradient-text' 
-                          : 'text-gray-900 hover:text-gray-700'
-                      }`}
-                    >
-                      {item.name}
+            <div className="min-h-screen w-full">
+              <div className="px-2 xs:px-6 lg:px-4 py-4">
+                <div className="flex items-center justify-between shadow-md shadow-optBlue/10 bg-deepBlue pt-2 pb-6">
+                  <div className="flex-shrink-0">
+                    <Link href="/" className="optmatic-logo flex">
+                    <img
+                alt="Optmatic logo"
+                src={Logo.src}
+                className="w-[200px] h-[70px] sm:w-[250px] sm:h-[80px]"
+              />
                     </Link>
-                  ))}
+                  </div>
+                  <button
+                    onClick={toggleMobileMenu}
+                    className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-slightBlue focus:outline-none focus:ring-2 focus:ring-inset focus:ring-darkerPrimary"
+                  >
+                    <span className="sr-only">Close menu</span>
+                    <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+                  </button>
                 </div>
-                <div className="mt-6 flex flex-col">
-                  <PrimaryButton text="Schedule a Call" link="/contact" />
+                
+                <nav className="mt-12 space-y-2 px-4 xs:px-6 lg:px-4">
+                  {mainMenuItems.map((item) => (
+                    <div key={item.name} className="">
+                      {item.hasDropdown && item.dropdownItems ? (
+                        <div className="border-t border-white/10 mt-6 mb-2 pt-4">
+                          <p className="text-white text-xl font-semibold mb-2">{item.name}</p>
+                          {item.dropdownItems.map((dropdownItem) => (
+                            <Link 
+                              key={dropdownItem.name} 
+                              href={dropdownItem.href || '#'}
+                              className={`block text-md font-light ${
+                                pathname === dropdownItem.href 
+                                  ? 'gradient-text' 
+                                  : 'text-white hover:text-white/80'
+                              }`}
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {dropdownItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <Link 
+                          href={item.href || '#'}
+                          className={`block text-xl font-semibold ${
+                            pathname === item.href 
+                              ? 'gradient-text' 
+                              : 'text-white hover:text-white/80'
+                          }`}
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </nav>
+                
+                <div className="pt-6 px-4 xs:px-6 lg:px-4">
+                  <PrimaryButton 
+                    text="Schedule a Call" 
+                    link="/contact" 
+                    targetVal="_self"
+                  />
                 </div>
               </div>
             </div>

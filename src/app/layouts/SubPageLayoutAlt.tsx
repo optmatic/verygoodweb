@@ -205,7 +205,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
 
         {/* Content */}
         <div className="relative z-30 py-4 lg:py-8">
-          <div className={`pt-8 ${availableComponents.length > 0 ? 'pb-8' : 'pb-8 sm:pt-8'} mx-auto max-w-7xl px-6 lg:px-8`}>
+          <div className={`pt-8 ${availableComponents.length > 0 ? 'pb-8' : 'pb-8 sm:pt-8'} mx-auto max-w-7xl px-6 lg:px-4`}>
             <div className="flex flex-col md:flex-row items-start justify-between">
               <div className="lg:gap-y-8 md:w-1/2 mb-8 md:mb-0">
                 <nav aria-label="Breadcrumb" className="flex mb-6 sm:mb-4">
@@ -337,7 +337,9 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
       )}
 
       <main className="flex-grow">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8">
+      {/* <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8"> */}
+
+        <div className="mx-auto max-w-7xl px-6 lg:px-2 py-8">
           {wrapChildrenWithAnchors(children)}
         </div>
       </main>
