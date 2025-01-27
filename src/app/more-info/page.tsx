@@ -28,7 +28,7 @@ export default function MoreInfo() {
       breadcrumbPath={[
         { label: "More Info", href: "/more-info" }]}
       metadata={metadata}
-      title="Important Information"
+      title="Key Information"
       // subtitle="We offer a range of web development services to help you achieve your business goals."
       // activeComponentId="web-development"
       // availableComponents={components}

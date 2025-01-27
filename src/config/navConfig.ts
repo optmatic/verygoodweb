@@ -31,8 +31,8 @@ export const mainMenuItems = [
         href: '/wordpress-solutions',
       }, 
       {
-        name: 'Important Information',
-        description: 'Important information about our services',
+        name: 'Key Information',
+        description: 'Key information about our services',
         href: '/more-info',
       }
 

@@ -112,12 +112,12 @@ export default function PrimaryNav() {
                                   key={dropdownItem.name}
                                   href={dropdownItem.href || '#'}
                                   className={`-m-3 block px-4 py-2 hover:text-white/80 hover:bg-slightBlue hover:border-optBlue/5 hover:border border border-deepBlue
-                                    ${dropdownItem.name === 'Important Information' ? 'bg-gradient-to-r from-optBlue/40 to-deepBlue border-l-2 border-l-optBlue/70 hover:bg-gradient-to-r hover:from-optBlue/70 hover:to-deepBlue hover:border-l-2 hover:border-l-optBlue hover:border-r-none hover:border-b-none hover:border-t-none hover:shadow-none' : ''}`}
+                                    ${dropdownItem.name === 'Key Information' ? 'bg-gradient-to-r from-optBlue/40 to-deepBlue border-l-2 border-l-optBlue/70 hover:bg-gradient-to-r hover:from-optBlue/70 hover:to-deepBlue hover:border-l-2 hover:border-l-optBlue hover:border-r-none hover:border-b-none hover:border-t-none hover:shadow-none' : ''}`}
                                 >
-                                  <p className={`text-md font-normal ${dropdownItem.name === 'Important Information' ? 'gradient-text' : 'text-white'}`}>
+                                  <p className={`text-md font-normal ${dropdownItem.name === 'Key Information' ? 'gradient-text' : 'text-white'}`}>
                                     {dropdownItem.name}
                                   </p>
-                                  <p className={`text-xs ${dropdownItem.name === 'Important Information' ? 'text-light' : 'text-white/80'}`}>
+                                  <p className={`text-xs ${dropdownItem.name === 'Key Information' ? 'text-light' : 'text-white/80'}`}>
                                     {dropdownItem.description}
                                   </p>
                                 </Link>
