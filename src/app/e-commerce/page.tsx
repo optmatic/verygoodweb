@@ -32,7 +32,7 @@ export default function Ecommerce() {
       imageSrc={EcommerceFeature.src}
       imageAlt="E-commerce Feature Image"
       buttonText="Request a Site Audit"
-      buttonLink="/e-commerce"
+      buttonLink="/site-audit"
     >
         <SimpleContent
   badge="Smarter online selling"
