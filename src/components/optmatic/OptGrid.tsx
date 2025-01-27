@@ -66,7 +66,8 @@ export default function OptGrid() {
     <div className="topographic py-24 sm:py-32">
       
       {/* <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8"> */}
-      <div className="mx-auto max-w-2xl lg:max-w-7xl">
+      <div className="px-4 md:px-8 mx-auto lg:max-w-7xl">
+      {/* <div className="mx-auto max-w-2xl lg:max-w-7xl"> */}
         <div className="intro max-w-lg">
         <h4 className="subheading text-base/7 font-semibold">Streamlined & Future-ready</h4>
         <hr className="mt-2 mb-6 border-deepBlue/50" />

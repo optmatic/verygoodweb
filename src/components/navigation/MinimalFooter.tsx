@@ -10,9 +10,9 @@ export default function MinimalFooter({ isDark = false }: MinimalFooterProps) {
   return (
     <footer className={`relative ${isDark ? 'bg-deepBlue border-white/20' : 'bg-white border-deepBlue/20'} border-t`}>
       <GradientFooterBackground />
-      <div className="relative mx-auto max-w-7xl px-6 pt-4 pb-8 lg:px-0">
+      <div className="relative mx-auto max-w-7xl px-6 pt-4 pb-8">
         <div className="pt-4 md:flex md:items-center md:justify-between">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-start">
             <img
               alt="Company name"
               src={isDark ? OptmaticLogoLight.src : OptmaticLogoDark.src}

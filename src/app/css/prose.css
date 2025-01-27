@@ -12,6 +12,7 @@
 .prose p {
     @apply text-black;
     @apply leading-normal;
+    
 }
 
 .prose ul {

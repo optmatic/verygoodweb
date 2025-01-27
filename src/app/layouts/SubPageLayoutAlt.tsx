@@ -205,7 +205,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
 
         {/* Content */}
         <div className="relative z-30 py-4 lg:py-8">
-          <div className={`pt-8 ${availableComponents.length > 0 ? 'pb-8' : 'pb-8 sm:pt-8'} mx-auto max-w-7xl px-6 lg:px-4`}>
+          <div className={`pt-8 ${availableComponents.length > 0 ? 'pb-8' : 'pb-8 sm:pt-8'} mx-auto max-w-7xl px-8 xl:px-6`}>
             <div className="flex flex-col md:flex-row items-start justify-between">
               <div className="lg:gap-y-8 md:w-1/2 mb-8 md:mb-0">
                 <nav aria-label="Breadcrumb" className="flex mb-6 sm:mb-4">
@@ -237,7 +237,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
                   </ol>
                 </nav>
                 {title && (
-                  <h1 className="pr-2 max-w-2xl text-3xl font-semibold tracking-tight text-light sm:text-6xl lg:col-span-2 xl:col-auto">
+                  <h1 className="pr-2 max-w-2xl text-3xl font-semibold tracking-tight text-light text-4xl sm:text-6xl lg:col-span-2 xl:col-auto">
                     {title}
                   </h1>
                 )}
@@ -255,7 +255,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
                 )}
               </div>
               {imageSrc && (
-                <div className="md:pl-[25px] md:w-1/2 flex items-center justify-center">
+                <div className="hidden md:block md:pl-[25px] md:w-1/2 flex items-center justify-center">
                   <img
                     src={imageSrc}
                     alt={imageAlt || ""}
@@ -277,7 +277,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
             'transition-all duration-200',
             isScrolled ? 'bg-slightBlue shadow-lg' : 'bg-[#242b3a]'
           )}>
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl px-8 xl:px-6">
               {/* Mobile tab alternative, will leave for now */}
               <div className="grid grid-cols-1 hidden">
                 <select
@@ -339,7 +339,7 @@ const SubPageLayoutAlt: React.FC<SubPageLayoutAltProps> = ({
       <main className="flex-grow">
       {/* <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8"> */}
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-2 py-8">
+        <div className="mx-auto max-w-7xl px-8 xl:px-6 py-8">
           {wrapChildrenWithAnchors(children)}
         </div>
       </main>
