@@ -36,8 +36,8 @@ const alegreyaSans = Alegreya_Sans({
 
 
 export const metadata: Metadata = {
-  title: "[optmatic] - Web Development & E-commerce",
-  description: "This is the website of Optmatic, a web development and e-commerce company.",
+  title: "[optmatic] -  Web Development & E-commerce",
+  description: "Future-proof your digital presence with Optmatic. We specialise in web development and e-commerce solutions, ensuring your business stays ahead in the digital age.",
   icons: {
     apple: '/apple-touch-icon.png',
     icon: [
