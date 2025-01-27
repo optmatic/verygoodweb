@@ -216,7 +216,7 @@ export default function GetStarted() {
               <div className="mt-10 flex flex-col gap-4 border-t !border-deepBlue/20 pt-8">
                 <DarkButton text="Submit your enquiry" type="submit" />
                 {result && (
-                  <p className={`text-left pt-4 font-semibold ${result.includes("Thank you") ? "text-optGreen" : "text-red-600"}`}>
+                  <p className={`text-left pt-4 font-semibold ${result.includes("Thank you") || result.includes("Sending") ? "text-optGreen" : "text-red-600"}`}>
                     {result}
                   </p>
                 )}
