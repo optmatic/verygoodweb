@@ -166,7 +166,7 @@ export default function SiteAuditForm() {
             </DialogHeader>
             <div className="py-6 text-center">
               <p className="mb-4">Thank you for requesting a site audit. We have received your submission and will review it shortly.</p>
-              <p className="mb-6">We'll be in touch with you soon!</p>
+              <p className="mb-6">We&apos;ll be in touch with you soon!</p>
               <Button onClick={() => {
                 setShowThankYou(false)
                 setIsOpen(false)

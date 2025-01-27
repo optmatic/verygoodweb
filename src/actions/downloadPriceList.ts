@@ -1,7 +1,7 @@
 'use server'
 
-// import { promises as fs } from 'fs'
-// import path from 'path'
+import { promises as fs } from 'fs'
+import path from 'path'
 
 interface DownloadResponse {
   success: boolean;
@@ -17,16 +17,12 @@ export async function downloadPriceList(formData: FormData): Promise<DownloadRes
     
     console.log('Download requested by:', { name, email, companyName });
     
-    // Here you would typically:
-    // 1. Read your PDF file
-    // 2. Convert it to base64
-    // 3. Return it
+    // Read the PDF file from your public directory
+    const filePath = path.join(process.cwd(), 'public', 'price-list-optmatic.pdf')
+    const fileBuffer = await fs.readFile(filePath)
     
-    // This is a placeholder implementation
-    // Replace this with your actual PDF handling logic
-    const response = await fetch('your-pdf-url-or-path');
-    const arrayBuffer = await response.arrayBuffer();
-    const fileData = Buffer.from(arrayBuffer).toString('base64');
+    // Convert buffer to base64 string
+    const fileData = fileBuffer.toString('base64')
     
     return {
       success: true,
