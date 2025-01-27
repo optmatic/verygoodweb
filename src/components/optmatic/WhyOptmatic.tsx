@@ -8,7 +8,7 @@ export default function WhyOptmatic() {
         {/* Left Content Section */}
         {/* Removed padding from here */}
         {/* <div className="flex-1 p-8 md:p-12 flex flex-col justify-center"> */}
-        <div className="flex-1 p-4 md:p-0 flex flex-col justify-center">
+        <div className="flex-1 md:p-0 flex flex-col justify-center">
           <div className="max-w-xl intro">
             <p className="text-sm subheading tracking-wider uppercase mb-4">WHY OPTMATIC?</p>
             <h1 className="text-4xl font-bold lg:text-5xl mb-8 font-serif">
@@ -30,7 +30,7 @@ export default function WhyOptmatic() {
           <img
             src={WhyOptmaticImg.src}
             alt="Professional working with laptop in a scenic setting"
-            className="object-cover w-full h-full opacity-50 px-4 py-2 md:px-0 md:py-0"
+            className="object-cover w-full h-full opacity-50 md:px-0 md:py-0"
           />
         </div>
       </div>
