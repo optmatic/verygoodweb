@@ -49,35 +49,26 @@ export function DownloadPriceList() {
       console.log("Download response:", response)
 
       if (response.success) {
-        // Create blob using a more reliable method
-        const binaryString = window.atob(response.fileData);
-        const bytes = new Uint8Array(binaryString.length);
-        const arrayBuffer = bytes.map((byte, i) => binaryString.charCodeAt(i));
-        const blob = new Blob([new Uint8Array(arrayBuffer)], { type: 'application/pdf' });
-
-        // Create and trigger download using a more compatible approach
-        const url = window.URL.createObjectURL(blob);
+        // Create a link to the public file
         const link = document.createElement('a');
         link.style.display = 'none';
-        link.href = url;
-        link.download = 'price-list-optmatic-2025.pdf';
+        link.href = response.fileData;
+        link.download = 'price-list-optmatic.pdf';
         
-        // Ensure link is properly added and removed
         document.body.appendChild(link);
         link.click();
         
-        // Small timeout to ensure download starts before cleanup
+        // Cleanup
         setTimeout(() => {
           document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
         }, 100);
 
-        setSubmitStatus("Thank you! Your price list has been downloaded.")
+        setSubmitStatus("Thank you! Your price list has been downloaded.");
         // Close dialog after 3 seconds
         setTimeout(() => {
-          setOpen(false)
-          setSubmitStatus("")
-        }, 3000)
+          setOpen(false);
+          setSubmitStatus("");
+        }, 3000);
       }
     } catch (error) {
       console.error("Error during submission:", error)

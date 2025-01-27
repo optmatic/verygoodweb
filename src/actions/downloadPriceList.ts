@@ -17,16 +17,10 @@ export async function downloadPriceList(formData: FormData): Promise<DownloadRes
     
     console.log('Download requested by:', { name, email, companyName });
     
-    // Read the PDF file from your public directory
-    const filePath = path.join(process.cwd(), 'public', 'price-list-optmatic.pdf')
-    const fileBuffer = await fs.readFile(filePath)
-    
-    // Convert buffer to base64 string
-    const fileData = fileBuffer.toString('base64')
-    
+    // Instead of reading the file directly, return the public URL
     return {
       success: true,
-      fileData
+      fileData: '/price-list-optmatic.pdf' // This will be the public URL path
     };
   } catch (error) {
     console.error('Error downloading price list:', error);
