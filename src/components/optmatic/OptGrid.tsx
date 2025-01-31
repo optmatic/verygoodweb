@@ -48,7 +48,7 @@ export default function OptGrid() {
       className: "lg:col-span-2",
       containerClassName: "min-h-[350px]",
       imageClassName: "object-bottom lg:object-right lg:object-bottom",
-      link: "/site-management",
+      link: "/website-management",
     },
     {
       title: "WordPress Solutions",
