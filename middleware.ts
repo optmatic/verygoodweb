@@ -6,8 +6,15 @@ export function middleware(request: NextRequest) {
   const country = request.headers.get('x-vercel-ip-country') || ''; // Default to empty string if not available
   const url = request.nextUrl.clone();
 
+  console.log('Middleware running:', {
+    country,
+    currentPath: url.pathname,
+    headers: Object.fromEntries(request.headers)
+  });
+
   // Redirect only if the user is in Australia and is on the homepage
   if (country.toLowerCase() === 'au' && url.pathname === '/') {
+    console.log('Redirecting to /au');
     url.pathname = '/au';
     return NextResponse.redirect(url);
   }
@@ -19,4 +26,5 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: '/',
 };
+
  
