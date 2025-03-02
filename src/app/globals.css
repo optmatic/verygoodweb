@@ -6,6 +6,16 @@
 
 @theme {
   --color-muted: #f5f5f5;
+  --color-deepGreen: #0f2d23;
+  --color-lightGreen: #38ba87;
+  --color-dark: oklch(0.13 0.028 261.692);
+  --color-beige: #f6e6cb;
+  --color-lightBeige: #f9efdb;
+}
+
+.intro-panel {
+  background-color: #f5f5f5;
+  border-color: black;
 }
 
 :root {
