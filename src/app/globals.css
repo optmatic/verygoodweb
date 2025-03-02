@@ -10,12 +10,42 @@
   --color-lightGreen: #38ba87;
   --color-dark: oklch(0.13 0.028 261.692);
   --color-beige: #f6e6cb;
-  --color-lightBeige: #f9efdb;
+  --color-lightBeige: #faf5ef;
 }
 
-.intro-panel {
-  background-color: #f5f5f5;
-  border-color: black;
+h1 {
+  @apply text-3xl tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl;
+}
+
+.location-page-card {
+  background-color: var(--color-white);
+  border-color: var(--color-deepGreen);
+}
+
+.hero-section {
+  background-color: var(--color-lightBeige);
+}
+
+.hero-section h1 {
+  color: var(--color-deepGreen);
+  font-family: "Playfair Display", serif;
+}
+
+header {
+  background-color: var(--color-deepGreen);
+}
+
+header a {
+  background-color: var(--color-deepGreen);
+}
+
+header button {
+  background-color: var(--color-deepGreen);
+  color: var(--color-lightGreen);
+}
+
+header a {
+  color: var(--color-lightGreen);
 }
 
 :root {

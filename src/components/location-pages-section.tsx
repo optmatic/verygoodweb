@@ -93,7 +93,7 @@ export default function LocationPagesSection() {
                   <Link
                     key={location.name}
                     href={location.href}
-                    className="group relative overflow-hidden rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 transition-colors"
+                    className="location-page-card group relative overflow-hidden rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 transition-colors"
                   >
                     <div className="aspect-[16/9] overflow-hidden">
                       <Image
