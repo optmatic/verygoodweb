@@ -18,8 +18,14 @@
   --font-geist-mono: "Geist Mono", monospace;
 }
 
-
-
+.intro-grid-item {
+  border-color: var(--color-deepGreen);
+  border-width: 1px;
+  border-style: solid;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
 
 h1 {
   font-family: var(--font-alegreya);

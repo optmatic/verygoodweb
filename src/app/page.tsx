@@ -11,7 +11,6 @@ import PricingList from "@/components/pricing-list";
 export default function Home() {
   return (
     <>
-      <HeroSection /> 
       <HeroSection1 />
       <IntroSection />
       <StatsSection />

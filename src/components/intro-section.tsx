@@ -45,17 +45,17 @@ export default function IntroSection() {
               </Button>
             </div>
             <div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/20">
-              <div className="space-y-2">
+              <div className="intro-grid-item space-y-2">
                 <p className="text-3xl font-bold text-gray-900">0.4s</p>
                 <p className="text-sm text-muted-foreground">
                   Average Load Time
                 </p>
               </div>
-              <div className="space-y-2">
+              <div className="intro-grid-item space-y-2">
                 <p className="text-3xl font-bold text-gray-900">100%</p>
                 <p className="text-sm text-muted-foreground">Uptime</p>
               </div>
-              <div className="space-y-2">
+              <div className="intro-grid-item space-y-2">
                 <p className="text-3xl font-bold text-gray-900">A+</p>
                 <p className="text-sm text-muted-foreground">Security Rating</p>
               </div>

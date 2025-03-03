@@ -13,3 +13,27 @@
   --font-geist-sans: "Geist Sans", sans-serif;
   --font-geist-mono: "Geist Mono", monospace;
 }
+
+h1 {
+  font-family: var(--font-alegreya);
+}
+
+h2 {
+  font-family: var(--font-alegreya-sans);
+}
+
+h3 {
+  font-family: var(--font-geist-sans);
+}
+
+h4 {
+  font-family: var(--font-geist-sans);
+}
+
+h5 {
+  font-family: var(--font-geist-sans);
+}
+
+h6 {
+  font-family: var(--font-geist-sans);
+}
