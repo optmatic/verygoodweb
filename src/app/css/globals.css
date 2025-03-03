@@ -11,9 +11,18 @@
   --color-dark: oklch(0.13 0.028 261.692);
   --color-beige: #f6e6cb;
   --color-lightBeige: #faf5ef;
+
+  --font-alegreya: "Alegreya", serif;
+  --font-alegreya-sans: "Alegreya Sans", sans-serif;
+  --font-geist-sans: "Geist Sans", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
 }
 
+
+
+
 h1 {
+  font-family: var(--font-alegreya);
   @apply text-3xl tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl;
 }
 
@@ -24,11 +33,14 @@ h1 {
 
 .hero-section {
   background-color: var(--color-lightBeige);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-section h1 {
   color: var(--color-deepGreen);
-  font-family: "Playfair Display", serif;
 }
 
 header {
