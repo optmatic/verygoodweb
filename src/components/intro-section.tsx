@@ -1,7 +1,7 @@
 import { ArrowRight, Zap, Shield, Timer } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
+import Button3d from "./button";
 export default function IntroSection() {
   return (
     <section className="container max-w-7xl mx-auto py-24 border-t border-white/20">
@@ -27,20 +27,7 @@ export default function IntroSection() {
               </p>
             </div>
             <div className="flex flex-col gap-4 min-[400px]:flex-row">
-              <Button asChild size="lg" className="bg-lightGreen  ">
-                <Link href="#pricing">
-                  View Pricing
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-white/20 bg-white/5 text-white hover:bg-white/10"
-              >
-                <Link href="#examples">See Examples</Link>
-              </Button>
+              <Button3d text="See Examples" href="#examples" />
             </div>
             <div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/20">
               <div className="intro-grid-item space-y-2">

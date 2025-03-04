@@ -14,6 +14,14 @@
   --font-geist-mono: "Geist Mono", monospace;
 }
 
+p {
+  font-family: var(--font-geist-sans);
+}
+
+button {
+  font-family: var(--font-geist-mono);
+}
+
 h1 {
   font-family: var(--font-alegreya);
 }
@@ -27,13 +35,13 @@ h3 {
 }
 
 h4 {
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-alegreya-sans);
 }
 
 h5 {
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-alegreya-sans);
 }
 
 h6 {
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-alegreya-sans);
 }
