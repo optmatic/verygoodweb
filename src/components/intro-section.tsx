@@ -9,27 +9,25 @@ export default function IntroSection() {
         <div className="grid lg:grid-cols-2 gap-16">
           <div className="flex flex-col justify-center space-y-8">
             <div className="space-y-6">
-              <div className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-sm text-gray-900">
+              <div className="inline-flex bg-lightGreen font-semibold items-center rounded-full px-3 py-1 text-sm text-deepGreen">
                 <Zap className="mr-2 h-3 w-3" />
                 96% Faster Than WordPress
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Static Sites. <br />
-                Built Right. <br />
-                No Exceptions.
+              <h2 className="text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl">
+                <span className="text-deepGreen">Static Sites.</span>{" "}
+                <span className="text-deepGreen">Built Right.</span> <br />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-lightGreen to-deepGreen">
+                  No Exceptions.
+                </span>
               </h2>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl">
+              <p className="max-w-[600px] text-dark md:text-lg">
                 We build lightning-fast static websites that just work. No
                 WordPress. No page builders. No monthly fees. Just clean,
                 efficient code that loads in milliseconds.
               </p>
             </div>
             <div className="flex flex-col gap-4 min-[400px]:flex-row">
-              <Button
-                asChild
-                size="lg"
-                className="bg-white text-black hover:bg-white/90"
-              >
+              <Button asChild size="lg" className="bg-lightGreen  ">
                 <Link href="#pricing">
                   View Pricing
                   <ArrowRight className="ml-2 h-4 w-4" />

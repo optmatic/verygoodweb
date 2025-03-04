@@ -11,6 +11,7 @@
   --color-dark: oklch(0.13 0.028 261.692);
   --color-beige: #f6e6cb;
   --color-lightBeige: #faf5ef;
+  --color-paleGreen: oklch(0.982 0.018 155.826);
 
   --font-alegreya: "Alegreya", serif;
   --font-alegreya-sans: "Alegreya Sans", sans-serif;
@@ -19,7 +20,16 @@
 }
 
 .intro-grid-item {
-  border-color: var(--color-deepGreen);
+  border-color: var(--color-paleGreen);
+  border-width: 1px;
+  border-style: solid;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.intro-panel {
+  border-color: var(--color-paleGreen);
   border-width: 1px;
   border-style: solid;
   padding: 1rem;

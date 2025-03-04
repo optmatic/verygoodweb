@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Code, Hammer } from "lucide-react";
+import Button3d from "./button";
+import Button from "./button";
 
 export default function HeroSection() {
   return (
@@ -19,17 +21,8 @@ export default function HeroSection() {
               We build websites. They work well. No unnecessary features.
             </p>
             <div className="mt-4 flex flex-col gap-2 min-[400px]:flex-row">
-              <Link
-                href="#contact"
-                className="bg-deepGreen text-lightGreen inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              >
-                Hire Us
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              <Button3d text="Hire Us" href="/contact" />
             </div>
-            {/* <div className="mt-4 text-center md:text-left">
-              "It's not just a website. It's a website that works."
-            </div> */}
           </div>
 
           {/* Image Section */}
