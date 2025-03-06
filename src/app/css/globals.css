@@ -35,6 +35,18 @@
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--color-paleGreen) / 30;
+}
+
+.accordion-trigger {
+  @apply text-deepGreen;
+  font-family: var(--font-alegreya-sans);
+  @apply font-semibold;
+}
+
+.accordion-trigger:hover {
+  @apply text-black;
+  @apply cursor-pointer;
 }
 
 h1 {

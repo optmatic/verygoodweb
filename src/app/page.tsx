@@ -15,9 +15,13 @@ export default function Home() {
       <IntroSection />
       <StatsSection />
       <CtaSection />
+      <hr className="border-deepGreen/20" />
       <LocationPagesSection />
+      <hr className="border-deepGreen/20" />
       <FaqSection />
+      <hr className="border-deepGreen/20" />
       <TestimonialCarousel />
+      <hr className="border-deepGreen/20" />
       <PricingList />
     </>
   );

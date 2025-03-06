@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Button3d from "@/components/button";
 
 const testimonials = [
   {
@@ -97,16 +98,7 @@ export default function TestimonialCarousel() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button
-            asChild
-            size="lg"
-            className="bg-white text-black hover:bg-white/90"
-          >
-            <Link href="/case-studies">
-              View Case Studies
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <Button3d href="/case-studies" text="View Case Studies" />
         </div>
       </div>
     </section>

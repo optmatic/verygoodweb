@@ -74,10 +74,10 @@ export default function LocationPagesSection() {
     <section className="container max-w-7xl mx-auto py-24 border-t border-white/20">
       <div className="px-4 md:px-6 space-y-16">
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tighter text-deepGreen underline underline-offset-2 decoration-lightGreen sm:text-4xl">
             Local Web Design Services
           </h2>
-          <p className="text-muted-foreground text-lg max-w-[600px]">
+          <p className="text-deepGreen text-lg max-w-[600px]">
             We build lightning-fast static websites for businesses across
             Australia. Find your local web design services:
           </p>
@@ -86,14 +86,16 @@ export default function LocationPagesSection() {
         <div className="space-y-16">
           {Object.entries(locations).map(([region, cities]) => (
             <div key={region} className="space-y-8">
-              <h3 className="text-xl font-semibold text-gray-900">{region}</h3>
+              <h3 className="text-xl underline underline-offset-2 decoration-lightGreen font-semibold text-gray-900">
+                {region}
+              </h3>
 
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {cities.map((location) => (
                   <Link
                     key={location.name}
                     href={location.href}
-                    className="location-page-card group relative overflow-hidden rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 transition-colors"
+                    className="location-page-card hover:bg-paleGreen/20 shadow-sm group relative overflow-hidden rounded-lg border border-white/20 bg-white/5 transition-colors"
                   >
                     <div className="aspect-[16/9] overflow-hidden">
                       <Image
@@ -108,8 +110,8 @@ export default function LocationPagesSection() {
                     <div className="space-y-4 p-6">
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <MapPin className="h-4 w-4 text-gray-900" />
-                          <h4 className="font-semibold text-gray-900">
+                          <MapPin className="h-4 w-4 text-deepGreen" />
+                          <h4 className="font-semibold text-gray-900 text-xl">
                             {location.name}
                           </h4>
                         </div>
@@ -119,14 +121,14 @@ export default function LocationPagesSection() {
                       </div>
 
                       <div className="space-y-2">
-                        <p className="text-xs text-muted-foreground font-medium">
+                        <p className="text-xs text-darkGreen font-semibold">
                           Serving:
                         </p>
                         <div className="flex flex-wrap gap-1">
                           {location.suburbs.map((suburb) => (
                             <span
                               key={suburb}
-                              className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-2.5 py-0.5 text-xs font-medium text-gray-900"
+                              className="inline-flex items-center rounded-full border border-deepGreen shadow-sm px-2 py-1 bg-paleGreen text-xs font-medium text-gray-900"
                             >
                               {suburb}
                             </span>
@@ -134,7 +136,7 @@ export default function LocationPagesSection() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-darkGreen">
                         Learn more
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </div>

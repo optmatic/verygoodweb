@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Button3d from "./button";
 
 const faqs = [
   {
@@ -52,42 +53,46 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section className="container max-w-7xl mx-auto py-24 border-t border-white/20">
-      <div className="px-4 md:px-6">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-[600px] mx-auto">
-            Everything you need to know about our web design process and static
-            sites.
-          </p>
-        </div>
+    <section className="bg-paleGreen/20 py-16 px-4 md:px-16">
+      <div className="container bg-paleGreen/40 shadow-lg flex flex-col items-center max-w-5xl mx-auto py-16 md:py-24 border-t border-white/20 rounded-lg">
+        <div className="w-full max-w-4xl px-4 md:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-deepGreen/80 text-lg mx-auto">
+              Everything you need to know about our web design process and
+              static sites.
+            </p>
+          </div>
 
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="rounded-lg border border-white/20 bg-white/5 px-6"
-              >
-                <AccordionTrigger className="text-base font-medium text-gray-900 hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+          <div className="w-full mx-auto mb-16">
+            <Accordion type="single" collapsible className="space-y-4 w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="rounded-lg border border-white/20 bg-white/5 overflow-hidden"
+                >
+                  <AccordionTrigger className="accordion-trigger px-6 py-4 text-base font-medium hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-dark px-6 pb-4 pt-0">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
 
-        <div className="mt-12 text-center text-sm text-muted-foreground">
-          Still have questions?{" "}
-          <a href="/contact" className="text-gray-900 hover:underline">
-            Get in touch
-          </a>
+          <div className="flex flex-col items-center">
+            <p className="text-sm text-dark mb-4">Still have questions?</p>
+            <Button3d
+              text="Get in touch"
+              href="/contact"
+              className="bg-lightGreen"
+            />
+          </div>
         </div>
       </div>
     </section>

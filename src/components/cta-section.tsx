@@ -24,7 +24,7 @@ export default function CtaSection() {
   }
 
   return (
-    <section className="bg-lightBeige  border-t border-deepGreen/20">
+    <section className="bg-paleGreen/10  border-t border-deepGreen/20">
       <div className="container max-w-7xl mx-auto py-24">
         <div className="px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
