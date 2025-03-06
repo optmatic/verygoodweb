@@ -34,16 +34,16 @@ const company = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/20 bg-black">
+    <footer className="border-t border-white/20 bg-deepGreen">
       <div className="container max-w-7xl mx-auto py-16">
         <div className="px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="space-y-8">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                <h3 className="text-lg font-semibold text-lightGreen mb-3">
                   Very Good Web Design
                 </h3>
-                <p className="text-sm text-muted-foreground max-w-md">
+                <p className="text-sm text-paleGreen max-w-md">
                   We build static websites that load fast, work well, and don't
                   break. No unnecessary features. No bloated frameworks. Just
                   clean, efficient code.
@@ -51,29 +51,29 @@ export default function Footer() {
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Mail className="h-4 w-4 text-gray-900" />
+                <div className="flex items-center gap-2 text-sm text-paleGreen">
+                  <Mail className="h-4 w-4 text-paleGreen" />
                   <a
                     href="mailto:hello@verygoodwebdesign.com"
-                    className="hover:text-gray-900"
+                    className="hover:text-paleGreen"
                   >
                     hello@verygoodwebdesign.com
                   </a>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Phone className="h-4 w-4 text-gray-900" />
-                  <a href="tel:1300123456" className="hover:text-gray-900">
+                <div className="flex items-center gap-2 text-sm text-paleGreen">
+                  <Phone className="h-4 w-4 text-paleGreen" />
+                  <a href="tel:1300123456" className="hover:text-paleGreen">
                     1300 123 456
                   </a>
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-white/20">
-                <div className="flex flex-wrap gap-x-8 gap-y-4 text-sm text-muted-foreground">
-                  <Link href="/privacy" className="hover:text-gray-900">
+              <div className="pt-8 border-t border-lightGreen">
+                <div className="flex flex-wrap gap-x-8 gap-y-4 text-sm text-paleGreen">
+                  <Link href="/privacy" className="hover:text-paleGreen">
                     Privacy Policy
                   </Link>
-                  <Link href="/terms" className="hover:text-gray-900">
+                  <Link href="/terms" className="hover:text-paleGreen">
                     Terms of Service
                   </Link>
                   <span>© {new Date().getFullYear()} Very Good Web Design</span>
@@ -83,15 +83,15 @@ export default function Footer() {
 
             <div className="grid gap-8 sm:grid-cols-3">
               <div className="space-y-6">
-                <h4 className="text-sm font-semibold text-gray-900">
+                <h4 className="text-sm font-semibold text-lightGreen">
                   Services
                 </h4>
-                <ul className="space-y-3 text-sm text-muted-foreground">
+                <ul className="space-y-3 text-sm text-paleGreen">
                   {services.map((service) => (
                     <li key={service.href}>
                       <Link
                         href={service.href}
-                        className="inline-flex items-center gap-1 hover:text-gray-900"
+                        className="inline-flex items-center gap-1"
                       >
                         {service.name}
                         <ArrowUpRight className="h-3 w-3" />
@@ -100,16 +100,14 @@ export default function Footer() {
                   ))}
                   <li className="pt-3 border-t border-white/20">
                     <div className="space-y-2">
-                      <div className="text-sm font-semibold text-gray-900">
+                      <div className="text-sm font-semibold text-lightGreen">
                         Managed Hosting
                       </div>
                       <div className="flex items-baseline gap-1">
-                        <span className="text-lg font-bold text-gray-900">
+                        <span className="text-lg font-bold text-lightGreen">
                           $5
                         </span>
-                        <span className="text-xs text-muted-foreground">
-                          /month
-                        </span>
+                        <span className="text-xs text-paleGreen">/ month</span>
                       </div>
                     </div>
                   </li>
@@ -117,13 +115,15 @@ export default function Footer() {
               </div>
 
               <div className="space-y-6">
-                <h4 className="text-sm font-semibold text-gray-900">Company</h4>
-                <ul className="space-y-3 text-sm text-muted-foreground">
+                <h4 className="text-sm font-semibold text-lightGreen">
+                  Company
+                </h4>
+                <ul className="space-y-3 text-sm text-paleGreen">
                   {company.map((item) => (
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="inline-flex items-center gap-1 hover:text-gray-900"
+                        className="inline-flex items-center gap-1"
                       >
                         {item.name}
                         <ArrowUpRight className="h-3 w-3" />
@@ -135,15 +135,15 @@ export default function Footer() {
 
               <div className="space-y-6">
                 <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-gray-900" />
-                  <h4 className="text-sm font-semibold text-gray-900">
+                  <MapPin className="h-4 w-4 text-lightGreen" />
+                  <h4 className="text-sm font-semibold text-lightGreen">
                     Locations
                   </h4>
                 </div>
-                <div className="space-y-6 text-sm text-muted-foreground">
+                <div className="space-y-6 text-sm text-paleGreen">
                   {Object.entries(locations).map(([region, cities]) => (
                     <div key={region} className="space-y-3">
-                      <div className="text-[13px] font-medium text-gray-900">
+                      <div className="text-[13px] font-medium text-lightGreen">
                         {region}
                       </div>
                       <ul className="space-y-3">
@@ -151,7 +151,7 @@ export default function Footer() {
                           <li key={city.href}>
                             <Link
                               href={city.href}
-                              className="inline-flex items-center gap-1 hover:text-gray-900"
+                              className="inline-flex items-center gap-1"
                             >
                               {city.name}
                               <ArrowUpRight className="h-3 w-3" />

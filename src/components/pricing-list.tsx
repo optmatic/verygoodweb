@@ -55,7 +55,7 @@ export default function PricingList() {
     <section className="container max-w-7xl mx-auto py-24 border-t border-white/20">
       <div className="px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-lightGreen to-deepGreen tracking-tighter sm:text-4xl md:text-5xl">
             Simple, Transparent Pricing
           </h2>
           <p className="text-muted-foreground text-lg max-w-[600px] mx-auto">
@@ -67,7 +67,7 @@ export default function PricingList() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className="relative rounded-lg border border-white/20 bg-white/5 p-8 hover:bg-white/10 transition-colors"
+              className="relative border border-lightGreen shadow-lg bg-white/5 p-8 hover:bg-white/10 transition-colors"
             >
               <div className="space-y-6">
                 <div className="space-y-2">
@@ -94,7 +94,7 @@ export default function PricingList() {
 
                 <Button
                   asChild
-                  className="w-full bg-white text-black hover:bg-white/90"
+                  className="w-full bg-lightGreen hover:bg-lightGreen/80 text-black"
                 >
                   <Link href="/contact">
                     Get Started

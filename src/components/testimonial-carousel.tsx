@@ -59,7 +59,7 @@ export default function TestimonialCarousel() {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
+        <div className="relative border border-lightGreen shadow-lg overflow-hidden py-8 max-w-4xl mx-auto">
           <div
             className="flex transition-transform duration-700 ease-out"
             style={{ transform: `translateX(-${current * 100}%)` }}
@@ -67,15 +67,15 @@ export default function TestimonialCarousel() {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="w-full flex-shrink-0 px-4 md:px-12">
                 <div className="max-w-2xl mx-auto space-y-6">
-                  <Quote className="h-12 w-12 text-gray-900" />
-                  <p className="text-2xl font-medium text-gray-900">
+                  <Quote className="h-12 w-12 text-deepGreen" />
+                  <p className="text-2xl font-medium text-deepGreen">
                     {testimonial.quote}
                   </p>
                   <div className="space-y-1">
-                    <div className="font-semibold text-gray-900">
+                    <div className="font-semibold text-deepGreen">
                       {testimonial.author}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm text-dark">
                       {testimonial.role}, {testimonial.company}
                     </div>
                   </div>
@@ -89,7 +89,7 @@ export default function TestimonialCarousel() {
               <button
                 key={index}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  current === index ? "bg-gray-900" : "bg-white/20"
+                  current === index ? "bg-deepGreen" : "bg-lightGreen/20"
                 }`}
                 onClick={() => setCurrent(index)}
               />
