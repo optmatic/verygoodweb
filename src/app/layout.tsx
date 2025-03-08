@@ -23,7 +23,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 const alegreya = Alegreya({
   variable: "--font-alegreya",
   subsets: ["latin"],
@@ -44,7 +43,8 @@ const jsonLd = {
       "@id": "https://optmatic.com#website",
       name: "Optmatic",
       url: "https://optmatic.com",
-      description: "Future-proof your digital presence with Optmatic. We specialise in web development and e-commerce solutions, ensuring your business stays ahead in the digital age.",
+      description:
+        "Future-proof your digital presence with Optmatic. We specialise in web development and e-commerce solutions, ensuring your business stays ahead in the digital age.",
     },
     {
       "@type": "Organization",
@@ -53,23 +53,25 @@ const jsonLd = {
       url: "https://optmatic.com",
       logo: "https://optmatic.com/logo.png",
       email: "tom@optmatic.com",
-      description: "Future-proof your digital presence with Optmatic. We specialise in web development and e-commerce solutions, ensuring your business stays ahead in the digital age.",
-    }
-  ]
+      description:
+        "Future-proof your digital presence with Optmatic. We specialise in web development and e-commerce solutions, ensuring your business stays ahead in the digital age.",
+    },
+  ],
 };
 
 export const metadata: Metadata = {
-  title: "[optmatic] -  Web Development & E-commerce",
-  description: "Future-proof your digital presence with Optmatic. We specialise in web development and e-commerce solutions, ensuring your business stays ahead in the digital age.",
+  title: "Very Good Web",
+  description:
+    "Future-proof your digital presence with Optmatic. We specialise in web development and e-commerce solutions, ensuring your business stays ahead in the digital age.",
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: '/apple-touch-icon.png',
+    apple: "/apple-touch-icon.png",
   },
-  manifest: '/site.webmanifest',
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -89,9 +91,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${alegreya.variable} ${alegreyaSans.variable} antialiased min-h-screen flex flex-col w-full bg-deepBlue`}
       >
         <PrimaryNav />
-          <main>
-          {children}
-          </main>
+        <main>{children}</main>
       </body>
     </html>
   );
